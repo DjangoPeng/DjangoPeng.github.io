@@ -57,8 +57,10 @@
           '<div class="article-share-links">',
             '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
             '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+            '<!-a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+            '<!-a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+            '<a href="http://service.weibo.com/share/share.php?appkey=3687385740&pic=http%3A%2F%2Fwww.devchen.com%2FSharePic.png&ralateUid=2806951572&searchPic=true&url=' + encodedUrl + '" class="article-share-sina" target="_blank" title="weibo"></a>',
+            '<a href="http://qr.liantu.com/api.php?text=' + encodedUrl + '" class="article-share-wechat" target="_blank" title="wechat"></a>',
           '</div>',
         '</div>'
       ].join('');
