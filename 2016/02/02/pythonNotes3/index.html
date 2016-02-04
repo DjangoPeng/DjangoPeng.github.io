@@ -4,19 +4,33 @@
   <meta charset="utf-8">
   
   
-  <meta name="keywords" content="python, data mining, machine learning">
+  <meta name="keywords" content="python, notes,python, data mining, machine learning">
   
-  <title>Archives | Code4Future</title>
+  <title>python读书笔记：细节决定成败(3) | Code4Future</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Code4Future">
-<meta property="og:url" content="http://pengjt.com/archives/index.html">
+  <meta name="description" content="作者：一个独行的程序员
+背景：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的tutorial
+14.pprint - Pretty Printer坑
+15.List Comprehensionelems = [1, 2, 3, 4]
+squares = [e*">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python读书笔记：细节决定成败(3)">
+<meta property="og:url" content="http://pengjt.com/2016/02/02/pythonNotes3/index.html">
 <meta property="og:site_name" content="Code4Future">
-<meta property="og:description">
+<meta property="og:description" content="作者：一个独行的程序员
+背景：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的tutorial
+14.pprint - Pretty Printer坑
+15.List Comprehensionelems = [1, 2, 3, 4]
+squares = [e*">
+<meta property="og:image" content="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png">
+<meta property="og:updated_time" content="2016-02-03T00:35:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Code4Future">
-<meta name="twitter:description">
+<meta name="twitter:title" content="python读书笔记：细节决定成败(3)">
+<meta name="twitter:description" content="作者：一个独行的程序员
+背景：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的tutorial
+14.pprint - Pretty Printer坑
+15.List Comprehensionelems = [1, 2, 3, 4]
+squares = [e*">
   
     <link rel="alternative" href="/atom.xml" title="Code4Future" type="application/atom+xml">
   
@@ -68,96 +82,81 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
+        <section id="main"><article id="post-pythonNotes3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/02/03/tf-idf/" class="archive-article-date">
-  <time datetime="2016-02-03T23:50:51.000Z" itemprop="datePublished">Feb 3</time>
-</a>
-      
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/03/tf-idf/">TF-IDF原理及应用</a>
+    <h1 class="article-title" itemprop="name">
+      python读书笔记：细节决定成败(3)
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/02/02/pythonNotes3/" class="archive-article-date">
-  <time datetime="2016-02-02T23:43:11.000Z" itemprop="datePublished">Feb 2</time>
+    <div class="article-meta">
+      <a href="/2016/02/02/pythonNotes3/" class="article-date">
+  <time datetime="2016-02-02T23:43:11.000Z" itemprop="datePublished">2016-2-2 Tue  15:43</time>
 </a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/02/pythonNotes3/">python读书笔记：细节决定成败(3)</a>
-    </h1>
-  
-
-    </header>
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
   </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/28/pythonNotes2/" class="archive-article-date">
-  <time datetime="2016-01-29T00:29:32.000Z" itemprop="datePublished">Jan 28</time>
-</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/28/pythonNotes2/">python读书笔记：细节决定成败(2)</a>
-    </h1>
-  
+        <p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
+<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
+<p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/" target="_blank" rel="external">tutorial</a></p>
+<h2 id="14-pprint_-_Pretty_Printer"><a href="#14-pprint_-_Pretty_Printer" class="headerlink" title="14.pprint - Pretty Printer"></a>14.pprint - Pretty Printer</h2><p>坑</p>
+<h2 id="15-List_Comprehension"><a href="#15-List_Comprehension" class="headerlink" title="15.List Comprehension"></a>15.List Comprehension</h2><pre><code>elems = [1, 2, 3, 4]
+squares = [e*e for e in elems]  # square each element
+big = [e for e in elems if e &gt; 2]  # keep elements bigger than 2
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/28/pythonNotes1/" class="archive-article-date">
-  <time datetime="2016-01-28T23:04:53.000Z" itemprop="datePublished">Jan 28</time>
-</a>
+from gensim import corpora, models, similarities
+documents = [&quot;Human machine interface for lab abc computer applications&quot;,
+             &quot;A survey of user opinion of computer system response time&quot;,
+             &quot;The EPS user interface management system&quot;,
+             &quot;System and human system engineering testing of EPS&quot;,
+             &quot;Relation of user perceived response time to error measurement&quot;,
+             &quot;The generation of random binary unordered trees&quot;,
+             &quot;The intersection graph of paths in trees&quot;,
+             &quot;Graph minors IV Widths of trees and well quasi ordering&quot;,
+             &quot;Graph minors A survey&quot;]
+
+# remove common words and tokenize
+stoplist = set(&apos;for a of the and to in&apos;.split())
+texts = [[word for word in document.lower().split() if word not in stoplist]
+         for document in documents]
+</code></pre>
       
+    </div>
+    <footer class="article-footer">
+      
+        <div class="bdsharebuttonbox"><a href="http://pengjt.com/2016/02/02/pythonNotes3/">分享到：</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook">Facebook</a><a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter">Twitter</a><a href="#" class="bds_more" data-cmd="more">其他平台</a></div>
+      
+      
+        <a href="http://pengjt.com/2016/02/02/pythonNotes3/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/02/02/pythonNotes3/">评论</a>
+      
+      
+    </footer>
+  </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/28/pythonNotes1/">python读书笔记：细节决定成败(1)</a>
-    </h1>
+    <!- %- partial('post/nav') %>
   
 
-    </header>
-  </div>
+
+  
+  <section id="comments">
+  <!-- 多说评论框 start -->
+    <div id="ds-thread" class="ds-thread" data-thread-key="2016/02/02/pythonNotes3/" data-title="python读书笔记：细节决定成败(3)" data-url="http://pengjt.com/2016/02/02/pythonNotes3/"></div>
+  <!-- 多说评论框 end -->
+  </section>
+  
 </article>
-  
-  
-    </div></section>
-  
 </section>
         
           <aside id="sidebar">

@@ -524,20 +524,30 @@ body {
   clear: both;
 }
 .article-date {
+  margin: 10px 0px 0px 20px;
   float: left;
 }
+a.article-date:hover {
+  color: #258fb8;
+}
+.article-date:before {
+  font-family: FontAwesome;
+  color: #ccc;
+  content: "\f073";
+}
 .article-category {
+  margin: 10px 0px 0px 10px;
   float: left;
   line-height: 1em;
   color: #ccc;
   text-shadow: 0 1px #fff;
-  margin-left: 8px;
 }
 .article-category:before {
-  content: "\2022";
+  font-family: FontAwesome;
+  content: "\f0c6";
 }
 .article-category-link {
-  margin: 0 12px 1em;
+  margin: 0 1px 1em;
 }
 .article-header {
   padding: 20px 20px 0;

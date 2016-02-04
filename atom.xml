@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://pengjt.com/"/>
-  <updated>2016-01-29T19:11:36.000Z</updated>
+  <updated>2016-02-04T01:17:20.000Z</updated>
   <id>http://pengjt.com/</id>
   
   <author>
@@ -13,6 +13,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[TF-IDF原理及应用]]></title>
+    <link href="http://pengjt.com/2016/02/03/tf-idf/"/>
+    <id>http://pengjt.com/2016/02/03/tf-idf/</id>
+    <published>2016-02-03T23:50:51.000Z</published>
+    <updated>2016-02-04T01:17:20.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="https://lasnaves.com/wp-content/uploads/2015/07/machinelearninganddataminingWORDLE.png"></p>
+<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
+<h2 id="1-TF-IDF_u539F_u7406"><a href="#1-TF-IDF_u539F_u7406" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><h2 id="2-TF-IDF_u5E94_u7528"><a href="#2-TF-IDF_u5E94_u7528" class="headerlink" title="2.TF-IDF应用"></a>2.TF-IDF应用</h2><h2 id="3-python_u5B9E_u73B0"><a href="#3-python_u5B9E_u73B0" class="headerlink" title="3.python实现"></a>3.python实现</h2>]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="https://lasnaves.com/wp-content/uploads/2015/07/machinelearninganddataminingWORDLE.png"></p>
+<p><strong>作者</strong>：<a href="ht]]>
+    </summary>
+    
+      <category term="Data Mining" scheme="http://pengjt.com/categories/Data-Mining/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[python读书笔记：细节决定成败(3)]]></title>
+    <link href="http://pengjt.com/2016/02/02/pythonNotes3/"/>
+    <id>http://pengjt.com/2016/02/02/pythonNotes3/</id>
+    <published>2016-02-02T23:43:11.000Z</published>
+    <updated>2016-02-03T00:35:58.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
+<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
+<p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/" target="_blank" rel="external">tutorial</a></p>
+<h2 id="14-pprint_-_Pretty_Printer"><a href="#14-pprint_-_Pretty_Printer" class="headerlink" title="14.pprint - Pretty Printer"></a>14.pprint - Pretty Printer</h2><p>坑</p>
+<h2 id="15-List_Comprehension"><a href="#15-List_Comprehension" class="headerlink" title="15.List Comprehension"></a>15.List Comprehension</h2><pre><code>elems = [1, 2, 3, 4]
+squares = [e*e for e in elems]  # square each element
+big = [e for e in elems if e &gt; 2]  # keep elements bigger than 2
+
+from gensim import corpora, models, similarities
+documents = [&quot;Human machine interface for lab abc computer applications&quot;,
+             &quot;A survey of user opinion of computer system response time&quot;,
+             &quot;The EPS user interface management system&quot;,
+             &quot;System and human system engineering testing of EPS&quot;,
+             &quot;Relation of user perceived response time to error measurement&quot;,
+             &quot;The generation of random binary unordered trees&quot;,
+             &quot;The intersection graph of paths in trees&quot;,
+             &quot;Graph minors IV Widths of trees and well quasi ordering&quot;,
+             &quot;Graph minors A survey&quot;]
+
+# remove common words and tokenize
+stoplist = set(&apos;for a of the and to in&apos;.split())
+texts = [[word for word in document.lower().split() if word not in stoplist]
+         for document in documents]
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
+<p><strong>作者</strong>：<a hre]]>
+    </summary>
+    
+      <category term="python" scheme="http://pengjt.com/categories/python/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[python读书笔记：细节决定成败(2)]]></title>
