@@ -545,7 +545,7 @@ body {
 .article-date {
   margin: 10px 0px 0px 20px;
   float: left;
-  font-size: 13px;
+  font-size: 12px;
 }
 a.article-date:hover {
   color: #258fb8;
@@ -561,7 +561,7 @@ a.article-date:hover {
   line-height: 1em;
   color: #ccc;
   text-shadow: 0 1px #fff;
-  font-size: 13px;
+  font-size: 12px;
 }
 .article-category:before {
   font-family: FontAwesome;
