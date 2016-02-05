@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pengjt.com/search/index.html</loc>
+    <lastmod>2016-02-05T19:31:09.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pengjt.com/2016/02/03/tf-idf/</loc>
     <lastmod>2016-02-04T01:17:20.000Z</lastmod>
   </url>
