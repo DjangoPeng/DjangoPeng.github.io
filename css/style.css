@@ -163,6 +163,25 @@ body {
 .mobile-nav-on {
   overflow: hidden;
 }
+#to-top {
+  background: navbcolor;
+  position: fixed;
+  display: none;
+  z-index: 200;
+  right: 40px;
+  bottom: 10%;
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.15);
+  box-shadow: 0 0 5px rgba(0,0,0,0.15);
+  font-size: 14px;
+  color: #fff;
+  padding: 5px 15px;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: center;
+}
+#to-top:hover {
+  background: #646464;
+}
 #wrap {
   height: 100%;
   width: 100%;
@@ -526,6 +545,7 @@ body {
 .article-date {
   margin: 10px 0px 0px 20px;
   float: left;
+  font-size: 13px;
 }
 a.article-date:hover {
   color: #258fb8;
@@ -541,6 +561,7 @@ a.article-date:hover {
   line-height: 1em;
   color: #ccc;
   text-shadow: 0 1px #fff;
+  font-size: 13px;
 }
 .article-category:before {
   font-family: FontAwesome;
