@@ -39,11 +39,12 @@
     <link href="http://pengjt.com/2016/02/02/pythonNotes3/"/>
     <id>http://pengjt.com/2016/02/02/pythonNotes3/</id>
     <published>2016-02-02T23:43:11.000Z</published>
-    <updated>2016-02-05T23:50:27.000Z</updated>
+    <updated>2016-02-06T00:36:39.000Z</updated>
     <content type="html"><![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
 <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
 <p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/" target="_blank" rel="external">tutorial</a></p>
 <h2 id="14-pprint_-_Pretty_Printer"><a href="#14-pprint_-_Pretty_Printer" class="headerlink" title="14.pprint - Pretty Printer"></a>14.pprint - Pretty Printer</h2><p>坑</p>
+<a id="more"></a>
 <h2 id="15-List_Comprehension"><a href="#15-List_Comprehension" class="headerlink" title="15.List Comprehension"></a>15.List Comprehension</h2><pre><code>elems = [1, 2, 3, 4]
 squares = [e*e for e in elems]  # square each element
 big = [e for e in elems if e &gt; 2]  # keep elements bigger than 2
@@ -66,7 +67,10 @@ texts = [[word for word in document.lower().split() if word not in stoplist]
 </code></pre>]]></content>
     <summary type="html">
     <![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
-<p><strong>作者</strong>：<a hre]]>
+<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP">一个独行的程序员</a></p>
+<p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/">tutorial</a></p>
+<h2 id="14-pprint_-_Pretty_Printer"><a href="#14-pprint_-_Pretty_Printer" class="headerlink" title="14.pprint - Pretty Printer"></a>14.pprint - Pretty Printer</h2><p>坑</p>]]>
+    
     </summary>
     
       <category term="python" scheme="http://pengjt.com/tags/python/"/>
@@ -80,11 +84,12 @@ texts = [[word for word in document.lower().split() if word not in stoplist]
     <link href="http://pengjt.com/2016/01/28/pythonNotes2/"/>
     <id>http://pengjt.com/2016/01/28/pythonNotes2/</id>
     <published>2016-01-29T00:29:32.000Z</published>
-    <updated>2016-02-05T23:50:20.000Z</updated>
+    <updated>2016-02-06T00:37:47.000Z</updated>
     <content type="html"><![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
 <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
 <p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/" target="_blank" rel="external">tutorial</a></p>
 <h2 id="8-input_28_29_vs_raw_input_28_29"><a href="#8-input_28_29_vs_raw_input_28_29" class="headerlink" title="8.input() vs raw_input()"></a>8.input() vs raw_input()</h2><p>他们的作用都是用来读取命令行或者文件中的数据，区别在于<strong>返回结果</strong></p>
+<a id="more"></a>
 <ul>
 <li><p>input()返回的是numeric，如<code>int,flat,double</code></p>
 </li>
@@ -217,7 +222,10 @@ Sjoerd     ==&gt;       4127
 <h3 id="2016-01-28_u4E8EUCSD"><a href="#2016-01-28_u4E8EUCSD" class="headerlink" title="2016.01.28于UCSD"></a>2016.01.28于UCSD</h3>]]></content>
     <summary type="html">
     <![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
-<p><strong>作者</strong>：<a hre]]>
+<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2">一个独行的程序员</a></p>
+<p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/">tutorial</a></p>
+<h2 id="8-input_28_29_vs_raw_input_28_29"><a href="#8-input_28_29_vs_raw_input_28_29" class="headerlink" title="8.input() vs raw_input()"></a>8.input() vs raw_input()</h2><p>他们的作用都是用来读取命令行或者文件中的数据，区别在于<strong>返回结果</strong></p>]]>
+    
     </summary>
     
       <category term="python" scheme="http://pengjt.com/tags/python/"/>
@@ -231,11 +239,12 @@ Sjoerd     ==&gt;       4127
     <link href="http://pengjt.com/2016/01/28/pythonNotes1/"/>
     <id>http://pengjt.com/2016/01/28/pythonNotes1/</id>
     <published>2016-01-28T23:04:53.000Z</published>
-    <updated>2016-02-05T23:50:13.000Z</updated>
+    <updated>2016-02-06T00:37:58.000Z</updated>
     <content type="html"><![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
 <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
 <p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/" target="_blank" rel="external">tutorial</a></p>
 <h2 id="1-_5Ba_3Ab_29"><a href="#1-_5Ba_3Ab_29" class="headerlink" title="1.[a:b)"></a>1.[a:b)</h2><p>在使用list时，我们会常常使用左右区间的位置来赋值(range)或删除(del)其中的值。一定记住这个区间是一个<strong>左闭右开</strong>的区间；</p>
+<a id="more"></a>
 <pre><code>&gt;&gt;&gt;a = range(1,6)
 &gt;&gt;&gt;a
 [1,2,3,4,5]
@@ -410,7 +419,10 @@ robin the brave
 <h3 id="2016-01-28_u4E8EUCSD"><a href="#2016-01-28_u4E8EUCSD" class="headerlink" title="2016.01.28于UCSD"></a>2016.01.28于UCSD</h3>]]></content>
     <summary type="html">
     <![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
-<p><strong>作者</strong>：<a hre]]>
+<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2">一个独行的程序员</a></p>
+<p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/">tutorial</a></p>
+<h2 id="1-_5Ba_3Ab_29"><a href="#1-_5Ba_3Ab_29" class="headerlink" title="1.[a:b)"></a>1.[a:b)</h2><p>在使用list时，我们会常常使用左右区间的位置来赋值(range)或删除(del)其中的值。一定记住这个区间是一个<strong>左闭右开</strong>的区间；</p>]]>
+    
     </summary>
     
       <category term="python" scheme="http://pengjt.com/tags/python/"/>

@@ -173,29 +173,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
-<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
-<p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/" target="_blank" rel="external">tutorial</a></p>
+<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP">一个独行的程序员</a></p>
+<p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/">tutorial</a></p>
 <h2 id="14-pprint_-_Pretty_Printer"><a href="#14-pprint_-_Pretty_Printer" class="headerlink" title="14.pprint - Pretty Printer"></a>14.pprint - Pretty Printer</h2><p>坑</p>
-<h2 id="15-List_Comprehension"><a href="#15-List_Comprehension" class="headerlink" title="15.List Comprehension"></a>15.List Comprehension</h2><pre><code>elems = [1, 2, 3, 4]
-squares = [e*e for e in elems]  # square each element
-big = [e for e in elems if e &gt; 2]  # keep elements bigger than 2
-
-from gensim import corpora, models, similarities
-documents = [&quot;Human machine interface for lab abc computer applications&quot;,
-             &quot;A survey of user opinion of computer system response time&quot;,
-             &quot;The EPS user interface management system&quot;,
-             &quot;System and human system engineering testing of EPS&quot;,
-             &quot;Relation of user perceived response time to error measurement&quot;,
-             &quot;The generation of random binary unordered trees&quot;,
-             &quot;The intersection graph of paths in trees&quot;,
-             &quot;Graph minors IV Widths of trees and well quasi ordering&quot;,
-             &quot;Graph minors A survey&quot;]
-
-# remove common words and tokenize
-stoplist = set(&apos;for a of the and to in&apos;.split())
-texts = [[word for word in document.lower().split() if word not in stoplist]
-         for document in documents]
-</code></pre>
+        
+          <p class="article-more-link">
+            <a href="/2016/02/02/pythonNotes3/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -250,139 +235,14 @@ texts = [[word for word in document.lower().split() if word not in stoplist]
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
-<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
-<p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/" target="_blank" rel="external">tutorial</a></p>
+<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2">一个独行的程序员</a></p>
+<p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/">tutorial</a></p>
 <h2 id="8-input_28_29_vs_raw_input_28_29"><a href="#8-input_28_29_vs_raw_input_28_29" class="headerlink" title="8.input() vs raw_input()"></a>8.input() vs raw_input()</h2><p>他们的作用都是用来读取命令行或者文件中的数据，区别在于<strong>返回结果</strong></p>
-<ul>
-<li><p>input()返回的是numeric，如<code>int,flat,double</code></p>
-</li>
-<li><p>raw_input()返回的是<code>String</code></p>
-</li>
-</ul>
-<p>举个例子：</p>
-<pre><code>&gt;&gt;&gt; input()
-12+2     #comand line input
-14         #ouput
-&gt;&gt;&gt; raw_input()
-12+2     #comand line input
-&apos;12+2&apos;    #ouput
-</code></pre><p>然而在读过python的源码后，你会发现其实input()是通过raw_input来实现的：</p>
-<pre><code>def input(prompt):
-    return (eval(raw_input(prompt)))
-</code></pre><h2 id="9-Output_Formating"><a href="#9-Output_Formating" class="headerlink" title="9.Output Formating"></a>9.Output Formating</h2><p>从C语言开始，格式化字符串就已经为程序员所熟知，不管是C/C++还是Java，我觉得都没有python在输出格式化方面做的这么简练易用。举两个例子：</p>
-<h3 id="zfill_28_29"><a href="#zfill_28_29" class="headerlink" title="zfill()"></a>zfill()</h3><p>‘<em>pads a numeric string on the left with zeros. It understands about plus and minus signs:</em>‘</p>
-<p>这个函数的厉害之处在于它不仅能够高位补零，而且可以识别正负号！</p>
-<pre><code>&gt;&gt;&gt; &apos;12&apos;.zfill(5)
-&apos;00012&apos;
-&gt;&gt;&gt; &apos;-3.14&apos;.zfill(7)
-&apos;-003.14&apos;
-</code></pre><h3 id="str-format_28_29"><a href="#str-format_28_29" class="headerlink" title="str.format()"></a>str.format()</h3><p>当有多个string需要输出时，这个函数非常的powerful：</p>
-<pre><code>&gt;&gt;&gt; print &apos;We are the {} who say &quot;{}!&quot;&apos;.format(&apos;knights&apos;, &apos;Ni&apos;)
-We are the knights who say &quot;Ni!&quot;
-</code></pre><p>with position:</p>
-<pre><code>&gt;&gt;&gt; print &apos;{0} and {1}&apos;.format(&apos;spam&apos;, &apos;eggs&apos;)
-spam and eggs
-&gt;&gt;&gt; print &apos;{1} and {0}&apos;.format(&apos;spam&apos;, &apos;eggs&apos;)
-eggs and spam
-</code></pre><p>with keyword:</p>
-<pre><code>&gt;&gt;&gt; print &apos;This {food} is {adjective}.&apos;.format(
-...       food=&apos;spam&apos;, adjective=&apos;absolutely horrible&apos;)
-This spam is absolutely horrible.
-</code></pre><p>combine position with keyword:</p>
-<pre><code>&gt;&gt;&gt; print &apos;The story of {0}, {1}, and {other}.&apos;.format(&apos;Bill&apos;, &apos;Manfred&apos;,
-...                                                    other=&apos;Georg&apos;)
-The story of Bill, Manfred, and Georg.
-</code></pre><p>对于需要遍历输出对应项的情况，python更是给出了一个不错的解决方案—&gt;<code>:</code>,再结合一下position和format，完美！</p>
-<pre><code>&gt;&gt;&gt; table = {&apos;Sjoerd&apos;: 4127, &apos;Jack&apos;: 4098, &apos;Dcab&apos;: 7678}
-&gt;&gt;&gt; for name, phone in table.items():
-...     print &apos;{0:10} ==&gt; {1:10d}&apos;.format(name, phone)
-...
-Jack       ==&gt;       4098
-Dcab       ==&gt;       7678
-Sjoerd     ==&gt;       4127
-</code></pre><h2 id="10-Serializing_and_Deserializing"><a href="#10-Serializing_and_Deserializing" class="headerlink" title="10.Serializing and Deserializing"></a>10.Serializing and Deserializing</h2><p>序列化(serializing)和反序列化(deserializing)是为了数据的易用性而出现的，在不同开发平台和互联网中，数据的表示方法一直都是处于百花齐放的局面。直到JSON的出现，才有了一个便于交换(interchange)的数据格式</p>
-<ul>
-<li>序列化: 将python中的数据结构以字符串形式表示</li>
-<li>反序列化: 将上述的字符串重建为python中的数据结构</li>
-<li>JSON: JavaScript Object Notation</li>
-</ul>
-<p>简单来说，只需要记住两个函数<code>json.dumps()</code>和<code>json.load()</code>就可以了。他们的函数原型分别是：</p>
-<pre><code>json.dumps(obj, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, encoding=&quot;utf-8&quot;, default=None, sort_keys=False, **kw)
-</code></pre><p>两个函数的参数意义相同，可以自行阅读tutorial<a href="https://docs.python.org/2/library/json.html?highlight=json" target="_blank" rel="external">了解详情</a>，这里不展开了。</p>
-<pre><code>json.load(fp[, encoding[, cls[, object_hook[, parse_float[, parse_int[, parse_constant[, object_pairs_hook[, **kw]]]]]]]])
-</code></pre><h2 id="11-Class_Objects"><a href="#11-Class_Objects" class="headerlink" title="11.Class Objects"></a>11.Class Objects</h2><p>python是支持OOP的语言，因此接下来几节介绍python中到的各种对象。</p>
-<p>类是一个抽象的概念，类对象(class objects)支持两种操作(operations):</p>
-<ul>
-<li>属性引用(attribute references)</li>
-<li>实例化(instantiation)</li>
-</ul>
-<p>与其它大多数OOP语言一样，python的类也有变量和方法(method)，不过却又略有不同。python的变量(data attribute)是属于类的，也即是说只要定义了类，那么不需要实例化，就能够直接访问，类似于java中类的静态变量(static variable).并且可以直接通过赋值(assign)去修改值。举例：</p>
-<pre><code>&gt;&gt;&gt; class Simple:
-...     i = 1
-...     def foo(self):
-...             return &quot;hello world&quot;
-... 
-&gt;&gt;&gt; Simple.i
-1
-&gt;&gt;&gt; Simple.i = 2
-&gt;&gt;&gt; Simple.i
-2
-</code></pre><p>但是类的方法却必须通过实例化后才能访问，python中的实例化也有其独特之处，实例对象(instance object)放在下节讲。如果没有实例化而直接去访问类中定义的方法，会报<code>unbound method</code>,这是因为方法(method)是必须作用到一个实际的对象上的，而类对象本身是抽象的：</p>
-<pre><code>&gt;&gt;&gt; Simple.foo
-&lt;unbound method Simple.foo&gt;
-</code></pre><p>至于为什么类中的方法必须要自带一个self参数，我后面再讲，这也是python作为一个动态语言，与静态的OOP之间最大的差异！</p>
-<h2 id="12-Instance_Objects"><a href="#12-Instance_Objects" class="headerlink" title="12.Instance Objects"></a>12.Instance Objects</h2><p>实例对象(instance object)是一个具体的可操作的对象，其实例化的过程在python的官方解释中是这么说明的：</p>
-<p>“<em>Class instantiation uses function notation. Just pretend that the class object is a parameterless function that returns a new instance of the class.</em>“</p>
-<p>官方让我们假设类对象是返回一个实例对象的无参函数，所以实例化的过程就像是得到一个函数的返回结果。(晕吗?)个人感觉按照C++和Java的构造器(constructor)来理解，也不会出现太大问题。</p>
-<pre><code>&gt;&gt;&gt; x = Simple()
-&gt;&gt;&gt; x.foo()
-&apos;hello world&apos;
-</code></pre><p>既然要实例化，必然躲不过一个词“初始化”(initialization)，python中定义了<code>__init()__</code>这个方法来初始化实例对象。举个例子：</p>
-<pre><code>&gt;&gt;&gt; class A:
-...     i = 1
-...     def __init__(self):
-...             self.i = 3
-... 
-&gt;&gt;&gt; 
-&gt;&gt;&gt; A.i
-1    ＃class attribute
-&gt;&gt;&gt; x = A()
-&gt;&gt;&gt; x.i
-3    #instance attribute
-&gt;&gt;&gt; A.i
-1    #class attribute
-</code></pre><p>前面我做了比喻，类的变量和Java中的静态变量类似，但这里可以看出它们的不同。在Java中静态变量是属于类的，被其所有实例共用。然而python的变量不是共用的，所以我才说python的类理解起来更抽象一点，类也是一个对象，不过和实例对象却不同，更加抽象(晕吗?)</p>
-<p>之所以有这么大的差异，主要原因是python是一个动态语言，它可以动态添加属性，这就令很多一直用Java和C++的人不习惯。不过当你习惯之后，你会发觉它这种设计也真是好处多多。比如，你可以随时给你的类增加新的变量啊～</p>
-<pre><code>&gt;&gt;&gt; class A:
-...     i = 1
-... 
-&gt;&gt;&gt; A.j = 2
-&gt;&gt;&gt; A.j
-2
-</code></pre><h2 id="13-Method_Objects"><a href="#13-Method_Objects" class="headerlink" title="13.Method Objects"></a>13.Method Objects</h2><p>在python中，方法(method)和函数(function)是不同的。方法应该特指在类中定义的，其特征就是在定义时必须带上一个参数<code>self</code>。这和其他语言隐式的处理<code>this</code>这个参数不同（两者作用一样）。python必须要显示的指定这个方法作用的对象，这样的好处是在调用时能够确保方法是绑定(bound)在作用对象上的。因此，类是不能凭空调用方法的，必须作用在实例上才行，所以前面章节的例子里会出现<code>unbound method</code>这个错误提示。举个例子：</p>
-<pre><code>&gt;&gt;&gt; class B:
-...     def f(self):
-...             return &quot;Hello Method&quot;
-... 
-&gt;&gt;&gt; b = B()    #b is an instance object
-&gt;&gt;&gt; b.f()        
-&apos;Hello Method&apos;he
-&gt;&gt;&gt; B.f(b)    #B is a class object 
-&apos;Hello Method&apos;
-</code></pre><p>当类B有了实例b之后，它也是可以调用方法f的，因为这一切都只是为了确保这个方法的作用对象是存在的！现在回过头来看<code>self</code>，其实就是指类的实例本身作为参数传进这个函数：</p>
-<p>“<em>the special thing about methods is that the object is passed as the first argument of the function.</em>“</p>
-<p>这样也就好解释为什么函数本身定义时是可以不用显示的写<code>self</code>参数了，因为函数本身可以不属于任何类。如果有学过pascal这类面向过程的语言，就很好理解这句话了。</p>
-<pre><code>&gt;&gt;&gt; def f():        #Void, like a procedure in pascal
-...     1 + 2
-... 
-&gt;&gt;&gt; f()
-&gt;&gt;&gt; def ff():        #Return, like a function in pascal
-...     return 1 + 2
-... 
-&gt;&gt;&gt; ff()
-3
-</code></pre><hr>
-<h3 id="2016-01-28_u4E8EUCSD"><a href="#2016-01-28_u4E8EUCSD" class="headerlink" title="2016.01.28于UCSD"></a>2016.01.28于UCSD</h3>
+        
+          <p class="article-more-link">
+            <a href="/2016/01/28/pythonNotes2/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -437,181 +297,14 @@ Sjoerd     ==&gt;       4127
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
-<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
-<p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/" target="_blank" rel="external">tutorial</a></p>
+<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2">一个独行的程序员</a></p>
+<p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/">tutorial</a></p>
 <h2 id="1-_5Ba_3Ab_29"><a href="#1-_5Ba_3Ab_29" class="headerlink" title="1.[a:b)"></a>1.[a:b)</h2><p>在使用list时，我们会常常使用左右区间的位置来赋值(range)或删除(del)其中的值。一定记住这个区间是一个<strong>左闭右开</strong>的区间；</p>
-<pre><code>&gt;&gt;&gt;a = range(1,6)
-&gt;&gt;&gt;a
-[1,2,3,4,5]
-&gt;&gt;&gt;del a[1,3]
-&gt;&gt;&gt;a
-[1,4,5]
-</code></pre><p>实际删除的是1，2号元素，所以剩下的是[1,4,5]</p>
-<h2 id="2-Lambda_u8868_u8FBE_u5F0F"><a href="#2-Lambda_u8868_u8FBE_u5F0F" class="headerlink" title="2.Lambda表达式"></a>2.Lambda表达式</h2><p>如果使用过<code>filter/map/reduce</code>这几个函数，就会知道lambda表达式真的在匿名函数的写法上非常省时省力，且便于阅读。举个例子：</p>
-<pre><code>&gt;&gt;&gt; filter(lambda x : x % 2 == 0, range(10)) 
-[0, 2, 4, 6, 8]
-&gt;&gt;&gt; map(lambda x, y : x * y, range(1,4), range(1,4))
-[1, 4, 9]
-&gt;&gt;&gt; reduce(lambda x, y : x + y, range(101))
-5050
-</code></pre><p>lambda表达式的用法也很简单，<code>:</code>前写明参数，后面写表达式（函数体），表达式的结果就是函数返回值，这一点和R语言很像。</p>
-<h2 id="3-Tuples"><a href="#3-Tuples" class="headerlink" title="3.Tuples"></a>3.Tuples</h2><p>“<em>A tuple consists of a number of values separated by commas.</em>“</p>
-<p>元组（tuples）在数据处理方面非常的powerful，因为它可以包含任意类型的变量，且可以嵌套，各个元素间用逗号分隔。<strong>请注意：Tuples are immutable!(这一点和String一样)，但是他们可以包含mutable的变量。</strong></p>
-<pre><code>&gt;&gt;&gt; t = 12345, 54321, &apos;hello!&apos;
-&gt;&gt;&gt; t[0]
-12345
-&gt;&gt;&gt; t
-(12345, 54321, &apos;hello!&apos;)
-&gt;&gt;&gt; # Tuples may be nested:
-... u = t, (1, 2, 3, 4, 5)
-&gt;&gt;&gt; u
-((12345, 54321, &apos;hello!&apos;), (1, 2, 3, 4, 5))
-&gt;&gt;&gt; # Tuples are immutable:
-... t[0] = 88888
-Traceback (most recent call last):
-File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-TypeError: &apos;tuple&apos; object does not support item assignment
-&gt;&gt;&gt; # but they can contain mutable objects:
-... v = ([1, 2, 3], [3, 2, 1])
-&gt;&gt;&gt; v
-([1, 2, 3], [3, 2, 1])
-</code></pre><p>u可以看作一个嵌套的tuple；v可以看做包含了2个list的tuple，而list是可以赋值的mutable变量；但是我们不能直接去修改tuple中元素的值，因为tuple本身是immutable的，搞清楚这一点很重要。</p>
-<h2 id="4-unpacking"><a href="#4-unpacking" class="headerlink" title="4.unpacking"></a>4.unpacking</h2><p>unpacking应该和tuples结合起来看：如果将一个个变量装进tuple中被称作pack的话；那么将tuple拆分成一个个独立的变量就叫做unpack。</p>
-<pre><code>&gt;&gt;&gt; t = 1, 2, &apos;3&apos;
-&gt;&gt;&gt; t
-(1, 2, &apos;3&apos;)
-&gt;&gt;&gt; x, y, z = t
-&gt;&gt;&gt; x
-1
-&gt;&gt;&gt; y
-2
-&gt;&gt;&gt; z
-&apos;3&apos;
-</code></pre><p><strong>值得注意的是：左边的变量数量一定要与tuple中的元素数量一致！</strong></p>
-<p>“<em>Sequence unpacking requires the list of variables on the left to have the same number of elements as the length of the sequence.</em>“</p>
-<h2 id="5-Loop_techniques"><a href="#5-Loop_techniques" class="headerlink" title="5.Loop techniques"></a>5.Loop techniques</h2><p>python对于循环的支持非常好，内置了很多有用的函数，这里以<code>enumerate(), zip(), reversed(), sorted(),iteritems()</code>为例进行说明。</p>
-<h3 id="enumerate_28_29"><a href="#enumerate_28_29" class="headerlink" title="enumerate()"></a>enumerate()</h3><p>“<em>the position index and corresponding value can be retrieved at the same time using the enumerate() function.</em>“</p>
-<p>可以在循环时同时取得下标位置和对应值:</p>
-<pre><code>&gt;&gt;&gt; for i, v in enumerate([&apos;tic&apos;, &apos;tac&apos;, &apos;toe&apos;]):
-...     print i, v
-...
-0 tic
-1 tac
-2 toe
-</code></pre><h3 id="zip_28_29"><a href="#zip_28_29" class="headerlink" title="zip()"></a>zip()</h3><p>“<em>To loop over two or more sequences at the same time, the entries can be paired with the zip() function.</em>“</p>
-<p>在循环中如果有两个几以上的队列时，可以通过zip函数进行对应的匹配:</p>
-<pre><code>&gt;&gt;&gt; questions = [&apos;name&apos;, &apos;quest&apos;, &apos;favorite color&apos;]
-&gt;&gt;&gt; answers = [&apos;lancelot&apos;, &apos;the holy grail&apos;, &apos;blue&apos;]
-&gt;&gt;&gt; for q, a in zip(questions, answers):
-...     print &apos;What is your {0}?  It is {1}.&apos;.format(q, a)
-...
-What is your name?  It is lancelot.
-What is your quest?  It is the holy grail.
-What is your favorite color?  It is blue.
-</code></pre><h3 id="reversed_28_29"><a href="#reversed_28_29" class="headerlink" title="reversed()"></a>reversed()</h3><p>“<em>To loop over a sequence in reverse, first specify the sequence in a forward direction and then call the reversed()function.</em>“</p>
-<p>倒序输出结果:</p>
-<pre><code>&gt;&gt;&gt; for i in reversed(xrange(1,10,2)):
-...     print i
-...
-9
-7
-5
-3
-1
-</code></pre><h3 id="sorted_28_29"><a href="#sorted_28_29" class="headerlink" title="sorted()"></a>sorted()</h3><p>“<em>To loop over a sequence in sorted order, use the sorted() function which returns a new sorted list while leaving the source unaltered.</em>“</p>
-<p>遍历后返回一个有序队列，并且不修改原队列:</p>
-<pre><code>&gt;&gt;&gt; basket = [&apos;apple&apos;, &apos;orange&apos;, &apos;apple&apos;, &apos;pear&apos;, &apos;orange&apos;, &apos;banana&apos;]
-&gt;&gt;&gt; for f in sorted(set(basket)):
-...     print f
-...
-apple
-banana
-orange
-pear
-</code></pre><h3 id="iteritems_28_29"><a href="#iteritems_28_29" class="headerlink" title="iteritems()"></a>iteritems()</h3><p>“<em>When looping through dictionaries, the key and corresponding value can be retrieved at the same time using the iteritems() method.</em>“</p>
-<p>当遍历dictionaries时，可以通过iteritems()来分别获取key和value:</p>
-<pre><code>&gt;&gt;&gt; knights = {&apos;gallahad&apos;: &apos;the pure&apos;, &apos;robin&apos;: &apos;the brave&apos;}
-&gt;&gt;&gt; for k, v in knights.iteritems():
-...     print k, v
-...
-gallahad the pure
-robin the brave
-</code></pre><h2 id="6-Modules"><a href="#6-Modules" class="headerlink" title="6.Modules"></a>6.Modules</h2><p>很多人在开发时往往会涉及第三方package和多个脚本的情况，但是其实很多时候有些细节上的东西没有弄明白往往会出现事倍功半的效果。剩下两节就好好讲清楚Modules和Packages的关系，不感兴趣的可以跳过。</p>
-<p>“<em>A module is a file containing Python definitions and statements. The file name is the module name with the suffix .py appended. Within a module, the module’s name (as a string) is available as the value of the global variable <code>__name__</code>.</em>“</p>
-<p>module就是一个包含了一些定义（函数，类，变量，对象等）和语句的文件，一般以”.py”作为后缀，编译后的python文件以”.pyc”作后缀。在module内，有一个全局变量<code>__name__</code>,可以通过dir()函数来查看当前环境中有哪些已定以的变量和函数。</p>
-<p>以经典的fibonacci数列为例，假设下面这段代码是写在”fibo.py”这个文件中：</p>
-<pre><code># Fibonacci numbers module
- def fib(n): # write Fibonacci series up to n
-     a, b = 0, 1
-     while b &amp;lt; n:
-         print b,
-         a, b = b, a+b
-
- def fib2(n): # return Fibonacci series up to n
-     result = []
-     a, b = 0, 1
-     while b &amp;lt; n:
-         result.append(b)
-         a, b = b, a+b
-     return result
-</code></pre><p>现在如果我们想要在命令行或者终端中使用这个函数，我们可以import这个module：</p>
-<pre><code>&gt;&gt;&gt; import fibo
-&gt;&gt;&gt; fibo.fib(1000)
-1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
-&gt;&gt;&gt; fibo.fib2(100)
-[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-</code></pre><p>你还可以给这个module里的函数起一个简单的别名，使代码更简洁：</p>
-<pre><code>&gt;&gt;&gt; fib = fibo.fib
-&gt;&gt;&gt; fib(500)
-1 1 2 3 5 8 13 21 34 55 89 144 233 377
-</code></pre><h2 id="7-Packages"><a href="#7-Packages" class="headerlink" title="7.Packages"></a>7.Packages</h2><p>“<em>(1)Packages are a way of structuring Python’s module namespace by using ‘dotted module names’.<br><br>(2)A package is A collection of modules</em>“</p>
-<p>简单来说，package就是一个有结构的module的集合，以便于实现某些特定功能和用途，比较知名的packages有：NumPy, PIL(Python Imaging Library)等等。</p>
-<p><strong>它与modules最大的不同在于import时的细节，一定要注意语法！</strong></p>
-<p>假设我们有个叫做”sound”的package，它主要用来处理多种不同格式的音频文件，如:mp3,wmv,wma等。它的结构如下：</p>
-<pre><code>sound/                          Top-level package
-  __init__.py               Initialize the sound package
-  formats/                  Subpackage for file format conversions
-          __init__.py
-          wavread.py
-          wavwrite.py
-          aiffread.py
-          aiffwrite.py
-          auread.py
-          auwrite.py
-          ...
-  effects/                  Subpackage for sound effects
-          __init__.py
-          echo.py
-          surround.py
-          reverse.py
-          ...
-  filters/                  Subpackage for filters
-          __init__.py
-          equalizer.py
-          vocoder.py
-          karaoke.py
-          ...
-</code></pre><p>“<em>Note that in general the practice of importing </em> from a module or package is frowned upon, since it often causes poorly readable code.*”</p>
-<p>python官方不建议import整个package，因为它会降低代码的可读性。</p>
-<p>因此，我们有必要学会如何科学正确的import我们需要的submodule或subpackage.假设我们只需要echo.py这个module，我们可以单独import echo.py：</p>
-<pre><code>&gt;&gt;&gt;import sound.effects.echo 
-&gt;&gt;&gt;sound.effects.echo.echofilter(input, output, delay=0.7, atten=4)
-
-&gt;&gt;&gt;#另一种import方法：通过from关键字，我们可以在调用时省去包名的前缀  
-&gt;&gt;&gt;from sound.effects import echo
-&gt;&gt;&gt;echo.echofilter(input, output, delay=0.7, atten=4)
-
-&gt;&gt;&gt;#甚至可以直接import submodule，然后就像调用函数一样，省去所有前缀 
-&gt;&gt;&gt;from sound.effects.echo import echofilter 
-&gt;&gt;&gt;echofilter(input, output, delay=0.7, atten=4)
-</code></pre><p>通过三种import方法的对比，相信大家能够根据自己的实际情况找到最适合自己的方法。</p>
-<p><strong>但是，这里有一点语法上的细节，需要注意！</strong></p>
-<p>“<em>Note that when using <code>from package import item</code>, the item can be either a submodule (or subpackage) of the package, or some other name defined in the package, like a function, class or variable. The import statement first tests whether the item is defined in the package; if not, it assumes it is a module and attempts to load it. If it fails to find it, an <code>ImportError</code> exception is raised.</em>“</p>
-<p>当使用<code>from package import item</code>这种语法结构时，item可以是一个submodule或subpackage，甚至是package中定义的一个函数，类和变量等对象；import会先假设item是一个对象，去测试其是否被定义；如果没有找到，它会尝试去加载，如果仍然没有找到，那么这时候会报<code>ImportError</code></p>
-<p>“<em>Contrarily, when using syntax like <code>import item.subitem.subsubitem</code>, each <code>item</code> except for the last must be a package; the last <code>item</code> can be a module or a package but can’t be a class or function or variable defined in the previous item.</em>“</p>
-<p>相反，如果使用<code>item.subitem.subsubitem</code>这样的语法结构时，除了最后一个<code>item</code>可以是module或者package以外，上级（前缀）的所有<code>item</code>必须且只能是package，请谨记！</p>
-<hr>
-<h3 id="2016-01-28_u4E8EUCSD"><a href="#2016-01-28_u4E8EUCSD" class="headerlink" title="2016.01.28于UCSD"></a>2016.01.28于UCSD</h3>
+        
+          <p class="article-more-link">
+            <a href="/2016/01/28/pythonNotes1/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">

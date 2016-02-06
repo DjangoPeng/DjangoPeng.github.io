@@ -2,23 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://pengjt.com/2016/02/03/tf-idf/</loc>
-    <lastmod>2016-02-05T23:50:41.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pengjt.com/2016/02/02/pythonNotes3/</loc>
-    <lastmod>2016-02-05T23:50:27.000Z</lastmod>
+    <loc>http://pengjt.com/2016/01/28/pythonNotes1/</loc>
+    <lastmod>2016-02-06T00:37:58.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://pengjt.com/2016/01/28/pythonNotes2/</loc>
-    <lastmod>2016-02-05T23:50:20.000Z</lastmod>
+    <lastmod>2016-02-06T00:37:47.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pengjt.com/2016/01/28/pythonNotes1/</loc>
-    <lastmod>2016-02-05T23:50:13.000Z</lastmod>
+    <loc>http://pengjt.com/2016/02/02/pythonNotes3/</loc>
+    <lastmod>2016-02-06T00:36:39.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pengjt.com/2016/02/03/tf-idf/</loc>
+    <lastmod>2016-02-05T23:50:41.000Z</lastmod>
   </url>
   
 </urlset>
