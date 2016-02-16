@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am a slow walker, but I never walk back.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pengjt.com/"/>
-  <updated>2016-02-16T06:49:23.000Z</updated>
+  <updated>2016-02-16T07:19:11.000Z</updated>
   <id>http://pengjt.com/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://pengjt.com/2016/02/03/tf-idf/"/>
     <id>http://pengjt.com/2016/02/03/tf-idf/</id>
     <published>2016-02-03T23:50:51.000Z</published>
-    <updated>2016-02-16T06:49:23.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="https://lasnaves.com/wp-content/uploads/2015/07/machinelearninganddataminingWORDLE.png"></p>
+    <updated>2016-02-16T07:19:11.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://iblog.blogactiv.eu/files/2008/10/tag-cloud.png"></p>
 <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
 <h2 id="1-TF-IDF_u539F_u7406"><a href="#1-TF-IDF_u539F_u7406" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><p>TF-IDF(Term Frequency-Inverse Document Frequency)，中文叫做词频－逆文档频率。在文本挖掘(Text Mining)和信息检索(Information Retrieval)领域具有广泛的应用。</p>
 <a id="more"></a>
@@ -98,7 +98,7 @@
 <p>TF-IDF的优点是计算简单，利于理解，性价比极高。但是它也有缺陷，首先单纯依据文章中的TF来衡量重要性，忽略了位置信息。如段首，句首一般权重更高；其次，有的文章可能关键词只出现1-2次，但可能通篇都是围绕其进行阐述和解释，所以单纯靠TF仍然不能解决所有的情况。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p><img src="https://lasnaves.com/wp-content/uploads/2015/07/machinelearninganddataminingWORDLE.png"/></p>
+    <![CDATA[<p><img src="http://iblog.blogactiv.eu/files/2008/10/tag-cloud.png"/></p>
 <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP">一个独行的程序员</a></p>
 <h2 id="1-TF-IDF_u539F_u7406"><a href="#1-TF-IDF_u539F_u7406" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><p>TF-IDF(Term Frequency-Inverse Document Frequency)，中文叫做词频－逆文档频率。在文本挖掘(Text Mining)和信息检索(Information Retrieval)领域具有广泛的应用。</p>]]>
     
