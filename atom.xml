@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am a slow walker, but I never walk back.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pengjt.com/"/>
-  <updated>2016-02-05T23:50:41.000Z</updated>
+  <updated>2016-02-16T06:49:23.000Z</updated>
   <id>http://pengjt.com/</id>
   
   <author>
@@ -15,20 +15,96 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[TF-IDF原理及应用]]></title>
+    <title><![CDATA[TF-IDF的原理与应用]]></title>
     <link href="http://pengjt.com/2016/02/03/tf-idf/"/>
     <id>http://pengjt.com/2016/02/03/tf-idf/</id>
     <published>2016-02-03T23:50:51.000Z</published>
-    <updated>2016-02-05T23:50:41.000Z</updated>
+    <updated>2016-02-16T06:49:23.000Z</updated>
     <content type="html"><![CDATA[<p><img src="https://lasnaves.com/wp-content/uploads/2015/07/machinelearninganddataminingWORDLE.png"></p>
 <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
-<h2 id="1-TF-IDF_u539F_u7406"><a href="#1-TF-IDF_u539F_u7406" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><h2 id="2-TF-IDF_u5E94_u7528"><a href="#2-TF-IDF_u5E94_u7528" class="headerlink" title="2.TF-IDF应用"></a>2.TF-IDF应用</h2><h2 id="3-python_u5B9E_u73B0"><a href="#3-python_u5B9E_u73B0" class="headerlink" title="3.python实现"></a>3.python实现</h2>]]></content>
+<h2 id="1-TF-IDF_u539F_u7406"><a href="#1-TF-IDF_u539F_u7406" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><p>TF-IDF(Term Frequency-Inverse Document Frequency)，中文叫做词频－逆文档频率。在文本挖掘(Text Mining)和信息检索(Information Retrieval)领域具有广泛的应用。</p>
+<a id="more"></a>
+<p>其难能可贵之处在于：<strong>没有繁复的数学推导式，仅需要中学数学水平，便可以在一节课时间理解其原理并上手使用。</strong></p>
+<p>设想现在我们正在阅读新闻，如何最快速的了解新闻主旨？毫无疑问——<strong>关键词</strong></p>
+<p>TF-IDF就具有这样的能力：提取关键词！</p>
+<p>假设一个词在一篇文章中出现的次数越多，那么它就越”紧扣主题”。以本文为例，我们可以统计<strong>词频(TF)</strong>，不难发现<em>TF-IDF</em>,<em>原理</em>,<em>应用</em>是出现频率很高的词，后文称keywords。这符合我们的假设，但是有些词却出现的次数更多，如：<em>的</em>，<em>是</em>,<em>有</em>等。这类词语没有明确意义，我们称为停顿词(Stopwords)。</p>
+<p>如果单纯按照词频算关键词，你会发现几乎所有的文章都是stopwords的词频最高。换句话说，像这种”万金油”，是没有区分度的词语，不能很好的起到将文章分类的作用。这时就需要祭出<strong>逆文档频率(IDF)</strong>来解决词语权重的问题。</p>
+<p>虽然keywords词频不如stopwords高，但是纵观全网的所有文章中，本文的keywords并不是在每篇文章都出现的，而是在很小一部分文章中出现。所以这些keywords是具有高辨识度的，应该给一个更大的权重；相反那些几乎所有文章中都出现的stopwords，则应该给一个很小的权重。</p>
+<p>最终，将TF*IDF得出的分值作为每一个词在本文的重要度，就提取出了文章的关键词。</p>
+<p>公式化的说法如下,<br>对于在某一特定文件里的词语 t<sub>i</sub> 来说，它的重要性可表示为：</p>
+<p><img src="https://upload.wikimedia.org/math/e/5/a/e5a7b43197068eddf42859f3995ebf15.png"></p>
+<p>以上式子中n<sub>i,j</sub>是该词在文件d<sub>j</sub>中的出现次数，而分母则是在文件d<sub>j</sub>中所有字词的出现次数之和。</p>
+<p><img src="https://upload.wikimedia.org/math/0/2/5/0257ce95c505ab568d7898faa56a4f5c.png"></p>
+<p>|D|：语料库中的文件总数</p>
+<p>|{ j: t<sub>i</sub> in d<sub>j</sub>}| ：包含词语 t<sub>i</sub>的文件数目（即 n<sub>i,j</sub> != 0的文件数目）如果该词语不在语料库中，就会导致分母为零，因此一般情况下使用1 + |{j : t<sub>i</sub> in d<sub>j</sub>}|</p>
+<p><img src="https://upload.wikimedia.org/math/b/0/6/b06a060c28253c8dd2528811c447862e.png"></p>
+<p>TF-IDF倾向于过滤掉常见的词语，保留重要的词语。</p>
+<h2 id="2-TF-IDF_u5E94_u7528"><a href="#2-TF-IDF_u5E94_u7528" class="headerlink" title="2.TF-IDF应用"></a>2.TF-IDF应用</h2><p>本小节通过Google搜索结果数为例，将含有中文”的”结果数15.8亿作为整个语料库大小，计算上一节中的keyword和stopword的TF-IDF值。为了计算简便，假设全文分词后一共500词，则结果如下：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>包含该词的文章(百万)</th>
+<th>IDF</th>
+<th>TF</th>
+<th>TF-IDF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TF-IDF</td>
+<td>0.497</td>
+<td>3.502</td>
+<td>0.018</td>
+<td>0.063</td>
+</tr>
+<tr>
+<td>原理</td>
+<td>24.4</td>
+<td>1.811</td>
+<td>0.008</td>
+<td>0.014</td>
+</tr>
+<tr>
+<td>应用</td>
+<td>82.8</td>
+<td>1.280</td>
+<td>0.008</td>
+<td>0.010</td>
+</tr>
+<tr>
+<td>是</td>
+<td>363</td>
+<td>0.638</td>
+<td>0.028</td>
+<td>0.018</td>
+</tr>
+<tr>
+<td>有</td>
+<td>482</td>
+<td>0.515</td>
+<td>0.026</td>
+<td>0.013</td>
+</tr>
+<tr>
+<td>的</td>
+<td>1580</td>
+<td>0.000</td>
+<td>0.080</td>
+<td>0.000</td>
+</tr>
+</tbody>
+</table>
+<p>TF-IDF的优点是计算简单，利于理解，性价比极高。但是它也有缺陷，首先单纯依据文章中的TF来衡量重要性，忽略了位置信息。如段首，句首一般权重更高；其次，有的文章可能关键词只出现1-2次，但可能通篇都是围绕其进行阐述和解释，所以单纯靠TF仍然不能解决所有的情况。</p>
+]]></content>
     <summary type="html">
-    <![CDATA[<p><img src="https://lasnaves.com/wp-content/uploads/2015/07/machinelearninganddataminingWORDLE.png"></p>
-<p><strong>作者</strong>：<a href="ht]]>
+    <![CDATA[<p><img src="https://lasnaves.com/wp-content/uploads/2015/07/machinelearninganddataminingWORDLE.png"/></p>
+<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP">一个独行的程序员</a></p>
+<h2 id="1-TF-IDF_u539F_u7406"><a href="#1-TF-IDF_u539F_u7406" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><p>TF-IDF(Term Frequency-Inverse Document Frequency)，中文叫做词频－逆文档频率。在文本挖掘(Text Mining)和信息检索(Information Retrieval)领域具有广泛的应用。</p>]]>
+    
     </summary>
     
-      <category term="Data Minging, Machine Learning" scheme="http://pengjt.com/tags/Data-Minging-Machine-Learning/"/>
+      <category term="Text Minging, Information Retrieval" scheme="http://pengjt.com/tags/Text-Minging-Information-Retrieval/"/>
     
       <category term="Data Mining" scheme="http://pengjt.com/categories/Data-Mining/"/>
     
