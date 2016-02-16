@@ -1,8 +1,7 @@
+##A blog of techniques and experiences
+
 **http://pengjt.com**
 
-This is a blog of techniques and experiences
-
-</br>
 Author:Jingtian Peng.
 
 Email:pjt73651@gmail.com
