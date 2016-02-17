@@ -1,4 +1,4 @@
-##A blog of techniques and experiences
+##Code4Future : A blog of coders
 
 **http://pengjt.com**
 
