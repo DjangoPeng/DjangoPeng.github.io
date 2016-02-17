@@ -1,4 +1,4 @@
-##Code4Future : A blog of coders
+##Code4Future : A techniqual blog for coders
 
 **http://pengjt.com**
 
