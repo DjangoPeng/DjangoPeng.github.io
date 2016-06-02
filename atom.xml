@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am a slow walker, but I never walk back.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pengjt.com/"/>
-  <updated>2016-06-02T15:16:56.000Z</updated>
+  <updated>2016-06-02T15:22:49.000Z</updated>
   <id>http://pengjt.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pengjt.com/2016/06/02/How-to-build-a-blog-with-Hexo/"/>
     <id>http://pengjt.com/2016/06/02/How-to-build-a-blog-with-Hexo/</id>
     <published>2016-06-02T14:40:59.000Z</published>
-    <updated>2016-06-02T15:16:56.000Z</updated>
+    <updated>2016-06-02T15:22:49.000Z</updated>
     <content type="html"><![CDATA[<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
 <h2 id="Install_Node-js"><a href="#Install_Node-js" class="headerlink" title="Install Node.js"></a>Install Node.js</h2><p>Mac通过Homebrew安装Node.js </p>
 <pre><code>$ brew install node
@@ -30,8 +30,10 @@
 </code></pre><a id="more"></a>
 <p>或者去Hexo官网：<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a></p>
 <p>按照流程安装。</p>
-<p>##Build Your Blog<br>    $ hexo init <your_blog_path><br>    $ cd <your_blog_path><br>    $ npm install    </your_blog_path></your_blog_path></p>
-<p>新建立的blog文件夹目录结果如下：</p>
+<h2 id="Build_Your_Blog"><a href="#Build_Your_Blog" class="headerlink" title="Build Your Blog"></a>Build Your Blog</h2><pre><code>$ hexo init &lt;your_blog_path&gt;
+$ cd &lt;your_blog_path&gt;
+$ npm install    
+</code></pre><p>新建立的blog文件夹目录结果如下：</p>
 <pre><code>.
 ├── _config.yml
 ├── package.json
@@ -41,13 +43,14 @@
 |   ├── _drafts
 |   └── _posts
 └── themes
-</code></pre><p>##Start Server<br>在你的blog根目录下，启动server，默认端口为：<a href="http://0.0.0.0:4000" target="_blank" rel="external">http://0.0.0.0:4000</a></p>
+</code></pre><h2 id="Start_Server"><a href="#Start_Server" class="headerlink" title="Start Server"></a>Start Server</h2><p>在你的blog根目录下，启动server，默认端口为：<a href="http://0.0.0.0:4000" target="_blank" rel="external">http://0.0.0.0:4000</a></p>
 <pre><code>$ hexo server
 INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.
-</code></pre><p>##Create New Post<br>    $ hexo new “How to build a blog with Hexo”<br>    INFO  Created: ~/Documents/iBlog/source/_posts/How-to-build-a-blog-with-Hexo.md</p>
-<p>用markdown编辑器写好文章好，生成对应的html文件：</p>
+</code></pre><h2 id="Create_New_Post"><a href="#Create_New_Post" class="headerlink" title="Create New Post"></a>Create New Post</h2><pre><code>$ hexo new &quot;How to build a blog with Hexo&quot;
+INFO  Created: ~/Documents/iBlog/source/_posts/How-to-build-a-blog-with-Hexo.md
+</code></pre><p>用markdown编辑器写好文章好，生成对应的html文件：</p>
 <pre><code>$ hexo generate
-</code></pre><p>##Update the Github Repository<br>将public文件夹下的内容copy到github对应的repository，同步后就能看到你的站点更新了。</p>
+</code></pre><h2 id="Update_the_Github_Repository"><a href="#Update_the_Github_Repository" class="headerlink" title="Update the Github Repository"></a>Update the Github Repository</h2><p>将public文件夹下的内容copy到github对应的repository，同步后就能看到你的站点更新了。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2">一个独行的程序员</a></p>
@@ -61,9 +64,9 @@ INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.
     
     </summary>
     
-      <category term="web" scheme="http://pengjt.com/tags/web/"/>
+      <category term="Web" scheme="http://pengjt.com/tags/Web/"/>
     
-      <category term="others" scheme="http://pengjt.com/categories/others/"/>
+      <category term="Others" scheme="http://pengjt.com/categories/Others/"/>
     
   </entry>
   
@@ -168,7 +171,7 @@ INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.
     <link href="http://pengjt.com/2016/02/02/pythonNotes3/"/>
     <id>http://pengjt.com/2016/02/02/pythonNotes3/</id>
     <published>2016-02-02T07:43:11.000Z</published>
-    <updated>2016-02-06T00:36:39.000Z</updated>
+    <updated>2016-06-02T15:22:43.000Z</updated>
     <content type="html"><![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
 <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
 <p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/" target="_blank" rel="external">tutorial</a></p>
@@ -202,9 +205,9 @@ texts = [[word for word in document.lower().split() if word not in stoplist]
     
     </summary>
     
-      <category term="python" scheme="http://pengjt.com/tags/python/"/>
+      <category term="Python" scheme="http://pengjt.com/tags/Python/"/>
     
-      <category term="python" scheme="http://pengjt.com/categories/python/"/>
+      <category term="Python" scheme="http://pengjt.com/categories/Python/"/>
     
   </entry>
   
@@ -213,7 +216,7 @@ texts = [[word for word in document.lower().split() if word not in stoplist]
     <link href="http://pengjt.com/2016/01/28/pythonNotes2/"/>
     <id>http://pengjt.com/2016/01/28/pythonNotes2/</id>
     <published>2016-01-28T08:29:32.000Z</published>
-    <updated>2016-02-06T00:37:47.000Z</updated>
+    <updated>2016-06-02T15:22:36.000Z</updated>
     <content type="html"><![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
 <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
 <p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/" target="_blank" rel="external">tutorial</a></p>
@@ -357,9 +360,9 @@ Sjoerd     ==&gt;       4127
     
     </summary>
     
-      <category term="python" scheme="http://pengjt.com/tags/python/"/>
+      <category term="Python" scheme="http://pengjt.com/tags/Python/"/>
     
-      <category term="python" scheme="http://pengjt.com/categories/python/"/>
+      <category term="Python" scheme="http://pengjt.com/categories/Python/"/>
     
   </entry>
   
@@ -368,7 +371,7 @@ Sjoerd     ==&gt;       4127
     <link href="http://pengjt.com/2016/01/28/pythonNotes1/"/>
     <id>http://pengjt.com/2016/01/28/pythonNotes1/</id>
     <published>2016-01-28T07:04:53.000Z</published>
-    <updated>2016-02-06T00:37:58.000Z</updated>
+    <updated>2016-06-02T15:22:18.000Z</updated>
     <content type="html"><![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
 <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
 <p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/" target="_blank" rel="external">tutorial</a></p>
@@ -556,7 +559,7 @@ robin the brave
     
       <category term="python" scheme="http://pengjt.com/tags/python/"/>
     
-      <category term="python" scheme="http://pengjt.com/categories/python/"/>
+      <category term="Python" scheme="http://pengjt.com/categories/Python/"/>
     
   </entry>
   
