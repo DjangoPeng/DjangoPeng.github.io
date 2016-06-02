@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am a slow walker, but I never walk back.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pengjt.com/"/>
-  <updated>2016-06-02T15:13:41.000Z</updated>
+  <updated>2016-06-02T15:16:56.000Z</updated>
   <id>http://pengjt.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pengjt.com/2016/06/02/How-to-build-a-blog-with-Hexo/"/>
     <id>http://pengjt.com/2016/06/02/How-to-build-a-blog-with-Hexo/</id>
     <published>2016-06-02T14:40:59.000Z</published>
-    <updated>2016-06-02T15:13:41.000Z</updated>
+    <updated>2016-06-02T15:16:56.000Z</updated>
     <content type="html"><![CDATA[<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
 <h2 id="Install_Node-js"><a href="#Install_Node-js" class="headerlink" title="Install Node.js"></a>Install Node.js</h2><p>Mac通过Homebrew安装Node.js </p>
 <pre><code>$ brew install node
@@ -27,7 +27,8 @@
 <p>下载dmg文件，直接安装</p>
 <h2 id="Install_Hexo"><a href="#Install_Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><p>Mac通过npm直接安装Hexo</p>
 <pre><code>$ npm install hexo --no-optional
-</code></pre><p>或者去Hexo官网：<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a></p>
+</code></pre><a id="more"></a>
+<p>或者去Hexo官网：<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a></p>
 <p>按照流程安装。</p>
 <p>##Build Your Blog<br>    $ hexo init <your_blog_path><br>    $ cd <your_blog_path><br>    $ npm install    </your_blog_path></your_blog_path></p>
 <p>新建立的blog文件夹目录结果如下：</p>
@@ -49,8 +50,15 @@ INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.
 </code></pre><p>##Update the Github Repository<br>将public文件夹下的内容copy到github对应的repository，同步后就能看到你的站点更新了。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
-<h2 id="]]>
+    <![CDATA[<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2">一个独行的程序员</a></p>
+<h2 id="Install_Node-js"><a href="#Install_Node-js" class="headerlink" title="Install Node.js"></a>Install Node.js</h2><p>Mac通过Homebrew安装Node.js </p>
+<pre><code>$ brew install node
+</code></pre><p>或者去Node.js官网：<a href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
+<p>下载dmg文件，直接安装</p>
+<h2 id="Install_Hexo"><a href="#Install_Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><p>Mac通过npm直接安装Hexo</p>
+<pre><code>$ npm install hexo --no-optional
+</code></pre>]]>
+    
     </summary>
     
       <category term="web" scheme="http://pengjt.com/tags/web/"/>
