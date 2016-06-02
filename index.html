@@ -91,6 +91,87 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-How-to-build-a-blog-with-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/02/How-to-build-a-blog-with-Hexo/">How to build a blog with Hexo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/06/02/How-to-build-a-blog-with-Hexo/" class="article-date">
+  <time datetime="2016-06-02T14:40:59.000Z" itemprop="datePublished">2016-6-2 Thu  22:40</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/others/">others</a>
+  </div>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
+<h2 id="Install_Node-js"><a href="#Install_Node-js" class="headerlink" title="Install Node.js"></a>Install Node.js</h2><p>Mac通过Homebrew安装Node.js </p>
+<pre><code>$ brew install node
+</code></pre><p>或者去Node.js官网：<a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></p>
+<p>下载dmg文件，直接安装</p>
+<h2 id="Install_Hexo"><a href="#Install_Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><p>Mac通过npm直接安装Hexo</p>
+<pre><code>$ npm install hexo --no-optional
+</code></pre><p>或者去Hexo官网：<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a></p>
+<p>按照流程安装。</p>
+<p>##Build Your Blog<br>    $ hexo init <your_blog_path><br>    $ cd <your_blog_path><br>    $ npm install    </your_blog_path></your_blog_path></p>
+<p>新建立的blog文件夹目录结果如下：</p>
+<pre><code>.
+├── _config.yml
+├── package.json
+├── scaffolds
+├── scripts
+├── source
+|   ├── _drafts
+|   └── _posts
+└── themes
+</code></pre><p>##Start Server<br>在你的blog根目录下，启动server，默认端口为：<a href="http://0.0.0.0:4000" target="_blank" rel="external">http://0.0.0.0:4000</a></p>
+<pre><code>$ hexo server
+INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.
+</code></pre><p>##Create New Post<br>    $ hexo new “How to build a blog with Hexo”<br>    INFO  Created: ~/Documents/iBlog/source/_posts/How-to-build-a-blog-with-Hexo.md</p>
+<p>用markdown编辑器写好文章好，生成对应的html文件：</p>
+<pre><code>$ hexo generate
+</code></pre><p>##Update the Github Repository<br>将public文件夹下的内容copy到github对应的repository，同步后就能看到你的站点更新了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://pengjt.com/2016/06/02/How-to-build-a-blog-with-Hexo/" data-id="cioyfzixe0000v9xosg9flnog" class="article-share-link">分享</a>
+      
+      
+        <a href="http://pengjt.com/2016/06/02/How-to-build-a-blog-with-Hexo/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/06/02/How-to-build-a-blog-with-Hexo/">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+
+    </footer>
+
+      
+      
+  </div>
+  
+
+
+  
+
+
+
+</article>
+
+  
     <article id="post-tf-idf" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -107,7 +188,7 @@
     
     <div class="article-meta">
       <a href="/2016/02/15/tf-idf/" class="article-date">
-  <time datetime="2016-02-16T04:50:51.000Z" itemprop="datePublished">2016-2-15 Mon  20:50</time>
+  <time datetime="2016-02-15T12:50:51.000Z" itemprop="datePublished">2016-2-15 Mon  20:50</time>
 </a>
       
   <div class="article-category">
@@ -129,7 +210,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://pengjt.com/2016/02/15/tf-idf/" data-id="cikqidkm50005suxoiu8vw04l" class="article-share-link">分享</a>
+        <a data-url="http://pengjt.com/2016/02/15/tf-idf/" data-id="cioyfzixp0005v9xozjivsu2r" class="article-share-link">分享</a>
       
       
         <a href="http://pengjt.com/2016/02/15/tf-idf/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/02/15/tf-idf/">评论</a>
@@ -168,7 +249,7 @@
     
     <div class="article-meta">
       <a href="/2016/02/02/pythonNotes3/" class="article-date">
-  <time datetime="2016-02-02T23:43:11.000Z" itemprop="datePublished">2016-2-2 Tue  15:43</time>
+  <time datetime="2016-02-02T07:43:11.000Z" itemprop="datePublished">2016-2-2 Tue  15:43</time>
 </a>
       
   <div class="article-category">
@@ -191,7 +272,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://pengjt.com/2016/02/02/pythonNotes3/" data-id="cikqidkm7000asuxop06sadug" class="article-share-link">分享</a>
+        <a data-url="http://pengjt.com/2016/02/02/pythonNotes3/" data-id="cioyfzixr000av9xoz6l8u3v6" class="article-share-link">分享</a>
       
       
         <a href="http://pengjt.com/2016/02/02/pythonNotes3/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/02/02/pythonNotes3/">评论</a>
@@ -230,7 +311,7 @@
     
     <div class="article-meta">
       <a href="/2016/01/28/pythonNotes2/" class="article-date">
-  <time datetime="2016-01-29T00:29:32.000Z" itemprop="datePublished">2016-1-28 Thu  16:29</time>
+  <time datetime="2016-01-28T08:29:32.000Z" itemprop="datePublished">2016-1-28 Thu  16:29</time>
 </a>
       
   <div class="article-category">
@@ -253,7 +334,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://pengjt.com/2016/01/28/pythonNotes2/" data-id="cikqidkm9000dsuxoz1mmlh8h" class="article-share-link">分享</a>
+        <a data-url="http://pengjt.com/2016/01/28/pythonNotes2/" data-id="cioyfzixu000fv9xoaw1zetau" class="article-share-link">分享</a>
       
       
         <a href="http://pengjt.com/2016/01/28/pythonNotes2/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/01/28/pythonNotes2/">评论</a>
@@ -292,7 +373,7 @@
     
     <div class="article-meta">
       <a href="/2016/01/28/pythonNotes1/" class="article-date">
-  <time datetime="2016-01-28T23:04:53.000Z" itemprop="datePublished">2016-1-28 Thu  15:04</time>
+  <time datetime="2016-01-28T07:04:53.000Z" itemprop="datePublished">2016-1-28 Thu  15:04</time>
 </a>
       
   <div class="article-category">
@@ -315,7 +396,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://pengjt.com/2016/01/28/pythonNotes1/" data-id="cikqidklt0000suxolfca506y" class="article-share-link">分享</a>
+        <a data-url="http://pengjt.com/2016/01/28/pythonNotes1/" data-id="cioyfzixx000iv9xozv8cklrq" class="article-share-link">分享</a>
       
       
         <a href="http://pengjt.com/2016/01/28/pythonNotes1/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/01/28/pythonNotes1/">评论</a>
@@ -357,7 +438,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Mining/">Data Mining</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">3</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Mining/">Data Mining</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/others/">others</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -366,7 +447,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Text-Minging-Information-Retrieval/" style="font-size: 10px;">Text Minging, Information Retrieval</a> <a href="/tags/python/" style="font-size: 20px;">python</a>
+      <a href="/tags/Text-Minging-Information-Retrieval/" style="font-size: 10px;">Text Minging, Information Retrieval</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/web/" style="font-size: 10px;">web</a>
     </div>
   </div>
 
@@ -375,7 +456,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -385,6 +466,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/06/02/How-to-build-a-blog-with-Hexo/">How to build a blog with Hexo</a>
+          </li>
         
           <li>
             <a href="/2016/02/15/tf-idf/">TF-IDF的原理与应用</a>
