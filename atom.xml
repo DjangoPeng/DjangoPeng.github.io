@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am a slow walker, but I never walk back.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pengjt.com/"/>
-  <updated>2016-06-02T15:22:49.000Z</updated>
+  <updated>2016-06-07T08:35:03.000Z</updated>
   <id>http://pengjt.com/</id>
   
   <author>
@@ -13,6 +13,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Stanford CS229:Supervised Learning[1]]]></title>
+    <link href="http://pengjt.com/2016/06/07/Stanford-CS229-1/"/>
+    <id>http://pengjt.com/2016/06/07/Stanford-CS229-1/</id>
+    <published>2016-06-07T06:17:26.000Z</published>
+    <updated>2016-06-07T08:35:03.000Z</updated>
+    <content type="html"><![CDATA[<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
+<h2 id="Supervised_Learning"><a href="#Supervised_Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h2><p>监督学习(Supervised Learning)是机器学习中的一大类方法，其特点就是需要已经标注过的数据作为训练集，通过回归（Regression）等方法，得到一个误差最小的假设或估计。</p>
+<img src="/2016/06/07/Stanford-CS229-1/pic_9.png" alt="Supervised Learning" title="Supervised Learning">
+<a id="more"></a>
+<h2 id="Linear_Regression"><a href="#Linear_Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h2><p>最简单的回归模型就是线性回归，在正式讨论之前，先定义一些变量：</p>
+<img src="/2016/06/07/Stanford-CS229-1/pic_10.png" alt="Basic Notation" title="Basic Notation">    
+<p>以预测房屋价格（y）为例，假设我们只考虑住房大小（x1）和卧室数量（x2）这2个特征，并且用线性回归进行拟合，则可以得到目标函数的形式如下： </p>
+<img src="/2016/06/07/Stanford-CS229-1/pic_0.png" alt="2-D Linear Regression" title="2-D Linear Regression">
+<p>为了简化形式，假设:</p>
+<img src="/2016/06/07/Stanford-CS229-1/pic_11.png" alt="." title=".">
+<p>则可以将函数写成向量形式：</p>
+<img src="/2016/06/07/Stanford-CS229-1/pic_1.png" alt="." title=".">
+<p><strong>最小二乘法</strong></p>
+<p>如何评估当前的h是最优的呢？<br>最简单、最常用的方法就是最小二乘法，非常好解释。它的原理就是累计预测值(h)和真实值(y)的差的平方：</p>
+<img src="/2016/06/07/Stanford-CS229-1/pic_2.png" alt="." title=".">
+<p>关于公式中为什么会有1/2，原因是在求最优值时，会对J求偏导，刚好指数为2，与前面系数一拍即合～</p>
+<h2 id="Gradient_Descent"><a href="#Gradient_Descent" class="headerlink" title="Gradient Descent"></a>Gradient Descent</h2><p>在有了J之后，可以用梯度下降法来求解最优值。显然，我们的目的是想使J尽可能趋近于0。如果通过计算机来进行迭代求解，对于第i个参数，迭代公式如下：</p>
+<img src="/2016/06/07/Stanford-CS229-1/pic_12.png" alt="m = 1" title="m = 1">
+<p>当然，实际情况m&gt;1，所以需要把所有训练样本都累加起来。</p>
+<img src="/2016/06/07/Stanford-CS229-1/pic_13.png" alt="m > 1" title="m > 1">
+<p>其中，alpha是learning rate。用梯度下降求解的过程可以想象成一个寻找山谷最低点的过程：</p>
+<img src="/2016/06/07/Stanford-CS229-1/pic_3.png" alt="Initial" title="Initial">
+<p>每次选择梯度（下山最快）的方向迭代，alpha决定了每一步迭代的步长。最终当J几乎不变时，函数收敛，我们求得了一个局部最优值。一定记住是<strong>局部</strong>最优值。</p>
+<img src="/2016/06/07/Stanford-CS229-1/pic_4.png" alt="Convergence 1" title="Convergence 1">
+<img src="/2016/06/07/Stanford-CS229-1/pic_5.png" alt="Convergence 2" title="Convergence 2">
+<p>不难发现，由于起始值的不同，导致了收敛路线不同，最终收敛结果完全不同。同时，alpha也会影响收敛的路线，这个很好解释，不展开了。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP">一个独行的程序员</a></p>
+<h2 id="Supervised_Learning"><a href="#Supervised_Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h2><p>监督学习(Supervised Learning)是机器学习中的一大类方法，其特点就是需要已经标注过的数据作为训练集，通过回归（Regression）等方法，得到一个误差最小的假设或估计。</p>
+<img src="/2016/06/07/Stanford-CS229-1/pic_9.png" alt="Supervised Learning" title="Supervised Learning">]]>
+    
+    </summary>
+    
+      <category term="Machine Learning, Linear Algebra" scheme="http://pengjt.com/tags/Machine-Learning-Linear-Algebra/"/>
+    
+      <category term="Machine Learning" scheme="http://pengjt.com/categories/Machine-Learning/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[How to build a blog with Hexo]]></title>

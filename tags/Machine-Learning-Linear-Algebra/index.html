@@ -7,36 +7,17 @@
   
   <meta name="keywords" content="python, data mining, machine learning">
   
-  <title>How to build a blog with Hexo | Code4Future</title>
+  <title>Tag: Machine Learning, Linear Algebra | Code4Future</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="作者：一个独行的程序员
-Install Node.jsMac通过Homebrew安装Node.js 
-$ brew install node
-或者去Node.js官网：https://nodejs.org/en/
-下载dmg文件，直接安装
-Install HexoMac通过npm直接安装Hexo
-$ npm install hexo --no-optional">
-<meta property="og:type" content="article">
-<meta property="og:title" content="How to build a blog with Hexo">
-<meta property="og:url" content="http://pengjt.com/2016/06/02/How-to-build-a-blog-with-Hexo/index.html">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Code4Future">
+<meta property="og:url" content="http://pengjt.com/tags/Machine-Learning-Linear-Algebra/index.html">
 <meta property="og:site_name" content="Code4Future">
-<meta property="og:description" content="作者：一个独行的程序员
-Install Node.jsMac通过Homebrew安装Node.js 
-$ brew install node
-或者去Node.js官网：https://nodejs.org/en/
-下载dmg文件，直接安装
-Install HexoMac通过npm直接安装Hexo
-$ npm install hexo --no-optional">
-<meta property="og:updated_time" content="2016-06-02T15:22:49.000Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="How to build a blog with Hexo">
-<meta name="twitter:description" content="作者：一个独行的程序员
-Install Node.jsMac通过Homebrew安装Node.js 
-$ brew install node
-或者去Node.js官网：https://nodejs.org/en/
-下载dmg文件，直接安装
-Install HexoMac通过npm直接安装Hexo
-$ npm install hexo --no-optional">
+<meta name="twitter:title" content="Code4Future">
+<meta name="twitter:description">
   
     <link rel="alternative" href="/atom.xml" title="Code4Future" type="application/atom+xml">
   
@@ -108,129 +89,39 @@ $ npm install hexo --no-optional">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-How-to-build-a-blog-with-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      How to build a blog with Hexo
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2016/06/07/Stanford-CS229-1/" class="archive-article-date">
+  <time datetime="2016-06-07T06:17:26.000Z" itemprop="datePublished">Jun 7</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/06/07/Stanford-CS229-1/">Stanford CS229:Supervised Learning[1]</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/06/02/How-to-build-a-blog-with-Hexo/" class="article-date">
-  <time datetime="2016-06-02T14:40:59.000Z" itemprop="datePublished">2016-6-2 Thu  22:40</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Others/">Others</a>
+    </header>
   </div>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
-<h2 id="Install_Node-js"><a href="#Install_Node-js" class="headerlink" title="Install Node.js"></a>Install Node.js</h2><p>Mac通过Homebrew安装Node.js </p>
-<pre><code>$ brew install node
-</code></pre><p>或者去Node.js官网：<a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></p>
-<p>下载dmg文件，直接安装</p>
-<h2 id="Install_Hexo"><a href="#Install_Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><p>Mac通过npm直接安装Hexo</p>
-<pre><code>$ npm install hexo --no-optional
-</code></pre><a id="more"></a>
-<p>或者去Hexo官网：<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a></p>
-<p>按照流程安装。</p>
-<h2 id="Build_Your_Blog"><a href="#Build_Your_Blog" class="headerlink" title="Build Your Blog"></a>Build Your Blog</h2><pre><code>$ hexo init &lt;your_blog_path&gt;
-$ cd &lt;your_blog_path&gt;
-$ npm install    
-</code></pre><p>新建立的blog文件夹目录结果如下：</p>
-<pre><code>.
-├── _config.yml
-├── package.json
-├── scaffolds
-├── scripts
-├── source
-|   ├── _drafts
-|   └── _posts
-└── themes
-</code></pre><h2 id="Start_Server"><a href="#Start_Server" class="headerlink" title="Start Server"></a>Start Server</h2><p>在你的blog根目录下，启动server，默认端口为：<a href="http://0.0.0.0:4000" target="_blank" rel="external">http://0.0.0.0:4000</a></p>
-<pre><code>$ hexo server
-INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.
-</code></pre><h2 id="Create_New_Post"><a href="#Create_New_Post" class="headerlink" title="Create New Post"></a>Create New Post</h2><pre><code>$ hexo new &quot;How to build a blog with Hexo&quot;
-INFO  Created: ~/Documents/iBlog/source/_posts/How-to-build-a-blog-with-Hexo.md
-</code></pre><p>用markdown编辑器写好文章好，生成对应的html文件：</p>
-<pre><code>$ hexo generate
-</code></pre><h2 id="Update_the_Github_Repository"><a href="#Update_the_Github_Repository" class="headerlink" title="Update the Github Repository"></a>Update the Github Repository</h2><p>将public文件夹下的内容copy到github对应的repository，同步后就能看到你的站点更新了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://pengjt.com/2016/06/02/How-to-build-a-blog-with-Hexo/" data-id="cip526ai40000krxo1diirxlu" class="article-share-link">分享</a>
-      
-      
-        <a href="http://pengjt.com/2016/06/02/How-to-build-a-blog-with-Hexo/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/06/02/How-to-build-a-blog-with-Hexo/">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
-
-    </footer>
-
-      
-      
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2016/06/07/Stanford-CS229-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Stanford CS229:Supervised Learning[1]
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/02/15/tf-idf/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">TF-IDF的原理与应用</div>
-    </a>
-  
-</nav>
-
-  
-
-
-  
-    <section id="comments">
-    <!-- 多说评论框 start -->
-      <div id="ds-thread" class="ds-thread" data-thread-key="2016/06/02/How-to-build-a-blog-with-Hexo/" data-title="How to build a blog with Hexo" data-url="http://pengjt.com/2016/06/02/How-to-build-a-blog-with-Hexo/"></div>
-    <!-- 多说评论框 end --> 
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-    <script type="text/javascript">
-    var duoshuoQuery = {short_name:"code4future"};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] 
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-      </script>
-    <!-- 多说公共JS代码 end -->
-    </section>
-  
-
-
-
 </article>
+  
+  
+    </div></section>
+  
 </section>
         
           <aside id="sidebar">

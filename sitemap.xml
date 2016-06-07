@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pengjt.com/2016/06/07/Stanford-CS229-1/</loc>
+    <lastmod>2016-06-07T08:35:03.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pengjt.com/2016/06/02/How-to-build-a-blog-with-Hexo/</loc>
     <lastmod>2016-06-02T15:22:49.000Z</lastmod>
   </url>
