@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am a slow walker, but I never walk back.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pengjt.com/"/>
-  <updated>2016-06-07T08:35:03.000Z</updated>
+  <updated>2016-06-07T08:35:01.000Z</updated>
   <id>http://pengjt.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pengjt.com/2016/06/07/Stanford-CS229-1/"/>
     <id>http://pengjt.com/2016/06/07/Stanford-CS229-1/</id>
     <published>2016-06-07T06:17:26.000Z</published>
-    <updated>2016-06-07T08:35:03.000Z</updated>
+    <updated>2016-06-07T08:35:01.000Z</updated>
     <content type="html"><![CDATA[<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
 <h2 id="Supervised_Learning"><a href="#Supervised_Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h2><p>监督学习(Supervised Learning)是机器学习中的一大类方法，其特点就是需要已经标注过的数据作为训练集，通过回归（Regression）等方法，得到一个误差最小的假设或估计。</p>
 <img src="/2016/06/07/Stanford-CS229-1/pic_9.png" alt="Supervised Learning" title="Supervised Learning">
