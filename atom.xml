@@ -3,9 +3,9 @@
   <title><![CDATA[Code4Future]]></title>
   <subtitle><![CDATA[I am a slow walker, but I never walk back.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://pengjt.com/"/>
-  <updated>2016-06-07T08:35:01.000Z</updated>
-  <id>http://pengjt.com/</id>
+  <link href="http://zjupjt.com/"/>
+  <updated>2016-06-07T08:35:03.000Z</updated>
+  <id>http://zjupjt.com/</id>
   
   <author>
     <name><![CDATA[Jingtian Peng]]></name>
@@ -16,10 +16,10 @@
   
   <entry>
     <title><![CDATA[Stanford CS229:Supervised Learning[1]]]></title>
-    <link href="http://pengjt.com/2016/06/07/Stanford-CS229-1/"/>
-    <id>http://pengjt.com/2016/06/07/Stanford-CS229-1/</id>
+    <link href="http://zjupjt.com/2016/06/07/Stanford-CS229-1/"/>
+    <id>http://zjupjt.com/2016/06/07/Stanford-CS229-1/</id>
     <published>2016-06-07T06:17:26.000Z</published>
-    <updated>2016-06-07T08:35:01.000Z</updated>
+    <updated>2016-06-07T08:35:03.000Z</updated>
     <content type="html"><![CDATA[<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
 <h2 id="Supervised_Learning"><a href="#Supervised_Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h2><p>监督学习(Supervised Learning)是机器学习中的一大类方法，其特点就是需要已经标注过的数据作为训练集，通过回归（Regression）等方法，得到一个误差最小的假设或估计。</p>
 <img src="/2016/06/07/Stanford-CS229-1/pic_9.png" alt="Supervised Learning" title="Supervised Learning">
@@ -54,16 +54,16 @@
     
     </summary>
     
-      <category term="Machine Learning, Linear Algebra" scheme="http://pengjt.com/tags/Machine-Learning-Linear-Algebra/"/>
+      <category term="Machine Learning, Linear Algebra" scheme="http://zjupjt.com/tags/Machine-Learning-Linear-Algebra/"/>
     
-      <category term="Machine Learning" scheme="http://pengjt.com/categories/Machine-Learning/"/>
+      <category term="Machine Learning" scheme="http://zjupjt.com/categories/Machine-Learning/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[How to build a blog with Hexo]]></title>
-    <link href="http://pengjt.com/2016/06/02/How-to-build-a-blog-with-Hexo/"/>
-    <id>http://pengjt.com/2016/06/02/How-to-build-a-blog-with-Hexo/</id>
+    <link href="http://zjupjt.com/2016/06/02/How-to-build-a-blog-with-Hexo/"/>
+    <id>http://zjupjt.com/2016/06/02/How-to-build-a-blog-with-Hexo/</id>
     <published>2016-06-02T14:40:59.000Z</published>
     <updated>2016-06-02T15:22:49.000Z</updated>
     <content type="html"><![CDATA[<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
@@ -110,16 +110,16 @@ INFO  Created: ~/Documents/iBlog/source/_posts/How-to-build-a-blog-with-Hexo.md
     
     </summary>
     
-      <category term="Web" scheme="http://pengjt.com/tags/Web/"/>
+      <category term="Web" scheme="http://zjupjt.com/tags/Web/"/>
     
-      <category term="Others" scheme="http://pengjt.com/categories/Others/"/>
+      <category term="Others" scheme="http://zjupjt.com/categories/Others/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[TF-IDF的原理与应用]]></title>
-    <link href="http://pengjt.com/2016/02/15/tf-idf/"/>
-    <id>http://pengjt.com/2016/02/15/tf-idf/</id>
+    <link href="http://zjupjt.com/2016/02/15/tf-idf/"/>
+    <id>http://zjupjt.com/2016/02/15/tf-idf/</id>
     <published>2016-02-15T12:50:51.000Z</published>
     <updated>2016-02-16T17:34:53.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://iblog.blogactiv.eu/files/2008/10/tag-cloud.png"></p>
@@ -206,16 +206,16 @@ INFO  Created: ~/Documents/iBlog/source/_posts/How-to-build-a-blog-with-Hexo.md
     
     </summary>
     
-      <category term="Text Minging, Information Retrieval" scheme="http://pengjt.com/tags/Text-Minging-Information-Retrieval/"/>
+      <category term="Text Minging, Information Retrieval" scheme="http://zjupjt.com/tags/Text-Minging-Information-Retrieval/"/>
     
-      <category term="Data Mining" scheme="http://pengjt.com/categories/Data-Mining/"/>
+      <category term="Data Mining" scheme="http://zjupjt.com/categories/Data-Mining/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[python读书笔记：细节决定成败(3)]]></title>
-    <link href="http://pengjt.com/2016/02/02/pythonNotes3/"/>
-    <id>http://pengjt.com/2016/02/02/pythonNotes3/</id>
+    <link href="http://zjupjt.com/2016/02/02/pythonNotes3/"/>
+    <id>http://zjupjt.com/2016/02/02/pythonNotes3/</id>
     <published>2016-02-02T07:43:11.000Z</published>
     <updated>2016-06-02T15:22:43.000Z</updated>
     <content type="html"><![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
@@ -251,16 +251,16 @@ texts = [[word for word in document.lower().split() if word not in stoplist]
     
     </summary>
     
-      <category term="Python" scheme="http://pengjt.com/tags/Python/"/>
+      <category term="Python" scheme="http://zjupjt.com/tags/Python/"/>
     
-      <category term="Python" scheme="http://pengjt.com/categories/Python/"/>
+      <category term="Python" scheme="http://zjupjt.com/categories/Python/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[python读书笔记：细节决定成败(2)]]></title>
-    <link href="http://pengjt.com/2016/01/28/pythonNotes2/"/>
-    <id>http://pengjt.com/2016/01/28/pythonNotes2/</id>
+    <link href="http://zjupjt.com/2016/01/28/pythonNotes2/"/>
+    <id>http://zjupjt.com/2016/01/28/pythonNotes2/</id>
     <published>2016-01-28T08:29:32.000Z</published>
     <updated>2016-06-02T15:22:36.000Z</updated>
     <content type="html"><![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
@@ -406,16 +406,16 @@ Sjoerd     ==&gt;       4127
     
     </summary>
     
-      <category term="Python" scheme="http://pengjt.com/tags/Python/"/>
+      <category term="Python" scheme="http://zjupjt.com/tags/Python/"/>
     
-      <category term="Python" scheme="http://pengjt.com/categories/Python/"/>
+      <category term="Python" scheme="http://zjupjt.com/categories/Python/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[python读书笔记：细节决定成败(1)]]></title>
-    <link href="http://pengjt.com/2016/01/28/pythonNotes1/"/>
-    <id>http://pengjt.com/2016/01/28/pythonNotes1/</id>
+    <link href="http://zjupjt.com/2016/01/28/pythonNotes1/"/>
+    <id>http://zjupjt.com/2016/01/28/pythonNotes1/</id>
     <published>2016-01-28T07:04:53.000Z</published>
     <updated>2016-06-02T15:22:18.000Z</updated>
     <content type="html"><![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
@@ -603,9 +603,9 @@ robin the brave
     
     </summary>
     
-      <category term="python" scheme="http://pengjt.com/tags/python/"/>
+      <category term="python" scheme="http://zjupjt.com/tags/python/"/>
     
-      <category term="Python" scheme="http://pengjt.com/categories/Python/"/>
+      <category term="Python" scheme="http://zjupjt.com/categories/Python/"/>
     
   </entry>
   
