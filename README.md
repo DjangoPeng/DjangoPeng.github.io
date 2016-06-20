@@ -1,6 +1,6 @@
 ##Code4Future : A techniqual blog for coders
 
-**http://pengjt.com**
+**http://zjupjt.com**
 
 Author:Jingtian Peng.
 
