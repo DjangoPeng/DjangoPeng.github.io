@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am a slow walker, but I never walk back.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://zjupjt.com/"/>
-  <updated>2016-06-07T08:35:03.000Z</updated>
+  <updated>2016-07-08T01:51:15.000Z</updated>
   <id>http://zjupjt.com/</id>
   
   <author>
@@ -15,11 +15,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Singular Vector Decomposition(SVD)]]></title>
+    <link href="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/"/>
+    <id>http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/</id>
+    <published>2016-06-28T06:24:48.000Z</published>
+    <updated>2016-07-08T01:51:15.000Z</updated>
+    <content type="html"><![CDATA[<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
+<p><strong>参考</strong>：Dr. Edel Garcia, Singular Value Decomposition (SVD) A Fast Track Tutorial</p>
+<p><em>SVD（奇异值分解）是常用的一种矩阵降维方法，其数学原理和求解过程并不复杂。这篇文章用一个样例来解释说明如何进行SVD的运算，并附上了常用的求解SVD的工具。</em></p>
+<h2 id="Problem_3A__u6C42_u77E9_u9635A_u7684SVD"><a href="#Problem_3A__u6C42_u77E9_u9635A_u7684SVD" class="headerlink" title="Problem: 求矩阵A的SVD"></a>Problem: 求矩阵A的SVD</h2><img src="/2016/06/28/Singular-Vector-Decomposition-SVD/img_0.png" alt="img_0.png" title="">
+<a id="more"></a>
+<h2 id="Solution_uFF1A"><a href="#Solution_uFF1A" class="headerlink" title="Solution："></a>Solution：</h2><h3 id="Step_1-_u6C42_u8F6C_u7F6E_u77E9_u9635_u4E0E_u79EF"><a href="#Step_1-_u6C42_u8F6C_u7F6E_u77E9_u9635_u4E0E_u79EF" class="headerlink" title="Step 1.求转置矩阵与积"></a>Step 1.求转置矩阵与积</h3><img src="/2016/06/28/Singular-Vector-Decomposition-SVD/img_1.png" alt="img_1.png" title="">
+<h3 id="Step_2-_u6C42_u7279_u5F81_u65B9_u7A0B_u548C_u5947_u5F02_u503C"><a href="#Step_2-_u6C42_u7279_u5F81_u65B9_u7A0B_u548C_u5947_u5F02_u503C" class="headerlink" title="Step 2.求特征方程和奇异值"></a>Step 2.求特征方程和奇异值</h3><img src="/2016/06/28/Singular-Vector-Decomposition-SVD/img_2.png" alt="img_2.png" title="">
+<h3 id="Step_3-_u7528_u5947_u5F02_u503C_u6784_u9020_u77E9_u9635S"><a href="#Step_3-_u7528_u5947_u5F02_u503C_u6784_u9020_u77E9_u9635S" class="headerlink" title="Step 3.用奇异值构造矩阵S"></a>Step 3.用奇异值构造矩阵S</h3><img src="/2016/06/28/Singular-Vector-Decomposition-SVD/img_3.png" alt="img_3.png" title="">
+<h3 id="Step_4-_u7528_u7279_u5F81_u5411_u91CF_u6784_u9020_u77E9_u9635V"><a href="#Step_4-_u7528_u7279_u5F81_u5411_u91CF_u6784_u9020_u77E9_u9635V" class="headerlink" title="Step 4.用特征向量构造矩阵V"></a>Step 4.用特征向量构造矩阵V</h3><img src="/2016/06/28/Singular-Vector-Decomposition-SVD/img_4.png" alt="img_4.png" title="">
+<h3 id="Step_5-_u6C42_u77E9_u9635U"><a href="#Step_5-_u6C42_u77E9_u9635U" class="headerlink" title="Step 5.求矩阵U"></a>Step 5.求矩阵U</h3><img src="/2016/06/28/Singular-Vector-Decomposition-SVD/img_5.png" alt="img_5.png" title="">
+<h3 id="u6B63_u4EA4_u6027"><a href="#u6B63_u4EA4_u6027" class="headerlink" title="正交性"></a>正交性</h3><img src="/2016/06/28/Singular-Vector-Decomposition-SVD/img_6.png" alt="img_6.png" title="">
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2">一个独行的程序员</a></p>
+<p><strong>参考</strong>：Dr. Edel Garcia, Singular Value Decomposition (SVD) A Fast Track Tutorial</p>
+<p><em>SVD（奇异值分解）是常用的一种矩阵降维方法，其数学原理和求解过程并不复杂。这篇文章用一个样例来解释说明如何进行SVD的运算，并附上了常用的求解SVD的工具。</em></p>
+<h2 id="Problem_3A__u6C42_u77E9_u9635A_u7684SVD"><a href="#Problem_3A__u6C42_u77E9_u9635A_u7684SVD" class="headerlink" title="Problem: 求矩阵A的SVD"></a>Problem: 求矩阵A的SVD</h2><img src="/2016/06/28/Singular-Vector-Decomposition-SVD/img_0.png" alt="img_0.png" title="">]]>
+    
+    </summary>
+    
+      <category term="Information Retrieval" scheme="http://zjupjt.com/tags/Information-Retrieval/"/>
+    
+      <category term="Data Mining" scheme="http://zjupjt.com/categories/Data-Mining/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Stanford CS229:Supervised Learning[1]]]></title>
     <link href="http://zjupjt.com/2016/06/07/Stanford-CS229-1/"/>
     <id>http://zjupjt.com/2016/06/07/Stanford-CS229-1/</id>
     <published>2016-06-07T06:17:26.000Z</published>
-    <updated>2016-06-07T08:35:03.000Z</updated>
+    <updated>2016-06-28T06:30:24.000Z</updated>
     <content type="html"><![CDATA[<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
 <h2 id="Supervised_Learning"><a href="#Supervised_Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h2><p>监督学习(Supervised Learning)是机器学习中的一大类方法，其特点就是需要已经标注过的数据作为训练集，通过回归（Regression）等方法，得到一个误差最小的假设或估计。</p>
 <img src="/2016/06/07/Stanford-CS229-1/pic_9.png" alt="Supervised Learning" title="Supervised Learning">
@@ -54,18 +86,18 @@
     
     </summary>
     
-      <category term="Machine Learning, Linear Algebra" scheme="http://zjupjt.com/tags/Machine-Learning-Linear-Algebra/"/>
+      <category term="Machine Learning" scheme="http://zjupjt.com/tags/Machine-Learning/"/>
     
       <category term="Machine Learning" scheme="http://zjupjt.com/categories/Machine-Learning/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[How to build a blog with Hexo]]></title>
-    <link href="http://zjupjt.com/2016/06/02/How-to-build-a-blog-with-Hexo/"/>
-    <id>http://zjupjt.com/2016/06/02/How-to-build-a-blog-with-Hexo/</id>
+    <title><![CDATA[Hexo Tutorial]]></title>
+    <link href="http://zjupjt.com/2016/06/02/Hexo-Tutorial/"/>
+    <id>http://zjupjt.com/2016/06/02/Hexo-Tutorial/</id>
     <published>2016-06-02T14:40:59.000Z</published>
-    <updated>2016-06-02T15:22:49.000Z</updated>
+    <updated>2016-07-08T02:02:52.000Z</updated>
     <content type="html"><![CDATA[<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
 <h2 id="Install_Node-js"><a href="#Install_Node-js" class="headerlink" title="Install Node.js"></a>Install Node.js</h2><p>Mac通过Homebrew安装Node.js </p>
 <pre><code>$ brew install node
@@ -97,7 +129,7 @@ INFO  Created: ~/Documents/iBlog/source/_posts/How-to-build-a-blog-with-Hexo.md
 </code></pre><p>用markdown编辑器写好文章好，生成对应的html文件：</p>
 <pre><code>$ hexo generate
 </code></pre><h2 id="Update_the_Github_Repository"><a href="#Update_the_Github_Repository" class="headerlink" title="Update the Github Repository"></a>Update the Github Repository</h2><p>将public文件夹下的内容copy到github对应的repository，同步后就能看到你的站点更新了。</p>
-]]></content>
+<h2 id="Add_a_local_image"><a href="#Add_a_local_image" class="headerlink" title="Add a local image"></a>Add a local image</h2>  ]]></content>
     <summary type="html">
     <![CDATA[<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2">一个独行的程序员</a></p>
 <h2 id="Install_Node-js"><a href="#Install_Node-js" class="headerlink" title="Install Node.js"></a>Install Node.js</h2><p>Mac通过Homebrew安装Node.js </p>
@@ -121,9 +153,9 @@ INFO  Created: ~/Documents/iBlog/source/_posts/How-to-build-a-blog-with-Hexo.md
     <link href="http://zjupjt.com/2016/02/15/tf-idf/"/>
     <id>http://zjupjt.com/2016/02/15/tf-idf/</id>
     <published>2016-02-15T12:50:51.000Z</published>
-    <updated>2016-02-16T17:34:53.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="http://iblog.blogactiv.eu/files/2008/10/tag-cloud.png"></p>
-<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
+    <updated>2016-07-08T02:05:45.000Z</updated>
+    <content type="html"><![CDATA[<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
+<img src="/2016/02/15/tf-idf/img_0.png" alt="." title=".">
 <h2 id="1-TF-IDF_u539F_u7406"><a href="#1-TF-IDF_u539F_u7406" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><p>TF-IDF(Term Frequency-Inverse Document Frequency)，中文叫做词频－逆文档频率。在文本挖掘(Text Mining)和信息检索(Information Retrieval)领域具有广泛的应用。</p>
 <a id="more"></a>
 <p>其难能可贵之处在于：<strong>没有繁复的数学推导式，仅需要中学数学水平，便可以在一节课时间理解其原理并上手使用。</strong></p>
@@ -200,8 +232,8 @@ INFO  Created: ~/Documents/iBlog/source/_posts/How-to-build-a-blog-with-Hexo.md
 <p>TF-IDF的优点是计算简单，利于理解，性价比极高。但是它也有缺陷，首先单纯依据文章中的TF来衡量重要性，忽略了位置信息。如段首，句首一般权重更高；其次，有的文章可能关键词只出现1-2次，但可能通篇都是围绕其进行阐述和解释，所以单纯靠TF仍然不能解决所有的情况。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p><img src="http://iblog.blogactiv.eu/files/2008/10/tag-cloud.png"/></p>
-<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP">一个独行的程序员</a></p>
+    <![CDATA[<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP">一个独行的程序员</a></p>
+<img src="/2016/02/15/tf-idf/img_0.png" alt="." title=".">
 <h2 id="1-TF-IDF_u539F_u7406"><a href="#1-TF-IDF_u539F_u7406" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><p>TF-IDF(Term Frequency-Inverse Document Frequency)，中文叫做词频－逆文档频率。在文本挖掘(Text Mining)和信息检索(Information Retrieval)领域具有广泛的应用。</p>]]>
     
     </summary>
@@ -217,8 +249,8 @@ INFO  Created: ~/Documents/iBlog/source/_posts/How-to-build-a-blog-with-Hexo.md
     <link href="http://zjupjt.com/2016/02/02/pythonNotes3/"/>
     <id>http://zjupjt.com/2016/02/02/pythonNotes3/</id>
     <published>2016-02-02T07:43:11.000Z</published>
-    <updated>2016-06-02T15:22:43.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
+    <updated>2016-07-08T02:13:31.000Z</updated>
+    <content type="html"><![CDATA[<img src="/2016/02/02/pythonNotes3/img_0.png" alt="." title=".">
 <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
 <p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/" target="_blank" rel="external">tutorial</a></p>
 <h2 id="14-pprint_-_Pretty_Printer"><a href="#14-pprint_-_Pretty_Printer" class="headerlink" title="14.pprint - Pretty Printer"></a>14.pprint - Pretty Printer</h2><p>坑</p>
@@ -244,7 +276,7 @@ texts = [[word for word in document.lower().split() if word not in stoplist]
          for document in documents]
 </code></pre>]]></content>
     <summary type="html">
-    <![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
+    <![CDATA[<img src="/2016/02/02/pythonNotes3/img_0.png" alt="." title=".">
 <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP">一个独行的程序员</a></p>
 <p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/">tutorial</a></p>
 <h2 id="14-pprint_-_Pretty_Printer"><a href="#14-pprint_-_Pretty_Printer" class="headerlink" title="14.pprint - Pretty Printer"></a>14.pprint - Pretty Printer</h2><p>坑</p>]]>
@@ -262,8 +294,8 @@ texts = [[word for word in document.lower().split() if word not in stoplist]
     <link href="http://zjupjt.com/2016/01/28/pythonNotes2/"/>
     <id>http://zjupjt.com/2016/01/28/pythonNotes2/</id>
     <published>2016-01-28T08:29:32.000Z</published>
-    <updated>2016-06-02T15:22:36.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
+    <updated>2016-07-08T02:14:01.000Z</updated>
+    <content type="html"><![CDATA[<img src="/2016/01/28/pythonNotes2/img_0.png" alt="." title=".">
 <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
 <p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/" target="_blank" rel="external">tutorial</a></p>
 <h2 id="8-input_28_29_vs_raw_input_28_29"><a href="#8-input_28_29_vs_raw_input_28_29" class="headerlink" title="8.input() vs raw_input()"></a>8.input() vs raw_input()</h2><p>他们的作用都是用来读取命令行或者文件中的数据，区别在于<strong>返回结果</strong></p>
@@ -399,7 +431,7 @@ Sjoerd     ==&gt;       4127
 </code></pre><hr>
 <h3 id="2016-01-28_u4E8EUCSD"><a href="#2016-01-28_u4E8EUCSD" class="headerlink" title="2016.01.28于UCSD"></a>2016.01.28于UCSD</h3>]]></content>
     <summary type="html">
-    <![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
+    <![CDATA[<img src="/2016/01/28/pythonNotes2/img_0.png" alt="." title=".">
 <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2">一个独行的程序员</a></p>
 <p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/">tutorial</a></p>
 <h2 id="8-input_28_29_vs_raw_input_28_29"><a href="#8-input_28_29_vs_raw_input_28_29" class="headerlink" title="8.input() vs raw_input()"></a>8.input() vs raw_input()</h2><p>他们的作用都是用来读取命令行或者文件中的数据，区别在于<strong>返回结果</strong></p>]]>
@@ -417,8 +449,8 @@ Sjoerd     ==&gt;       4127
     <link href="http://zjupjt.com/2016/01/28/pythonNotes1/"/>
     <id>http://zjupjt.com/2016/01/28/pythonNotes1/</id>
     <published>2016-01-28T07:04:53.000Z</published>
-    <updated>2016-06-02T15:22:18.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
+    <updated>2016-07-08T02:14:11.000Z</updated>
+    <content type="html"><![CDATA[<img src="/2016/01/28/pythonNotes1/img_0.png" alt="." title=".">
 <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
 <p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/" target="_blank" rel="external">tutorial</a></p>
 <h2 id="1-_5Ba_3Ab_29"><a href="#1-_5Ba_3Ab_29" class="headerlink" title="1.[a:b)"></a>1.[a:b)</h2><p>在使用list时，我们会常常使用左右区间的位置来赋值(range)或删除(del)其中的值。一定记住这个区间是一个<strong>左闭右开</strong>的区间；</p>
@@ -596,14 +628,14 @@ robin the brave
 <hr>
 <h3 id="2016-01-28_u4E8EUCSD"><a href="#2016-01-28_u4E8EUCSD" class="headerlink" title="2016.01.28于UCSD"></a>2016.01.28于UCSD</h3>]]></content>
     <summary type="html">
-    <![CDATA[<p><img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" alt=""></p>
+    <![CDATA[<img src="/2016/01/28/pythonNotes1/img_0.png" alt="." title=".">
 <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2">一个独行的程序员</a></p>
 <p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/">tutorial</a></p>
 <h2 id="1-_5Ba_3Ab_29"><a href="#1-_5Ba_3Ab_29" class="headerlink" title="1.[a:b)"></a>1.[a:b)</h2><p>在使用list时，我们会常常使用左右区间的位置来赋值(range)或删除(del)其中的值。一定记住这个区间是一个<strong>左闭右开</strong>的区间；</p>]]>
     
     </summary>
     
-      <category term="python" scheme="http://zjupjt.com/tags/python/"/>
+      <category term="Python" scheme="http://zjupjt.com/tags/Python/"/>
     
       <category term="Python" scheme="http://zjupjt.com/categories/Python/"/>
     
