@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am a slow walker, but I never walk back.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://zjupjt.com/"/>
-  <updated>2016-07-08T01:51:15.000Z</updated>
+  <updated>2016-07-08T06:19:35.000Z</updated>
   <id>http://zjupjt.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/"/>
     <id>http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/</id>
     <published>2016-06-28T06:24:48.000Z</published>
-    <updated>2016-07-08T01:51:15.000Z</updated>
+    <updated>2016-07-08T06:19:35.000Z</updated>
     <content type="html"><![CDATA[<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
 <p><strong>参考</strong>：Dr. Edel Garcia, Singular Value Decomposition (SVD) A Fast Track Tutorial</p>
 <p><em>SVD（奇异值分解）是常用的一种矩阵降维方法，其数学原理和求解过程并不复杂。这篇文章用一个样例来解释说明如何进行SVD的运算，并附上了常用的求解SVD的工具。</em></p>
@@ -40,9 +40,11 @@
     
     </summary>
     
-      <category term="Information Retrieval" scheme="http://zjupjt.com/tags/Information-Retrieval/"/>
+      <category term="Data Mining" scheme="http://zjupjt.com/tags/Data-Mining/"/>
     
-      <category term="Data Mining" scheme="http://zjupjt.com/categories/Data-Mining/"/>
+      <category term="Machine Learning" scheme="http://zjupjt.com/tags/Machine-Learning/"/>
+    
+      <category term="Machine Learning" scheme="http://zjupjt.com/categories/Machine-Learning/"/>
     
   </entry>
   
@@ -153,7 +155,7 @@ INFO  Created: ~/Documents/iBlog/source/_posts/How-to-build-a-blog-with-Hexo.md
     <link href="http://zjupjt.com/2016/02/15/tf-idf/"/>
     <id>http://zjupjt.com/2016/02/15/tf-idf/</id>
     <published>2016-02-15T12:50:51.000Z</published>
-    <updated>2016-07-08T02:05:45.000Z</updated>
+    <updated>2016-07-08T06:19:52.000Z</updated>
     <content type="html"><![CDATA[<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
 <img src="/2016/02/15/tf-idf/img_0.png" alt="." title=".">
 <h2 id="1-TF-IDF_u539F_u7406"><a href="#1-TF-IDF_u539F_u7406" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><p>TF-IDF(Term Frequency-Inverse Document Frequency)，中文叫做词频－逆文档频率。在文本挖掘(Text Mining)和信息检索(Information Retrieval)领域具有广泛的应用。</p>
@@ -238,7 +240,9 @@ INFO  Created: ~/Documents/iBlog/source/_posts/How-to-build-a-blog-with-Hexo.md
     
     </summary>
     
-      <category term="Text Minging, Information Retrieval" scheme="http://zjupjt.com/tags/Text-Minging-Information-Retrieval/"/>
+      <category term="Information Retrieval" scheme="http://zjupjt.com/tags/Information-Retrieval/"/>
+    
+      <category term="Text Minging" scheme="http://zjupjt.com/tags/Text-Minging/"/>
     
       <category term="Data Mining" scheme="http://zjupjt.com/categories/Data-Mining/"/>
     
