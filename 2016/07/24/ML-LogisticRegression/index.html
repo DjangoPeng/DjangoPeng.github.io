@@ -7,25 +7,43 @@
   
   <meta name="keywords" content="python, data mining, machine learning">
   
-  <title>python读书笔记：细节决定成败(3) | Code4Future</title>
+  <title>机器学习算法-Logistic Regression | Code4Future</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="作者：一个独行的程序员
-背景：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的tutorial
-14.pprint - Pretty Printer坑">
+逻辑回归（Logistic Regression）是一种简单的分类模型，由于其高效而又简单的特性，在实际中取得了非常广泛的应用。本文主要关注逻辑回归的应用场景和数学原理，并对其在多分类问题上的扩展做了简要介绍。
+逻辑回归问题在实际生活中，我们常常会遇到很多“二选一”的问题。如：
+
+预测用户是否喜欢某推荐商品
+判断用户性别
+预测球赛的获胜队
+
+在处理以上这些二分类问题时，逻辑">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python读书笔记：细节决定成败(3)">
-<meta property="og:url" content="http://zjupjt.com/2016/02/02/pythonNotes3/index.html">
+<meta property="og:title" content="机器学习算法-Logistic Regression">
+<meta property="og:url" content="http://zjupjt.com/2016/07/24/ML-LogisticRegression/index.html">
 <meta property="og:site_name" content="Code4Future">
 <meta property="og:description" content="作者：一个独行的程序员
-背景：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的tutorial
-14.pprint - Pretty Printer坑">
-<meta property="og:image" content="http://zjupjt.com/2016/02/02/pythonNotes3/img_0.png">
-<meta property="og:updated_time" content="2016-07-24T12:28:38.000Z">
+逻辑回归（Logistic Regression）是一种简单的分类模型，由于其高效而又简单的特性，在实际中取得了非常广泛的应用。本文主要关注逻辑回归的应用场景和数学原理，并对其在多分类问题上的扩展做了简要介绍。
+逻辑回归问题在实际生活中，我们常常会遇到很多“二选一”的问题。如：
+
+预测用户是否喜欢某推荐商品
+判断用户性别
+预测球赛的获胜队
+
+在处理以上这些二分类问题时，逻辑">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png">
+<meta property="og:updated_time" content="2016-07-24T15:10:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python读书笔记：细节决定成败(3)">
+<meta name="twitter:title" content="机器学习算法-Logistic Regression">
 <meta name="twitter:description" content="作者：一个独行的程序员
-背景：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的tutorial
-14.pprint - Pretty Printer坑">
+逻辑回归（Logistic Regression）是一种简单的分类模型，由于其高效而又简单的特性，在实际中取得了非常广泛的应用。本文主要关注逻辑回归的应用场景和数学原理，并对其在多分类问题上的扩展做了简要介绍。
+逻辑回归问题在实际生活中，我们常常会遇到很多“二选一”的问题。如：
+
+预测用户是否喜欢某推荐商品
+判断用户性别
+预测球赛的获胜队
+
+在处理以上这些二分类问题时，逻辑">
   
     <link rel="alternative" href="/atom.xml" title="Code4Future" type="application/atom+xml">
   
@@ -97,7 +115,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-pythonNotes3" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-ML-LogisticRegression" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -105,60 +123,74 @@
         
   
     <h1 class="article-title" itemprop="name">
-      python读书笔记：细节决定成败(3)
+      机器学习算法-Logistic Regression
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2016/02/02/pythonNotes3/" class="article-date">
-  <time datetime="2016-02-02T07:43:11.000Z" itemprop="datePublished">2016-2-2 Tue  15:43</time>
+      <a href="/2016/07/24/ML-LogisticRegression/" class="article-date">
+  <time datetime="2016-07-24T12:27:34.000Z" itemprop="datePublished">2016-7-24 Sun  20:27</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Python/">Python</a>
+    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
   </div>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/2016/02/02/pythonNotes3/img_0.png" alt="." title=".">
-<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
-<p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/" target="_blank" rel="external">tutorial</a></p>
-<h2 id="14-pprint_-_Pretty_Printer"><a href="#14-pprint_-_Pretty_Printer" class="headerlink" title="14.pprint - Pretty Printer"></a>14.pprint - Pretty Printer</h2><p>坑</p>
-<a id="more"></a>
-<h2 id="15-List_Comprehension"><a href="#15-List_Comprehension" class="headerlink" title="15.List Comprehension"></a>15.List Comprehension</h2><pre><code>elems = [1, 2, 3, 4]
-squares = [e*e for e in elems]  # square each element
-big = [e for e in elems if e &gt; 2]  # keep elements bigger than 2
+        <p>作者：<a href="https://cn.linkedin.com/in/jingtianp" target="_blank" rel="external">一个独行的程序员</a></p>
+<p><em>逻辑回归（Logistic Regression）是一种简单的分类模型，由于其高效而又简单的特性，在实际中取得了非常广泛的应用。本文主要关注逻辑回归的应用场景和数学原理，并对其在多分类问题上的扩展做了简要介绍。</em></p>
+<h1 id="u903B_u8F91_u56DE_u5F52"><a href="#u903B_u8F91_u56DE_u5F52" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><h2 id="u95EE_u9898"><a href="#u95EE_u9898" class="headerlink" title="问题"></a>问题</h2><p>在实际生活中，我们常常会遇到很多“二选一”的问题。如：</p>
+<ul>
+<li>预测用户是否喜欢某推荐商品</li>
+<li>判断用户性别</li>
+<li>预测球赛的获胜队</li>
+</ul>
+<p>在处理以上这些二分类问题时，逻辑回归成了我们的一把利器。通常这类问题的处理步骤为：</p>
+<ol>
+<li>获取原始数据</li>
+</ol>
+<ul>
+<li>标记训练数据</li>
+<li>训练逻辑回归的参数</li>
+<li>测试模型效果</li>
+</ul>
+<p>在获得数据和标签后，我们就得到了n组训练数据，定义为：<br>$$<br>D = (x^1, y^1), (x^2, y^2),…,(x^n, y^n)<br>$$<br>其中，每组数据有m维特征，即：<br>$<br>x^i=[x_1^i,x_2^i,…,x_m^i]<br>$<br>，y的取值为[0,1](1为正例，0为负例)。</p>
+<h2 id="u6A21_u578B"><a href="#u6A21_u578B" class="headerlink" title="模型"></a>模型</h2><h3 id="Logistic_Function"><a href="#Logistic_Function" class="headerlink" title="Logistic Function"></a>Logistic Function</h3><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png" alt=""></p>
+<p>$$<br>\sigma(t)=\frac{e^t}{1+e^t}=\frac{1}{1+e^{-t}}<br>$$</p>
+<p>令$t=\theta^T X=\sum\theta_i x_i$,其中，$x_0 = 1$。<br>$\theta$是一个n+1维的向量，也是我们模型训练的参数。</p>
+<h3 id="u4E3A_u4EC0_u4E48_u7528_u903B_u8F91_u56DE_u5F52"><a href="#u4E3A_u4EC0_u4E48_u7528_u903B_u8F91_u56DE_u5F52" class="headerlink" title="为什么用逻辑回归"></a>为什么用逻辑回归</h3><p>对于二分类问题，我们可以用t来描述数据本身的特征，即每个维度的值$x_i$和其对应的权重(即参数)$\theta_i$，同时考虑到向量的形式，我们将$x_0$设为1。</p>
+<p>在《机器学习实战》中LR的对应章节也有提到，我们其实是想通过数据和标签，构造出一个分类模型。那么如何尽可能利用所有维度特征和所有数据呢？</p>
+<p>我们将由事件特征到类别划属这个问题，映射到一个概率分布模型。即：<br>$$<br>y = \left{<br>\begin{aligned}<br>1,\, \sigma(\theta,X) &gt; 0.5 \<br>0,\, \sigma(\theta,X) &lt; 0.5<br>\end{aligned}<br>\right.<br>$$</p>
+<p>现在我们需要做的就是得到一个最优的$\theta$，使得模型预测准确率最高。</p>
+<h3 id="u68AF_u5EA6_u4E0B_u964D_u6CD5"><a href="#u68AF_u5EA6_u4E0B_u964D_u6CD5" class="headerlink" title="梯度下降法"></a>梯度下降法</h3><p>最常用的求解最优化问题的方法就是梯度下降法了，简单好懂，易于操作。其本质就是每次都朝着梯度的方向进行迭代，即：<br>$$<br>\vartriangle\theta_i = \partial\frac{\sigma(\theta,X)}{\partial\theta_i}<br>$$</p>
+<p>因此，我们也就得到了参数$\theta$的迭代方程：<br>$$<br>\theta:=\theta+\alpha\vartriangle\theta<br>$$<br>其中，$\alpha$是每一步迭代的步长，即 learning rate.</p>
+<h2 id="u6269_u5C55"><a href="#u6269_u5C55" class="headerlink" title="扩展"></a>扩展</h2><h3 id="u591A_u5206_u7C7B_u95EE_u9898"><a href="#u591A_u5206_u7C7B_u95EE_u9898" class="headerlink" title="多分类问题"></a>多分类问题</h3><p>逻辑回归之所以好用，就在于它利用了函数图像的特性，刚好在y=0.5上下形成了两个概率相等的区间。如果将其用作多分类，则会有许多麻烦产生。</p>
+<ul>
+<li>概率不再均等</li>
+<li>可解释性太差</li>
+<li>若每一个分类单独训练，无法解决多分类互斥的情况</li>
+</ul>
+<p>基于以上几点原因，前辈们想出了一个两全其美的办法。既能利用逻辑回归的简单形式，又能解决多分类的问题。</p>
+<h3 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h3><p><strong>Softmax可以看作是逻辑回归的多分类版本。</strong></p>
+<p>让我们再来回顾一下逻辑回归模型，其本质是利用了概率密度函数来解决分类问题，即：<br>$$<br>y^*=\left{<br>\begin{aligned}<br>1,\, p(y=1|\theta, X) &gt; 0.5 \<br>0,\, p(y=1|\theta, X) &lt; 0.5<br>\end{aligned}<br>\right.<br>$$</p>
+<p>那么，遵循这个思路，只要我们能够定义多分类场景下的条件概率就可以解决问题了。即<strong>multinomial logistic function</strong>，假设我们有K类：<br>$$<br>p(y=i|\theta,X) = \frac{e^{\theta_i^Tx}}{\sum_1^K e^{\theta_i^T x}}<br>$$<br>$$<br>y^*=argmax_i \, p(y=i|\theta,X)<br>$$</p>
+<p>需要注意的是，这里一共有K个$\theta$向量，对应了K个不同的类别，而每个$\theta$又有n+1个维度。</p>
 
-from gensim import corpora, models, similarities
-documents = [&quot;Human machine interface for lab abc computer applications&quot;,
-             &quot;A survey of user opinion of computer system response time&quot;,
-             &quot;The EPS user interface management system&quot;,
-             &quot;System and human system engineering testing of EPS&quot;,
-             &quot;Relation of user perceived response time to error measurement&quot;,
-             &quot;The generation of random binary unordered trees&quot;,
-             &quot;The intersection graph of paths in trees&quot;,
-             &quot;Graph minors IV Widths of trees and well quasi ordering&quot;,
-             &quot;Graph minors A survey&quot;]
-
-# remove common words and tokenize
-stoplist = set(&apos;for a of the and to in&apos;.split())
-texts = [[word for word in document.lower().split() if word not in stoplist]
-         for document in documents]
-</code></pre>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/02/02/pythonNotes3/" data-id="cir0ot11y000cyehp25z7ysh2" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/07/24/ML-LogisticRegression/" data-id="cir0qr2io0000hwhppxn50rmt" class="article-share-link">分享</a>
       
       
-        <a href="http://zjupjt.com/2016/02/02/pythonNotes3/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/02/02/pythonNotes3/">评论</a>
+        <a href="http://zjupjt.com/2016/07/24/ML-LogisticRegression/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/07/24/ML-LogisticRegression/">评论</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Classification/">Classification</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li></ul>
 
     </footer>
 
@@ -169,19 +201,10 @@ texts = [[word for word in document.lower().split() if word not in stoplist]
     
 <nav id="article-nav">
   
-    <a href="/2016/02/15/tf-idf/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          TF-IDF的原理与应用
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/28/pythonNotes2/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/06/28/Singular-Vector-Decomposition-SVD/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">python读书笔记：细节决定成败(2)</div>
+      <div class="article-nav-title">Singular Vector Decomposition(SVD)</div>
     </a>
   
 </nav>
@@ -192,7 +215,7 @@ texts = [[word for word in document.lower().split() if word not in stoplist]
   
     <section id="comments">
     <!-- 多说评论框 start -->
-      <div id="ds-thread" class="ds-thread" data-thread-key="2016/02/02/pythonNotes3/" data-title="python读书笔记：细节决定成败(3)" data-url="http://zjupjt.com/2016/02/02/pythonNotes3/"></div>
+      <div id="ds-thread" class="ds-thread" data-thread-key="2016/07/24/ML-LogisticRegression/" data-title="机器学习算法-Logistic Regression" data-url="http://zjupjt.com/2016/07/24/ML-LogisticRegression/"></div>
     <!-- 多说评论框 end --> 
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
