@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I am a slow walker, but I never walk back.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://zjupjt.com/"/>
-  <updated>2016-07-24T15:12:48.000Z</updated>
+  <updated>2016-07-24T15:12:49.000Z</updated>
   <id>http://zjupjt.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://zjupjt.com/2016/07/24/ML-LogisticRegression/"/>
     <id>http://zjupjt.com/2016/07/24/ML-LogisticRegression/</id>
     <published>2016-07-24T12:27:34.000Z</published>
-    <updated>2016-07-24T15:12:48.000Z</updated>
+    <updated>2016-07-24T15:12:49.000Z</updated>
     <content type="html"><![CDATA[<p>作者：<a href="https://cn.linkedin.com/in/jingtianp" target="_blank" rel="external">一个独行的程序员</a></p>
 <p><em>逻辑回归（Logistic Regression）是一种简单的分类模型，由于其高效而又简单的特性，在实际中取得了非常广泛的应用。本文主要关注逻辑回归的应用场景和数学原理，并对其在多分类问题上的扩展做了简要介绍。</em></p>
 <h1 id="u903B_u8F91_u56DE_u5F52"><a href="#u903B_u8F91_u56DE_u5F52" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><h2 id="u95EE_u9898"><a href="#u95EE_u9898" class="headerlink" title="问题"></a>问题</h2><p>在实际生活中，我们常常会遇到很多“二选一”的问题。如：</p>
