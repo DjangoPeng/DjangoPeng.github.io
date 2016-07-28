@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   <meta property="wb:webmaster" content="0f4e330dfccdfaa4" />
   
   
@@ -29,6 +29,7 @@
 <meta name="twitter:description" content="作者：一个独行的程序员
 
 1.TF-IDF原理TF-IDF(Term Frequency-Inverse Document Frequency)，中文叫做词频－逆文档频率。在文本挖掘(Text Mining)和信息检索(Information Retrieval)领域具有广泛的应用。">
+<meta name="twitter:image" content="http://zjupjt.com/2016/02/15/tf-idf/img_0.png">
   
     <link rel="alternative" href="/atom.xml" title="Code4Future" type="application/atom+xml">
   
@@ -37,12 +38,12 @@
   
   <!-link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <link href="http://fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 </head>
 <body>
-  <div id="container">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
     <div id="wrap">
       <header id="header">
   <div id="banner"></div>
@@ -128,7 +129,7 @@
       
         <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
 <img src="/2016/02/15/tf-idf/img_0.png" alt="." title=".">
-<h2 id="1-TF-IDF_u539F_u7406"><a href="#1-TF-IDF_u539F_u7406" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><p>TF-IDF(Term Frequency-Inverse Document Frequency)，中文叫做词频－逆文档频率。在文本挖掘(Text Mining)和信息检索(Information Retrieval)领域具有广泛的应用。</p>
+<h2 id="1-TF-IDF原理"><a href="#1-TF-IDF原理" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><p>TF-IDF(Term Frequency-Inverse Document Frequency)，中文叫做词频－逆文档频率。在文本挖掘(Text Mining)和信息检索(Information Retrieval)领域具有广泛的应用。</p>
 <a id="more"></a>
 <p>其难能可贵之处在于：<strong>没有繁复的数学推导式，仅需要中学数学水平，便可以在一节课时间理解其原理并上手使用。</strong></p>
 <p>设想现在我们正在阅读新闻，如何最快速的了解新闻主旨？毫无疑问——<strong>关键词</strong></p>
@@ -145,7 +146,7 @@
 <p>|{ j: t<sub>i</sub> in d<sub>j</sub>}| ：包含词语 t<sub>i</sub>的文件数目（即 n<sub>i,j</sub> != 0的文件数目）如果该词语不在语料库中，就会导致分母为零，因此一般情况下使用1 + |{j : t<sub>i</sub> in d<sub>j</sub>}|</p>
 <p><img src="https://upload.wikimedia.org/math/b/0/6/b06a060c28253c8dd2528811c447862e.png"></p>
 <p>TF-IDF倾向于过滤掉常见的词语，保留重要的词语。</p>
-<h2 id="2-TF-IDF_u5E94_u7528"><a href="#2-TF-IDF_u5E94_u7528" class="headerlink" title="2.TF-IDF应用"></a>2.TF-IDF应用</h2><p>本小节通过Google搜索结果数为例，将含有中文”的”结果数15.8亿作为整个语料库大小，计算上一节中的keyword和stopword的TF-IDF值。为了计算简便，假设全文分词后一共500词，则结果如下：</p>
+<h2 id="2-TF-IDF应用"><a href="#2-TF-IDF应用" class="headerlink" title="2.TF-IDF应用"></a>2.TF-IDF应用</h2><p>本小节通过Google搜索结果数为例，将含有中文”的”结果数15.8亿作为整个语料库大小，计算上一节中的keyword和stopword的TF-IDF值。为了计算简便，假设全文分词后一共500词，则结果如下：</p>
 <table>
 <thead>
 <tr>
@@ -207,7 +208,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/02/15/tf-idf/" data-id="cir0ra2n20005lihplcjovtcd" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/02/15/tf-idf/" data-id="cir6hyvdm000ff6hpwpc256j9" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/02/15/tf-idf/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/02/15/tf-idf/">评论</a>
@@ -407,12 +408,12 @@ window_bd_share_config={"common":{"bdSnsKey":{"tsina":"3687385740"},"bdWbuid":28
 <!--- Baidu Share End --->
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
-  </div>
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>

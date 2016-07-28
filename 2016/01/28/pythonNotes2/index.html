@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   <meta property="wb:webmaster" content="0f4e330dfccdfaa4" />
   
   
@@ -26,6 +26,7 @@
 <meta name="twitter:description" content="作者：一个独行的程序员
 背景：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的tutorial
 8.input() vs raw_input()他们的作用都是用来读取命令行或者文件中的数据，区别在于返回结果">
+<meta name="twitter:image" content="http://zjupjt.com/2016/01/28/pythonNotes2/img_0.png">
   
     <link rel="alternative" href="/atom.xml" title="Code4Future" type="application/atom+xml">
   
@@ -34,12 +35,12 @@
   
   <!-link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <link href="http://fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 </head>
 <body>
-  <div id="container">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
     <div id="wrap">
       <header id="header">
   <div id="banner"></div>
@@ -126,7 +127,7 @@
         <img src="/2016/01/28/pythonNotes2/img_0.png" alt="." title=".">
 <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
 <p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/" target="_blank" rel="external">tutorial</a></p>
-<h2 id="8-input_28_29_vs_raw_input_28_29"><a href="#8-input_28_29_vs_raw_input_28_29" class="headerlink" title="8.input() vs raw_input()"></a>8.input() vs raw_input()</h2><p>他们的作用都是用来读取命令行或者文件中的数据，区别在于<strong>返回结果</strong></p>
+<h2 id="8-input-vs-raw-input"><a href="#8-input-vs-raw-input" class="headerlink" title="8.input() vs raw_input()"></a>8.input() vs raw_input()</h2><p>他们的作用都是用来读取命令行或者文件中的数据，区别在于<strong>返回结果</strong></p>
 <a id="more"></a>
 <ul>
 <li><p>input()返回的是numeric，如<code>int,flat,double</code></p>
@@ -144,14 +145,14 @@
 </code></pre><p>然而在读过python的源码后，你会发现其实input()是通过raw_input来实现的：</p>
 <pre><code>def input(prompt):
     return (eval(raw_input(prompt)))
-</code></pre><h2 id="9-Output_Formating"><a href="#9-Output_Formating" class="headerlink" title="9.Output Formating"></a>9.Output Formating</h2><p>从C语言开始，格式化字符串就已经为程序员所熟知，不管是C/C++还是Java，我觉得都没有python在输出格式化方面做的这么简练易用。举两个例子：</p>
-<h3 id="zfill_28_29"><a href="#zfill_28_29" class="headerlink" title="zfill()"></a>zfill()</h3><p>‘<em>pads a numeric string on the left with zeros. It understands about plus and minus signs:</em>‘</p>
+</code></pre><h2 id="9-Output-Formating"><a href="#9-Output-Formating" class="headerlink" title="9.Output Formating"></a>9.Output Formating</h2><p>从C语言开始，格式化字符串就已经为程序员所熟知，不管是C/C++还是Java，我觉得都没有python在输出格式化方面做的这么简练易用。举两个例子：</p>
+<h3 id="zfill"><a href="#zfill" class="headerlink" title="zfill()"></a>zfill()</h3><p>‘<em>pads a numeric string on the left with zeros. It understands about plus and minus signs:</em>‘</p>
 <p>这个函数的厉害之处在于它不仅能够高位补零，而且可以识别正负号！</p>
 <pre><code>&gt;&gt;&gt; &apos;12&apos;.zfill(5)
 &apos;00012&apos;
 &gt;&gt;&gt; &apos;-3.14&apos;.zfill(7)
 &apos;-003.14&apos;
-</code></pre><h3 id="str-format_28_29"><a href="#str-format_28_29" class="headerlink" title="str.format()"></a>str.format()</h3><p>当有多个string需要输出时，这个函数非常的powerful：</p>
+</code></pre><h3 id="str-format"><a href="#str-format" class="headerlink" title="str.format()"></a>str.format()</h3><p>当有多个string需要输出时，这个函数非常的powerful：</p>
 <pre><code>&gt;&gt;&gt; print &apos;We are the {} who say &quot;{}!&quot;&apos;.format(&apos;knights&apos;, &apos;Ni&apos;)
 We are the knights who say &quot;Ni!&quot;
 </code></pre><p>with position:</p>
@@ -175,7 +176,7 @@ The story of Bill, Manfred, and Georg.
 Jack       ==&gt;       4098
 Dcab       ==&gt;       7678
 Sjoerd     ==&gt;       4127
-</code></pre><h2 id="10-Serializing_and_Deserializing"><a href="#10-Serializing_and_Deserializing" class="headerlink" title="10.Serializing and Deserializing"></a>10.Serializing and Deserializing</h2><p>序列化(serializing)和反序列化(deserializing)是为了数据的易用性而出现的，在不同开发平台和互联网中，数据的表示方法一直都是处于百花齐放的局面。直到JSON的出现，才有了一个便于交换(interchange)的数据格式</p>
+</code></pre><h2 id="10-Serializing-and-Deserializing"><a href="#10-Serializing-and-Deserializing" class="headerlink" title="10.Serializing and Deserializing"></a>10.Serializing and Deserializing</h2><p>序列化(serializing)和反序列化(deserializing)是为了数据的易用性而出现的，在不同开发平台和互联网中，数据的表示方法一直都是处于百花齐放的局面。直到JSON的出现，才有了一个便于交换(interchange)的数据格式</p>
 <ul>
 <li>序列化: 将python中的数据结构以字符串形式表示</li>
 <li>反序列化: 将上述的字符串重建为python中的数据结构</li>
@@ -185,7 +186,7 @@ Sjoerd     ==&gt;       4127
 <pre><code>json.dumps(obj, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, encoding=&quot;utf-8&quot;, default=None, sort_keys=False, **kw)
 </code></pre><p>两个函数的参数意义相同，可以自行阅读tutorial<a href="https://docs.python.org/2/library/json.html?highlight=json" target="_blank" rel="external">了解详情</a>，这里不展开了。</p>
 <pre><code>json.load(fp[, encoding[, cls[, object_hook[, parse_float[, parse_int[, parse_constant[, object_pairs_hook[, **kw]]]]]]]])
-</code></pre><h2 id="11-Class_Objects"><a href="#11-Class_Objects" class="headerlink" title="11.Class Objects"></a>11.Class Objects</h2><p>python是支持OOP的语言，因此接下来几节介绍python中到的各种对象。</p>
+</code></pre><h2 id="11-Class-Objects"><a href="#11-Class-Objects" class="headerlink" title="11.Class Objects"></a>11.Class Objects</h2><p>python是支持OOP的语言，因此接下来几节介绍python中到的各种对象。</p>
 <p>类是一个抽象的概念，类对象(class objects)支持两种操作(operations):</p>
 <ul>
 <li>属性引用(attribute references)</li>
@@ -206,7 +207,7 @@ Sjoerd     ==&gt;       4127
 <pre><code>&gt;&gt;&gt; Simple.foo
 &lt;unbound method Simple.foo&gt;
 </code></pre><p>至于为什么类中的方法必须要自带一个self参数，我后面再讲，这也是python作为一个动态语言，与静态的OOP之间最大的差异！</p>
-<h2 id="12-Instance_Objects"><a href="#12-Instance_Objects" class="headerlink" title="12.Instance Objects"></a>12.Instance Objects</h2><p>实例对象(instance object)是一个具体的可操作的对象，其实例化的过程在python的官方解释中是这么说明的：</p>
+<h2 id="12-Instance-Objects"><a href="#12-Instance-Objects" class="headerlink" title="12.Instance Objects"></a>12.Instance Objects</h2><p>实例对象(instance object)是一个具体的可操作的对象，其实例化的过程在python的官方解释中是这么说明的：</p>
 <p>“<em>Class instantiation uses function notation. Just pretend that the class object is a parameterless function that returns a new instance of the class.</em>“</p>
 <p>官方让我们假设类对象是返回一个实例对象的无参函数，所以实例化的过程就像是得到一个函数的返回结果。(晕吗?)个人感觉按照C++和Java的构造器(constructor)来理解，也不会出现太大问题。</p>
 <pre><code>&gt;&gt;&gt; x = Simple()
@@ -234,7 +235,7 @@ Sjoerd     ==&gt;       4127
 &gt;&gt;&gt; A.j = 2
 &gt;&gt;&gt; A.j
 2
-</code></pre><h2 id="13-Method_Objects"><a href="#13-Method_Objects" class="headerlink" title="13.Method Objects"></a>13.Method Objects</h2><p>在python中，方法(method)和函数(function)是不同的。方法应该特指在类中定义的，其特征就是在定义时必须带上一个参数<code>self</code>。这和其他语言隐式的处理<code>this</code>这个参数不同（两者作用一样）。python必须要显示的指定这个方法作用的对象，这样的好处是在调用时能够确保方法是绑定(bound)在作用对象上的。因此，类是不能凭空调用方法的，必须作用在实例上才行，所以前面章节的例子里会出现<code>unbound method</code>这个错误提示。举个例子：</p>
+</code></pre><h2 id="13-Method-Objects"><a href="#13-Method-Objects" class="headerlink" title="13.Method Objects"></a>13.Method Objects</h2><p>在python中，方法(method)和函数(function)是不同的。方法应该特指在类中定义的，其特征就是在定义时必须带上一个参数<code>self</code>。这和其他语言隐式的处理<code>this</code>这个参数不同（两者作用一样）。python必须要显示的指定这个方法作用的对象，这样的好处是在调用时能够确保方法是绑定(bound)在作用对象上的。因此，类是不能凭空调用方法的，必须作用在实例上才行，所以前面章节的例子里会出现<code>unbound method</code>这个错误提示。举个例子：</p>
 <pre><code>&gt;&gt;&gt; class B:
 ...     def f(self):
 ...             return &quot;Hello Method&quot;
@@ -257,12 +258,12 @@ Sjoerd     ==&gt;       4127
 &gt;&gt;&gt; ff()
 3
 </code></pre><hr>
-<h3 id="2016-01-28_u4E8EUCSD"><a href="#2016-01-28_u4E8EUCSD" class="headerlink" title="2016.01.28于UCSD"></a>2016.01.28于UCSD</h3>
+<h3 id="2016-01-28于UCSD"><a href="#2016-01-28于UCSD" class="headerlink" title="2016.01.28于UCSD"></a>2016.01.28于UCSD</h3>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/01/28/pythonNotes2/" data-id="cir0ra2o2000hlihpjbss688k" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/01/28/pythonNotes2/" data-id="cir6hyvdg000cf6hp20bt4ddx" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/01/28/pythonNotes2/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/01/28/pythonNotes2/">评论</a>
@@ -462,12 +463,12 @@ window_bd_share_config={"common":{"bdSnsKey":{"tsina":"3687385740"},"bdWbuid":28
 <!--- Baidu Share End --->
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
-  </div>
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>

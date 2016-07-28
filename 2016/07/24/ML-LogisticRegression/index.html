@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   <meta property="wb:webmaster" content="0f4e330dfccdfaa4" />
   
   
@@ -32,7 +32,7 @@
 
 在处理以上这些二分类问题时，逻辑">
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png">
-<meta property="og:updated_time" content="2016-07-24T15:12:49.000Z">
+<meta property="og:updated_time" content="2016-07-28T16:27:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习算法-Logistic Regression">
 <meta name="twitter:description" content="作者：一个独行的程序员
@@ -44,6 +44,7 @@
 预测球赛的获胜队
 
 在处理以上这些二分类问题时，逻辑">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png">
   
     <link rel="alternative" href="/atom.xml" title="Code4Future" type="application/atom+xml">
   
@@ -52,12 +53,12 @@
   
   <!-link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <link href="http://fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 </head>
 <body>
-  <div id="container">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
     <div id="wrap">
       <header id="header">
   <div id="banner"></div>
@@ -143,7 +144,7 @@
       
         <p>作者：<a href="https://cn.linkedin.com/in/jingtianp" target="_blank" rel="external">一个独行的程序员</a></p>
 <p><em>逻辑回归（Logistic Regression）是一种简单的分类模型，由于其高效而又简单的特性，在实际中取得了非常广泛的应用。本文主要关注逻辑回归的应用场景和数学原理，并对其在多分类问题上的扩展做了简要介绍。</em></p>
-<h1 id="u903B_u8F91_u56DE_u5F52"><a href="#u903B_u8F91_u56DE_u5F52" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><h2 id="u95EE_u9898"><a href="#u95EE_u9898" class="headerlink" title="问题"></a>问题</h2><p>在实际生活中，我们常常会遇到很多“二选一”的问题。如：</p>
+<h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在实际生活中，我们常常会遇到很多“二选一”的问题。如：</p>
 <ul>
 <li>预测用户是否喜欢某推荐商品</li>
 <li>判断用户性别</li>
@@ -159,17 +160,18 @@
 <li>测试模型效果</li>
 </ul>
 <a id="more"></a>
-<p>在获得数据和标签后，我们就得到了n组训练数据，定义为：<br>$$<br>D = (x^1, y^1), (x^2, y^2),…,(x^n, y^n)<br>$$<br>其中，每组数据有m维特征，即：<br>$<br>x^i=[x_1^i,x_2^i,…,x_m^i]<br>$<br>，y的取值为[0,1](1为正例，0为负例)。</p>
-<h2 id="u6A21_u578B"><a href="#u6A21_u578B" class="headerlink" title="模型"></a>模型</h2><h3 id="Logistic_Function"><a href="#Logistic_Function" class="headerlink" title="Logistic Function"></a>Logistic Function</h3><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png" alt=""></p>
+<p>在获得数据和标签后，我们就得到了n组训练数据，定义为：<br>$$<br>D = (x^1, y^1), (x^2, y^2),…,(x^n, y^n)<br>$$<br>其中，每组数据有m维特征，即：$x^i=[x_1^i,x_2^i,…,x_m^i]$</p>
+<p>y的取值为[0,1](1为正例，0为负例)。</p>
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><h3 id="Logistic-Function"><a href="#Logistic-Function" class="headerlink" title="Logistic Function"></a>Logistic Function</h3><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png" alt=""></p>
 <p>$$<br>\sigma(t)=\frac{e^t}{1+e^t}=\frac{1}{1+e^{-t}}<br>$$</p>
 <p>令$t=\theta^T X=\sum\theta_i x_i$,其中，$x_0 = 1$。<br>$\theta$是一个n+1维的向量，也是我们模型训练的参数。</p>
-<h3 id="u4E3A_u4EC0_u4E48_u7528_u903B_u8F91_u56DE_u5F52"><a href="#u4E3A_u4EC0_u4E48_u7528_u903B_u8F91_u56DE_u5F52" class="headerlink" title="为什么用逻辑回归"></a>为什么用逻辑回归</h3><p>对于二分类问题，我们可以用t来描述数据本身的特征，即每个维度的值$x_i$和其对应的权重(即参数)$\theta_i$，同时考虑到向量的形式，我们将$x_0$设为1。</p>
+<h3 id="为什么用逻辑回归"><a href="#为什么用逻辑回归" class="headerlink" title="为什么用逻辑回归"></a>为什么用逻辑回归</h3><p>对于二分类问题，我们可以用t来描述数据本身的特征，即每个维度的值$x_i$和其对应的权重(即参数)$\theta_i$，同时考虑到向量的形式，我们将$x_0$设为1。</p>
 <p>在《机器学习实战》中LR的对应章节也有提到，我们其实是想通过数据和标签，构造出一个分类模型。那么如何尽可能利用所有维度特征和所有数据呢？</p>
-<p>我们将由事件特征到类别划属这个问题，映射到一个概率分布模型。即：<br>$$<br>y = \left{<br>\begin{aligned}<br>1,\, \sigma(\theta,X) &gt; 0.5 \<br>0,\, \sigma(\theta,X) &lt; 0.5<br>\end{aligned}<br>\right.<br>$$</p>
+<p>我们将由事件特征到类别划属这个问题，映射到一个概率分布模型。即：<br>$$<br>y =<br>\begin{cases}<br>1,\, \sigma(\theta,X) &gt; 0.5 \\<br>0,\, \sigma(\theta,X) &lt; 0.5 \\<br>\end{cases}<br>$$</p>
 <p>现在我们需要做的就是得到一个最优的$\theta$，使得模型预测准确率最高。</p>
-<h3 id="u68AF_u5EA6_u4E0B_u964D_u6CD5"><a href="#u68AF_u5EA6_u4E0B_u964D_u6CD5" class="headerlink" title="梯度下降法"></a>梯度下降法</h3><p>最常用的求解最优化问题的方法就是梯度下降法了，简单好懂，易于操作。其本质就是每次都朝着梯度的方向进行迭代，即：<br>$$<br>\vartriangle\theta_i = \partial\frac{\sigma(\theta,X)}{\partial\theta_i}<br>$$</p>
+<h3 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h3><p>最常用的求解最优化问题的方法就是梯度下降法了，简单好懂，易于操作。其本质就是每次都朝着梯度的方向进行迭代，即：<br>$$<br>\vartriangle\theta_i = \partial\frac{\sigma(\theta,X)}{\partial\theta_i}<br>$$</p>
 <p>因此，我们也就得到了参数$\theta$的迭代方程：<br>$$<br>\theta:=\theta+\alpha\vartriangle\theta<br>$$<br>其中，$\alpha$是每一步迭代的步长，即 learning rate.</p>
-<h2 id="u6269_u5C55"><a href="#u6269_u5C55" class="headerlink" title="扩展"></a>扩展</h2><h3 id="u591A_u5206_u7C7B_u95EE_u9898"><a href="#u591A_u5206_u7C7B_u95EE_u9898" class="headerlink" title="多分类问题"></a>多分类问题</h3><p>逻辑回归之所以好用，就在于它利用了函数图像的特性，刚好在y=0.5上下形成了两个概率相等的区间。如果将其用作多分类，则会有许多麻烦产生。</p>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><h3 id="多分类问题"><a href="#多分类问题" class="headerlink" title="多分类问题"></a>多分类问题</h3><p>逻辑回归之所以好用，就在于它利用了函数图像的特性，刚好在y=0.5上下形成了两个概率相等的区间。如果将其用作多分类，则会有许多麻烦产生。</p>
 <ul>
 <li>概率不再均等</li>
 <li>可解释性太差</li>
@@ -177,7 +179,7 @@
 </ul>
 <p>基于以上几点原因，前辈们想出了一个两全其美的办法。既能利用逻辑回归的简单形式，又能解决多分类的问题。</p>
 <h3 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h3><p><strong>Softmax可以看作是逻辑回归的多分类版本。</strong></p>
-<p>让我们再来回顾一下逻辑回归模型，其本质是利用了概率密度函数来解决分类问题，即：<br>$$<br>y^*=\left{<br>\begin{aligned}<br>1,\, p(y=1|\theta, X) &gt; 0.5 \<br>0,\, p(y=1|\theta, X) &lt; 0.5<br>\end{aligned}<br>\right.<br>$$</p>
+<p>让我们再来回顾一下逻辑回归模型，其本质是利用了概率密度函数来解决分类问题，即：<br>$$<br>y^*=<br>\begin{cases}<br>1,\, p(y=1|\theta, X) &gt; 0.5 \\<br>0,\, p(y=1|\theta, X) &lt; 0.5 \\<br>\end{cases}<br>$$</p>
 <p>那么，遵循这个思路，只要我们能够定义多分类场景下的条件概率就可以解决问题了。即<strong>multinomial logistic function</strong>，假设我们有K类：<br>$$<br>p(y=i|\theta,X) = \frac{e^{\theta_i^Tx}}{\sum_1^K e^{\theta_i^T x}}<br>$$<br>$$<br>y^*=argmax_i \, p(y=i|\theta,X)<br>$$</p>
 <p>需要注意的是，这里一共有K个$\theta$向量，对应了K个不同的类别，而每个$\theta$又有n+1个维度。</p>
 
@@ -185,7 +187,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/07/24/ML-LogisticRegression/" data-id="cir0ra2q8000xlihppg756wdm" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/07/24/ML-LogisticRegression/" data-id="cir6hyvcz0001f6hpmpnuf79y" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/07/24/ML-LogisticRegression/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/07/24/ML-LogisticRegression/">评论</a>
@@ -376,12 +378,29 @@ window_bd_share_config={"common":{"bdSnsKey":{"tsina":"3687385740"},"bdWbuid":28
 <!--- Baidu Share End --->
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
-  </div>
+  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>

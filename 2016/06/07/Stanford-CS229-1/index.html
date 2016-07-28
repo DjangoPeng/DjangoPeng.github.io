@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   <meta property="wb:webmaster" content="0f4e330dfccdfaa4" />
   
   
@@ -33,6 +33,7 @@ Supervised Learning监督学习(Supervised Learning)是机器学习中的一大�
 <meta name="twitter:title" content="Stanford CS229:Supervised Learning[1]">
 <meta name="twitter:description" content="作者：一个独行的程序员
 Supervised Learning监督学习(Supervised Learning)是机器学习中的一大类方法，其特点就是需要已经标注过的数据作为训练集，通过回归（Regression）等方法，得到一个误差最小的假设或估计。">
+<meta name="twitter:image" content="http://zjupjt.com/2016/06/07/Stanford-CS229-1/pic_9.png">
   
     <link rel="alternative" href="/atom.xml" title="Code4Future" type="application/atom+xml">
   
@@ -41,12 +42,12 @@ Supervised Learning监督学习(Supervised Learning)是机器学习中的一大�
   
   <!-link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <link href="http://fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 </head>
 <body>
-  <div id="container">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
     <div id="wrap">
       <header id="header">
   <div id="banner"></div>
@@ -131,10 +132,10 @@ Supervised Learning监督学习(Supervised Learning)是机器学习中的一大�
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
-<h2 id="Supervised_Learning"><a href="#Supervised_Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h2><p>监督学习(Supervised Learning)是机器学习中的一大类方法，其特点就是需要已经标注过的数据作为训练集，通过回归（Regression）等方法，得到一个误差最小的假设或估计。</p>
+<h2 id="Supervised-Learning"><a href="#Supervised-Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h2><p>监督学习(Supervised Learning)是机器学习中的一大类方法，其特点就是需要已经标注过的数据作为训练集，通过回归（Regression）等方法，得到一个误差最小的假设或估计。</p>
 <img src="/2016/06/07/Stanford-CS229-1/pic_9.png" alt="Supervised Learning" title="Supervised Learning">
 <a id="more"></a>
-<h2 id="Linear_Regression"><a href="#Linear_Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h2><p>最简单的回归模型就是线性回归，在正式讨论之前，先定义一些变量：</p>
+<h2 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h2><p>最简单的回归模型就是线性回归，在正式讨论之前，先定义一些变量：</p>
 <img src="/2016/06/07/Stanford-CS229-1/pic_10.png" alt="Basic Notation" title="Basic Notation">    
 <p>以预测房屋价格（y）为例，假设我们只考虑住房大小（x1）和卧室数量（x2）这2个特征，并且用线性回归进行拟合，则可以得到目标函数的形式如下： </p>
 <img src="/2016/06/07/Stanford-CS229-1/pic_0.png" alt="2-D Linear Regression" title="2-D Linear Regression">
@@ -146,7 +147,7 @@ Supervised Learning监督学习(Supervised Learning)是机器学习中的一大�
 <p>如何评估当前的h是最优的呢？<br>最简单、最常用的方法就是最小二乘法，非常好解释。它的原理就是累计预测值(h)和真实值(y)的差的平方：</p>
 <img src="/2016/06/07/Stanford-CS229-1/pic_2.png" alt="." title=".">
 <p>关于公式中为什么会有1/2，原因是在求最优值时，会对J求偏导，刚好指数为2，与前面系数一拍即合～</p>
-<h2 id="Gradient_Descent"><a href="#Gradient_Descent" class="headerlink" title="Gradient Descent"></a>Gradient Descent</h2><p>在有了J之后，可以用梯度下降法来求解最优值。显然，我们的目的是想使J尽可能趋近于0。如果通过计算机来进行迭代求解，对于第i个参数，迭代公式如下：</p>
+<h2 id="Gradient-Descent"><a href="#Gradient-Descent" class="headerlink" title="Gradient Descent"></a>Gradient Descent</h2><p>在有了J之后，可以用梯度下降法来求解最优值。显然，我们的目的是想使J尽可能趋近于0。如果通过计算机来进行迭代求解，对于第i个参数，迭代公式如下：</p>
 <img src="/2016/06/07/Stanford-CS229-1/pic_12.png" alt="m = 1" title="m = 1">
 <p>当然，实际情况m&gt;1，所以需要把所有训练样本都累加起来。</p>
 <img src="/2016/06/07/Stanford-CS229-1/pic_13.png" alt="m > 1" title="m > 1">
@@ -161,7 +162,7 @@ Supervised Learning监督学习(Supervised Learning)是机器学习中的一大�
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/06/07/Stanford-CS229-1/" data-id="cir0ra2oi000nlihppz5cov3v" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/06/07/Stanford-CS229-1/" data-id="cir6hyvd90005f6hpy9asu2tz" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/06/07/Stanford-CS229-1/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/06/07/Stanford-CS229-1/">评论</a>
@@ -361,12 +362,12 @@ window_bd_share_config={"common":{"bdSnsKey":{"tsina":"3687385740"},"bdWbuid":28
 <!--- Baidu Share End --->
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
-  </div>
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>

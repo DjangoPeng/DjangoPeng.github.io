@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   <meta property="wb:webmaster" content="0f4e330dfccdfaa4" />
   
   
@@ -26,6 +26,7 @@
 <meta name="twitter:description" content="作者：一个独行的程序员
 背景：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的tutorial
 1.[a:b)在使用list时，我们会常常使用左右区间的位置来赋值(range)或删除(del)其中的值。一定记住这个区间是一个左闭右开的区间；">
+<meta name="twitter:image" content="http://zjupjt.com/2016/01/28/pythonNotes1/img_0.png">
   
     <link rel="alternative" href="/atom.xml" title="Code4Future" type="application/atom+xml">
   
@@ -34,12 +35,12 @@
   
   <!-link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <link href="http://fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 </head>
 <body>
-  <div id="container">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
     <div id="wrap">
       <header id="header">
   <div id="banner"></div>
@@ -126,7 +127,7 @@
         <img src="/2016/01/28/pythonNotes1/img_0.png" alt="." title=".">
 <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
 <p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/" target="_blank" rel="external">tutorial</a></p>
-<h2 id="1-_5Ba_3Ab_29"><a href="#1-_5Ba_3Ab_29" class="headerlink" title="1.[a:b)"></a>1.[a:b)</h2><p>在使用list时，我们会常常使用左右区间的位置来赋值(range)或删除(del)其中的值。一定记住这个区间是一个<strong>左闭右开</strong>的区间；</p>
+<h2 id="1-a-b"><a href="#1-a-b" class="headerlink" title="1.[a:b)"></a>1.[a:b)</h2><p>在使用list时，我们会常常使用左右区间的位置来赋值(range)或删除(del)其中的值。一定记住这个区间是一个<strong>左闭右开</strong>的区间；</p>
 <a id="more"></a>
 <pre><code>&gt;&gt;&gt;a = range(1,6)
 &gt;&gt;&gt;a
@@ -135,7 +136,7 @@
 &gt;&gt;&gt;a
 [1,4,5]
 </code></pre><p>实际删除的是1，2号元素，所以剩下的是[1,4,5]</p>
-<h2 id="2-Lambda_u8868_u8FBE_u5F0F"><a href="#2-Lambda_u8868_u8FBE_u5F0F" class="headerlink" title="2.Lambda表达式"></a>2.Lambda表达式</h2><p>如果使用过<code>filter/map/reduce</code>这几个函数，就会知道lambda表达式真的在匿名函数的写法上非常省时省力，且便于阅读。举个例子：</p>
+<h2 id="2-Lambda表达式"><a href="#2-Lambda表达式" class="headerlink" title="2.Lambda表达式"></a>2.Lambda表达式</h2><p>如果使用过<code>filter/map/reduce</code>这几个函数，就会知道lambda表达式真的在匿名函数的写法上非常省时省力，且便于阅读。举个例子：</p>
 <pre><code>&gt;&gt;&gt; filter(lambda x : x % 2 == 0, range(10)) 
 [0, 2, 4, 6, 8]
 &gt;&gt;&gt; map(lambda x, y : x * y, range(1,4), range(1,4))
@@ -177,8 +178,8 @@ TypeError: &apos;tuple&apos; object does not support item assignment
 &apos;3&apos;
 </code></pre><p><strong>值得注意的是：左边的变量数量一定要与tuple中的元素数量一致！</strong></p>
 <p>“<em>Sequence unpacking requires the list of variables on the left to have the same number of elements as the length of the sequence.</em>“</p>
-<h2 id="5-Loop_techniques"><a href="#5-Loop_techniques" class="headerlink" title="5.Loop techniques"></a>5.Loop techniques</h2><p>python对于循环的支持非常好，内置了很多有用的函数，这里以<code>enumerate(), zip(), reversed(), sorted(),iteritems()</code>为例进行说明。</p>
-<h3 id="enumerate_28_29"><a href="#enumerate_28_29" class="headerlink" title="enumerate()"></a>enumerate()</h3><p>“<em>the position index and corresponding value can be retrieved at the same time using the enumerate() function.</em>“</p>
+<h2 id="5-Loop-techniques"><a href="#5-Loop-techniques" class="headerlink" title="5.Loop techniques"></a>5.Loop techniques</h2><p>python对于循环的支持非常好，内置了很多有用的函数，这里以<code>enumerate(), zip(), reversed(), sorted(),iteritems()</code>为例进行说明。</p>
+<h3 id="enumerate"><a href="#enumerate" class="headerlink" title="enumerate()"></a>enumerate()</h3><p>“<em>the position index and corresponding value can be retrieved at the same time using the enumerate() function.</em>“</p>
 <p>可以在循环时同时取得下标位置和对应值:</p>
 <pre><code>&gt;&gt;&gt; for i, v in enumerate([&apos;tic&apos;, &apos;tac&apos;, &apos;toe&apos;]):
 ...     print i, v
@@ -186,7 +187,7 @@ TypeError: &apos;tuple&apos; object does not support item assignment
 0 tic
 1 tac
 2 toe
-</code></pre><h3 id="zip_28_29"><a href="#zip_28_29" class="headerlink" title="zip()"></a>zip()</h3><p>“<em>To loop over two or more sequences at the same time, the entries can be paired with the zip() function.</em>“</p>
+</code></pre><h3 id="zip"><a href="#zip" class="headerlink" title="zip()"></a>zip()</h3><p>“<em>To loop over two or more sequences at the same time, the entries can be paired with the zip() function.</em>“</p>
 <p>在循环中如果有两个几以上的队列时，可以通过zip函数进行对应的匹配:</p>
 <pre><code>&gt;&gt;&gt; questions = [&apos;name&apos;, &apos;quest&apos;, &apos;favorite color&apos;]
 &gt;&gt;&gt; answers = [&apos;lancelot&apos;, &apos;the holy grail&apos;, &apos;blue&apos;]
@@ -196,7 +197,7 @@ TypeError: &apos;tuple&apos; object does not support item assignment
 What is your name?  It is lancelot.
 What is your quest?  It is the holy grail.
 What is your favorite color?  It is blue.
-</code></pre><h3 id="reversed_28_29"><a href="#reversed_28_29" class="headerlink" title="reversed()"></a>reversed()</h3><p>“<em>To loop over a sequence in reverse, first specify the sequence in a forward direction and then call the reversed()function.</em>“</p>
+</code></pre><h3 id="reversed"><a href="#reversed" class="headerlink" title="reversed()"></a>reversed()</h3><p>“<em>To loop over a sequence in reverse, first specify the sequence in a forward direction and then call the reversed()function.</em>“</p>
 <p>倒序输出结果:</p>
 <pre><code>&gt;&gt;&gt; for i in reversed(xrange(1,10,2)):
 ...     print i
@@ -206,7 +207,7 @@ What is your favorite color?  It is blue.
 5
 3
 1
-</code></pre><h3 id="sorted_28_29"><a href="#sorted_28_29" class="headerlink" title="sorted()"></a>sorted()</h3><p>“<em>To loop over a sequence in sorted order, use the sorted() function which returns a new sorted list while leaving the source unaltered.</em>“</p>
+</code></pre><h3 id="sorted"><a href="#sorted" class="headerlink" title="sorted()"></a>sorted()</h3><p>“<em>To loop over a sequence in sorted order, use the sorted() function which returns a new sorted list while leaving the source unaltered.</em>“</p>
 <p>遍历后返回一个有序队列，并且不修改原队列:</p>
 <pre><code>&gt;&gt;&gt; basket = [&apos;apple&apos;, &apos;orange&apos;, &apos;apple&apos;, &apos;pear&apos;, &apos;orange&apos;, &apos;banana&apos;]
 &gt;&gt;&gt; for f in sorted(set(basket)):
@@ -216,7 +217,7 @@ apple
 banana
 orange
 pear
-</code></pre><h3 id="iteritems_28_29"><a href="#iteritems_28_29" class="headerlink" title="iteritems()"></a>iteritems()</h3><p>“<em>When looping through dictionaries, the key and corresponding value can be retrieved at the same time using the iteritems() method.</em>“</p>
+</code></pre><h3 id="iteritems"><a href="#iteritems" class="headerlink" title="iteritems()"></a>iteritems()</h3><p>“<em>When looping through dictionaries, the key and corresponding value can be retrieved at the same time using the iteritems() method.</em>“</p>
 <p>当遍历dictionaries时，可以通过iteritems()来分别获取key和value:</p>
 <pre><code>&gt;&gt;&gt; knights = {&apos;gallahad&apos;: &apos;the pure&apos;, &apos;robin&apos;: &apos;the brave&apos;}
 &gt;&gt;&gt; for k, v in knights.iteritems():
@@ -299,12 +300,12 @@ robin the brave
 <p>“<em>Contrarily, when using syntax like <code>import item.subitem.subsubitem</code>, each <code>item</code> except for the last must be a package; the last <code>item</code> can be a module or a package but can’t be a class or function or variable defined in the previous item.</em>“</p>
 <p>相反，如果使用<code>item.subitem.subsubitem</code>这样的语法结构时，除了最后一个<code>item</code>可以是module或者package以外，上级（前缀）的所有<code>item</code>必须且只能是package，请谨记！</p>
 <hr>
-<h3 id="2016-01-28_u4E8EUCSD"><a href="#2016-01-28_u4E8EUCSD" class="headerlink" title="2016.01.28于UCSD"></a>2016.01.28于UCSD</h3>
+<h3 id="2016-01-28于UCSD"><a href="#2016-01-28于UCSD" class="headerlink" title="2016.01.28于UCSD"></a>2016.01.28于UCSD</h3>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/01/28/pythonNotes1/" data-id="cir0ra2o9000klihp17b0edr3" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/01/28/pythonNotes1/" data-id="cir6hyvdc0007f6hp9fgfk12q" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/01/28/pythonNotes1/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/01/28/pythonNotes1/">评论</a>
@@ -499,12 +500,12 @@ window_bd_share_config={"common":{"bdSnsKey":{"tsina":"3687385740"},"bdWbuid":28
 <!--- Baidu Share End --->
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
-  </div>
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
