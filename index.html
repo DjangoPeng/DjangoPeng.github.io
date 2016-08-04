@@ -88,6 +88,69 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Activation-Function" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/04/Activation-Function/">神经网络中的激活函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/08/04/Activation-Function/" class="article-date">
+  <time datetime="2016-08-04T15:16:18.000Z" itemprop="datePublished">2016-8-4 Thu  23:16</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
+  </div>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作者：<a href="https://cn.linkedin.com/in/jingtianp" target="_blank" rel="external">一个独行的程序员</a></p>
+<p><em>在训练神经网络的参数时，我们通常会使用一些激活函数（Activation Function）来引入非线性因素，解决一些线性不可分的问题。这篇文章主要介绍几种常用的激活函数。</em></p>
+<h1 id="1-Sigmoid"><a href="#1-Sigmoid" class="headerlink" title="1.Sigmoid"></a>1.Sigmoid</h1><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png" alt="sigmoid"></p>
+<p>最早使用的激活函数，形式简单，且微分形式便于计算：</p>
+<p>$$<br>f(x)=\frac{1}{1+e^{-x}}<br>$$</p>
+<p>$$<br>f^{‘}(x)=f(x)(1-f(x))<br>$$</p>
+<h1 id="2-tanh"><a href="#2-tanh" class="headerlink" title="2.tanh"></a>2.tanh</h1><img src="/2016/08/04/Activation-Function/Tanh.png" alt="tanh" title="tanh">
+<p>sigmoid的一种变体，将1的值域从［0，1］扩展到了［－1，1］，又称为双极性sigmoid函数</p>
+<p>$$<br>t(x)=\frac{1-e^{-x}}{1+e^{-x}}\ =\ 2f(x)-1<br>$$<br>$$<br>t^{‘}(x)=1-t(x)^2<br>$$</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://zjupjt.com/2016/08/04/Activation-Function/" data-id="cirgho1pq0000frhp9uy2u5cx" class="article-share-link">分享</a>
+      
+      
+        <a href="http://zjupjt.com/2016/08/04/Activation-Function/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/08/04/Activation-Function/">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maching-Learning/">Maching Learning</a></li></ul>
+
+    </footer>
+
+      
+      
+  </div>
+  
+
+
+  
+
+
+
+</article>
+
+  
     <article id="post-ML-LogisticRegression" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -132,7 +195,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/07/24/ML-LogisticRegression/" data-id="cirgfss7s00019shpz2a4t53o" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/07/24/ML-LogisticRegression/" data-id="cirgho1qc0007frhpcumq9ylz" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/07/24/ML-LogisticRegression/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/07/24/ML-LogisticRegression/">评论</a>
@@ -194,7 +257,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/" data-id="cirgfss7n00009shpn9fgkl5k" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/" data-id="cirgho1pv0001frhpjfx9er42" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/06/28/Singular-Vector-Decomposition-SVD/">评论</a>
@@ -255,7 +318,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/06/07/Stanford-CS229-1/" data-id="cirgfss8000049shppp3h4zfm" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/06/07/Stanford-CS229-1/" data-id="cirgho1qa0005frhpozm6inb6" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/06/07/Stanford-CS229-1/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/06/07/Stanford-CS229-1/">评论</a>
@@ -321,7 +384,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/06/02/Hexo-Tutorial/" data-id="cirgfss8500059shpbnbflhsc" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/06/02/Hexo-Tutorial/" data-id="cirgho1q30004frhpo6assgrk" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/06/02/Hexo-Tutorial/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/06/02/Hexo-Tutorial/">评论</a>
@@ -382,7 +445,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/02/15/tf-idf/" data-id="cirgfss8r000f9shp3ivs90yy" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/02/15/tf-idf/" data-id="cirgho1qu000jfrhps0okrqks" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/02/15/tf-idf/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/02/15/tf-idf/">评论</a>
@@ -444,7 +507,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/02/02/pythonNotes3/" data-id="cirgfss8h000b9shp7dplpzti" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/02/02/pythonNotes3/" data-id="cirgho1qk000bfrhpiwut2f11" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/02/02/pythonNotes3/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/02/02/pythonNotes3/">评论</a>
@@ -506,7 +569,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/01/28/pythonNotes2/" data-id="cirgfss8f00099shpt7d1oed8" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/01/28/pythonNotes2/" data-id="cirgho1qr000gfrhpzah1322d" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/01/28/pythonNotes2/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/01/28/pythonNotes2/">评论</a>
@@ -568,7 +631,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/01/28/pythonNotes1/" data-id="cirgfss8c00079shprzhkb7mp" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/01/28/pythonNotes1/" data-id="cirgho1qh0009frhp79ohenx7" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/01/28/pythonNotes1/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/01/28/pythonNotes1/">评论</a>
@@ -610,7 +673,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Mining/">Data Mining</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">3</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Mining/">Data Mining</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -619,7 +682,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Classification/" style="font-size: 10px;">Classification</a> <a href="/tags/Data-Mining/" style="font-size: 10px;">Data Mining</a> <a href="/tags/Information-Retrieval/" style="font-size: 10px;">Information Retrieval</a> <a href="/tags/Machine-Learning/" style="font-size: 20px;">Machine Learning</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Text-Minging/" style="font-size: 10px;">Text Minging</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a>
+      <a href="/tags/Classification/" style="font-size: 10px;">Classification</a> <a href="/tags/Data-Mining/" style="font-size: 10px;">Data Mining</a> <a href="/tags/Deep-Learning/" style="font-size: 10px;">Deep Learning</a> <a href="/tags/Information-Retrieval/" style="font-size: 10px;">Information Retrieval</a> <a href="/tags/Machine-Learning/" style="font-size: 20px;">Machine Learning</a> <a href="/tags/Maching-Learning/" style="font-size: 10px;">Maching Learning</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Text-Minging/" style="font-size: 10px;">Text Minging</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a>
     </div>
   </div>
 
@@ -628,7 +691,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -638,6 +701,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/08/04/Activation-Function/">神经网络中的激活函数</a>
+          </li>
         
           <li>
             <a href="/2016/07/24/ML-LogisticRegression/">机器学习算法-Logistic Regression</a>
@@ -653,10 +720,6 @@
         
           <li>
             <a href="/2016/06/02/Hexo-Tutorial/">Hexo Tutorial</a>
-          </li>
-        
-          <li>
-            <a href="/2016/02/15/tf-idf/">TF-IDF的原理与应用</a>
           </li>
         
       </ul>

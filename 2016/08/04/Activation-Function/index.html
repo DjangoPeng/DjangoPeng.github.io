@@ -7,14 +7,42 @@
   
   <meta name="keywords" content="python, data mining, machine learning">
   
-  <title>Archives: 2016/1 | Code4Future</title>
+  <title>神经网络中的激活函数 | Code4Future</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Code4Future">
-<meta property="og:url" content="http://zjupjt.com/archives/2016/01/index.html">
+  <meta name="description" content="作者：一个独行的程序员
+在训练神经网络的参数时，我们通常会使用一些激活函数（Activation Function）来引入非线性因素，解决一些线性不可分的问题。这篇文章主要介绍几种常用的激活函数。
+1.Sigmoid
+最早使用的激活函数，形式简单，且微分形式便于计算：
+$$f(x)=\frac{1}{1+e^{-x}}$$
+$$f^{‘}(x)=f(x)(1-f(x))$$
+2.tanh
+sigm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="神经网络中的激活函数">
+<meta property="og:url" content="http://zjupjt.com/2016/08/04/Activation-Function/index.html">
 <meta property="og:site_name" content="Code4Future">
+<meta property="og:description" content="作者：一个独行的程序员
+在训练神经网络的参数时，我们通常会使用一些激活函数（Activation Function）来引入非线性因素，解决一些线性不可分的问题。这篇文章主要介绍几种常用的激活函数。
+1.Sigmoid
+最早使用的激活函数，形式简单，且微分形式便于计算：
+$$f(x)=\frac{1}{1+e^{-x}}$$
+$$f^{‘}(x)=f(x)(1-f(x))$$
+2.tanh
+sigm">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png">
+<meta property="og:image" content="http://zjupjt.com/2016/08/04/Activation-Function/Tanh.png">
+<meta property="og:updated_time" content="2016-08-04T15:46:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Code4Future">
+<meta name="twitter:title" content="神经网络中的激活函数">
+<meta name="twitter:description" content="作者：一个独行的程序员
+在训练神经网络的参数时，我们通常会使用一些激活函数（Activation Function）来引入非线性因素，解决一些线性不可分的问题。这篇文章主要介绍几种常用的激活函数。
+1.Sigmoid
+最早使用的激活函数，形式简单，且微分形式便于计算：
+$$f(x)=\frac{1}{1+e^{-x}}$$
+$$f^{‘}(x)=f(x)(1-f(x))$$
+2.tanh
+sigm">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png">
   
     <link rel="alternative" href="/atom.xml" title="Code4Future" type="application/atom+xml">
   
@@ -86,58 +114,98 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
+        <section id="main"><article id="post-Activation-Function" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/28/pythonNotes2/" class="archive-article-date">
-  <time datetime="2016-01-28T08:29:32.000Z" itemprop="datePublished">Jan 28</time>
-</a>
-      
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/28/pythonNotes2/">python读书笔记：细节决定成败(2)</a>
+    <h1 class="article-title" itemprop="name">
+      神经网络中的激活函数
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/28/pythonNotes1/" class="archive-article-date">
-  <time datetime="2016-01-28T07:04:53.000Z" itemprop="datePublished">Jan 28</time>
+    <div class="article-meta">
+      <a href="/2016/08/04/Activation-Function/" class="article-date">
+  <time datetime="2016-08-04T15:16:18.000Z" itemprop="datePublished">2016-8-4 Thu  23:16</time>
 </a>
       
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
+  </div>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作者：<a href="https://cn.linkedin.com/in/jingtianp" target="_blank" rel="external">一个独行的程序员</a></p>
+<p><em>在训练神经网络的参数时，我们通常会使用一些激活函数（Activation Function）来引入非线性因素，解决一些线性不可分的问题。这篇文章主要介绍几种常用的激活函数。</em></p>
+<h1 id="1-Sigmoid"><a href="#1-Sigmoid" class="headerlink" title="1.Sigmoid"></a>1.Sigmoid</h1><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png" alt="sigmoid"></p>
+<p>最早使用的激活函数，形式简单，且微分形式便于计算：</p>
+<p>$$<br>f(x)=\frac{1}{1+e^{-x}}<br>$$</p>
+<p>$$<br>f^{‘}(x)=f(x)(1-f(x))<br>$$</p>
+<h1 id="2-tanh"><a href="#2-tanh" class="headerlink" title="2.tanh"></a>2.tanh</h1><img src="/2016/08/04/Activation-Function/Tanh.png" alt="tanh" title="tanh">
+<p>sigmoid的一种变体，将1的值域从［0，1］扩展到了［－1，1］，又称为双极性sigmoid函数</p>
+<p>$$<br>t(x)=\frac{1-e^{-x}}{1+e^{-x}}\ =\ 2f(x)-1<br>$$<br>$$<br>t^{‘}(x)=1-t(x)^2<br>$$</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://zjupjt.com/2016/08/04/Activation-Function/" data-id="cirgho1pq0000frhp9uy2u5cx" class="article-share-link">分享</a>
+      
+      
+        <a href="http://zjupjt.com/2016/08/04/Activation-Function/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/08/04/Activation-Function/">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maching-Learning/">Maching Learning</a></li></ul>
+
+    </footer>
+
+      
+      
+  </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/28/pythonNotes1/">python读书笔记：细节决定成败(1)</a>
-    </h1>
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/07/24/ML-LogisticRegression/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">机器学习算法-Logistic Regression</div>
+    </a>
+  
+</nav>
+
   
 
-    </header>
-  </div>
+
+  
+    <section id="comments">
+    <!-- 多说评论框 start -->
+      <div id="ds-thread" class="ds-thread" data-thread-key="2016/08/04/Activation-Function/" data-title="神经网络中的激活函数" data-url="http://zjupjt.com/2016/08/04/Activation-Function/"></div>
+    <!-- 多说评论框 end --> 
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"code4future"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+    </section>
+  
+
+
+
 </article>
-  
-  
-    </div></section>
-  
 </section>
         
           <aside id="sidebar">
@@ -283,6 +351,23 @@ window_bd_share_config={"common":{"bdSnsKey":{"tsina":"3687385740"},"bdWbuid":28
 
 <script src="/js/script.js"></script>
 
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>
