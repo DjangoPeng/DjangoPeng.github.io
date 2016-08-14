@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta property="wb:webmaster" content="0f4e330dfccdfaa4" />
+  
+  
+  <meta name="keywords" content="python, data mining, machine learning">
+  
+  <title>神经网络模型 | Code4Future</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="作者：一个独行的程序员
+神经网络中决定一个模型好坏的因素就是参数W，b，而后向传播过程就是通过计算Loss相对w或b的偏导数来不断更新参数的过程。本文简要介绍神经网络模型，详细的解释了后向传播原理。
+神经网络模型在机器学习和认知科学领域，人工神经网络（artificial neural network，缩写ANN），简称神经网络（neural network，缩写NN）是一种模仿生物神经网络(动物">
+<meta property="og:type" content="article">
+<meta property="og:title" content="神经网络模型">
+<meta property="og:url" content="http://zjupjt.com/2016/08/13/nn-fp-bp/index.html">
+<meta property="og:site_name" content="Code4Future">
+<meta property="og:description" content="作者：一个独行的程序员
+神经网络中决定一个模型好坏的因素就是参数W，b，而后向传播过程就是通过计算Loss相对w或b的偏导数来不断更新参数的过程。本文简要介绍神经网络模型，详细的解释了后向传播原理。
+神经网络模型在机器学习和认知科学领域，人工神经网络（artificial neural network，缩写ANN），简称神经网络（neural network，缩写NN）是一种模仿生物神经网络(动物">
+<meta property="og:image" content="http://zjupjt.com/2016/08/13/nn-fp-bp/nn0.png">
+<meta property="og:image" content="http://zjupjt.com/2016/08/13/nn-fp-bp/nn1.png">
+<meta property="og:updated_time" content="2016-08-14T09:18:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="神经网络模型">
+<meta name="twitter:description" content="作者：一个独行的程序员
+神经网络中决定一个模型好坏的因素就是参数W，b，而后向传播过程就是通过计算Loss相对w或b的偏导数来不断更新参数的过程。本文简要介绍神经网络模型，详细的解释了后向传播原理。
+神经网络模型在机器学习和认知科学领域，人工神经网络（artificial neural network，缩写ANN），简称神经网络（neural network，缩写NN）是一种模仿生物神经网络(动物">
+<meta name="twitter:image" content="http://zjupjt.com/2016/08/13/nn-fp-bp/nn0.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Code4Future" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <!-link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link href="http://fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+</head>
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Code4Future</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I am a slow walker, but I never walk back.</a>
+        </h2>
+      
+    </div>
+
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/sitemap.xml">Map</a>
+        
+      </nav>    
+
+      <nav id="sub-nav">
+        
+        <a class="nav-icon" href="https://cn.linkedin.com/in/jingtianP" title="LinkedIn" target="_blank">&#61665;</a>
+        <a class="nav-icon" href="https://github.com/DjangoPeng" title="GitHub" target="_blank">&#61595;</a>
+        <a class="nav-icon" href="http://weibo.com/2806951572" title="weibo" target="_blank">&#61834;</a>
+        <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://zjupjt.com"></form>
+      </div>
+
+      <script type="text/javascript">
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','Qxi4BvHzoYsUfYh7oiD_','2.0.0');
+      </script>
+      
+    </div>
+    <div>
+        
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-nn-fp-bp" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      神经网络模型
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/08/13/nn-fp-bp/" class="article-date">
+  <time datetime="2016-08-13T14:54:48.000Z" itemprop="datePublished">2016-8-13 Sat  22:54</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
+  </div>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作者：<a href="https://cn.linkedin.com/in/jingtianp" target="_blank" rel="external">一个独行的程序员</a></p>
+<p><em>神经网络中决定一个模型好坏的因素就是参数<strong>W，b</strong>，而后向传播过程就是通过计算Loss相对w或b的偏导数来不断更新参数的过程。本文简要介绍神经网络模型，详细的解释了<strong>后向传播原理</strong>。</em></p>
+<h2 id="神经网络模型"><a href="#神经网络模型" class="headerlink" title="神经网络模型"></a>神经网络模型</h2><p>在机器学习和认知科学领域，人工神经网络（artificial neural network，缩写ANN），简称神经网络（neural network，缩写NN）是一种模仿生物神经网络(动物的中枢神经系统，特别是大脑)的结构和功能的数学模型或计算模型，用于对函数进行估计或近似。神经网络由大量的人工神经元联结进行计算。现代神经网络是一种非线性统计性数据建模工具。</p>
+<a id="more"></a>
+<p>典型的神经网络具有以下两个部分：</p>
+<p><strong>网络结构</strong>：指定了网络中的变量和它们的拓扑关系。</p>
+<p><strong>激活函数</strong>：大部分神经网络模型具有一个短时间尺度的动力学规则，来定义神经元如何根据其他神经元的活动来改变自己的激励值。一般激励函数依赖于网络中的权重（即该网络的参数）。</p>
+<p>和其他机器学习方法一样，神经网络已经被用于解决各种各样的问题，例如机器视觉和语音识别。这些问题都是很难被传统基于规则的编程所解决的。</p>
+<h3 id="神经元"><a href="#神经元" class="headerlink" title="神经元"></a>神经元</h3><img src="/2016/08/13/nn-fp-bp/nn0.png" alt="神经元" title="神经元">
+<ul>
+<li>a1~an为各神经元的输出</li>
+<li>w1~wn为神经元各个突触的权值</li>
+<li>b为偏置</li>
+<li>f为激活函数，通常为非线性函数。一般有sigmoid, tanh, Relu</li>
+<li>t为神经元输出</li>
+</ul>
+<p>向量表示：</p>
+<ul>
+<li>$t=f(WA^T+b)$</li>
+<li>$W$为权重向量</li>
+<li>$A$为输入向量，$A^T$为输入向量的转置</li>
+<li>$b$为偏置</li>
+<li>$f$为激活函数</li>
+</ul>
+<p>可见，一个神经元的功能是求得输入向量与权向量的内积后，经一个非线性传递函数得到一个标量结果。</p>
+<p>单个神经元的作用：把一个n维向量空间用一个超平面分割成两部分（称之为判断边界），给定一个输入向量，神经元可以判断出这个向量位于超平面的哪一边。</p>
+<h3 id="神经网络模型-1"><a href="#神经网络模型-1" class="headerlink" title="神经网络模型"></a>神经网络模型</h3><p>神经网络就是多层神经元的连接，上一层的神经元输出，作为下一层神经元的输入，下图是一个3层的神经网络，1个输入层，1个隐层和1个输出层：</p>
+<img src="/2016/08/13/nn-fp-bp/nn1.png" alt="3层神经网络" title="3层神经网络">
+<p>符号定义：</p>
+<ul>
+<li>$a^{(l)}_{i}$为第$l$层的第$i$个神经元的输出 </li>
+<li>$w^{(l)}_{ij}$为第$l$层第$j$个神经元到第$l+1$层第$i$个神经元的权重</li>
+<li>$b^{(l)}_i$为第$l$层第$i$个神经元的偏置</li>
+<li>向量$(\vec{W},\vec{B})=(w^{(l)}, b^{(l)}),\ l=1,…,L,\ L为网络层数，w和b为模型参数$</li>
+</ul>
+<h3 id="前向传播"><a href="#前向传播" class="headerlink" title="前向传播"></a>前向传播</h3><p><em>这个概念比较简单，就是在给定模型参数$W和B$的情况下，通过输入数据$X$，得到输出值$H$的一个过程。一般我们通过前向传播的输出$H$与真实值$Y$之间的差来后向传播训练参数。在参数确定后，便可以使用前向传播来进行预测了</em></p>
+<p>当$l=1时，令a^{(1)}_{i}=x_i$,下面以3层网络为例解释前向传播的计算过程：</p>
+<p>$$<br>a_{1}^{(2)} = f(w_{11}^{(1)}x_1 + w_{12}^{(1)}x_2 + w_{13}^{(1)}x_3 + b_{1}^{(1)})<br>$$</p>
+<p>$$<br>a^{(2)}_2 = f(w^{(1)}_{21}x_1+w^{(1)}_{22}x_2+w^{(1)}_{23}x_3 + b^{(1)}_{2})<br>$$</p>
+<p>$$<br>a^{(2)}_3 = f(w^{(1)}_{31}x_1+w^{(1)}_{32}x_2+w^{(1)}_{33}x_3 + b^{(1)}_{3})<br>$$</p>
+<p>$$<br>h_{w,b}(x) = a^{(3)}_3 = f(w^{(2)}_{11}a^{(2)}_1+w^{(2)}_{12}a^{(2)}_2+w^{(2)}_{13}a^{(2)}_3 + b^{(2)}_{1})<br>$$</p>
+<p>这样的形式看起来未免太过繁复，所以我们可以使用向量的形式来描述这个计算过程，令$z^{(l)}_i$表示第$l$层第$i$个节点的输入加权和，则有：</p>
+<p>$$<br>z^{(l)}_i=\sum_{j=1}^n{w^{(l-1)}a^{(l-1)}+b^{(l-1)}}<br>$$</p>
+<p>$$<br>a_i^{(l)}=f(z_i^{(l)}),\quad  i=1,…,n<br>$$</p>
+<p>于是，3层网络的输出表达式为</p>
+<p>$$<br>h_{w,b}(x)=a^{(3)}=f(z^{(3)})<br>$$</p>
+<h3 id="后向传播"><a href="#后向传播" class="headerlink" title="后向传播"></a>后向传播</h3><p>后向传播是利用$h与y$的差，反过来调整网络模型中的隐层参数$w和b$。本文以sigmoid函数作为激励函数，进行反向传播原理说明。</p>
+<p>符号定义：</p>
+<ul>
+<li>$\sigma(x)=\frac{1}{1+e^{-x}},\ sigmoid函数$</li>
+<li>$    \sigma^{‘}(x)=\sigma(x)(1-\sigma(x)),\ 易证$</li>
+</ul>
+<h4 id="权重调整"><a href="#权重调整" class="headerlink" title="权重调整"></a>权重调整</h4><p>假设输出层的节点数为K，一共$L$层网络，则有以下定义：</p>
+<p>损失函数<br>$$<br>E = \frac{1}{2}\sum_{k\in{K}}(h_k-Y_k)^2<br>$$<br>这里需要注意的是，原理上我们应该用整个训练集的所有数据来计算E。但是实际操作时，由于计算量太大，我们往往就只用1个数据点来进行参数调整（梯度更新），这也就是所谓的SGD（Stochastic Gradient Descent），关于这部分内容，参考<a href="http://zjupjt.com/2016/06/07/Stanford-CS229-1/">这篇文章</a>。</p>
+<p>训练的目标：最小化误差，即求损失函数对参数的偏导数。</p>
+<p>不失一般性，不妨考虑最后一隐层第$j$个神经元的参数$w^{(L-1)}_{kj}$，则有：</p>
+<p>$$<br>\frac{\partial{E}}{\partial{w^{(L-1)}_{kj}}}=\frac{\partial}{\partial{w^{(L-1)}_{kj}}}\frac{1}{2}\sum_{k\in{K}}(h_k-Y_k)^2<br>$$</p>
+<p>由于参数$w^{(L-1)}_{kj}$只影响第k个输出，所以输出层的其它偏导数为0，且$Y$与参数并不相关，即：</p>
+<p>$$<br>\frac{\partial}{\partial {w_{kj}^{(L-1)}} } \frac{1}{2} \sum_{k\in{K}} (h_k-Y_k)^2 = \frac{\partial}{\partial{w_{kj}^{(L)}}} \frac{1}{2} (h_k-Y_k)^2 \  ＝\ (h_k-Y_k) \frac{\partial}{\partial{w_k^{(L)}}} h_k<br>$$</p>
+<p>根据上文定义有：</p>
+<p>$$<br>h_k=a_k^{(L)}=\sigma{(z_k^{(L)})}<br>$$</p>
+<p>代入上式得：<br>$$<br>\frac{\partial{E}}{\partial{w^{(L-1)}_{kj}}}＝(h_k-Y_k) \sigma{(z_k^{(L)})} (1-\sigma{(z_k^{(L)})}) \frac{\partial{(z_k^{(L)})}}{\partial{w_{kj}^{(L-1)}}}<br>$$<br>同理，由于求$w^{(L-1)}_{kj}$的偏导数，所以只与第$j$个输入有关，其他的参数偏导数为0。</p>
+<p>即：<br>$$<br>\frac{\partial{(z_k^{(L)})}}{\partial{w_{kj}^{(L-1)}}} = \sum_{j\in n} \frac {\partial{ ({w_{kj}^{(L-1)} a_j^{(L-1)} + b^{(L-1)}} )} } {\partial{w^{(L-1)}_{kj}}} = \frac{\partial{(w_{kj}^{(L-1)} a_j^{(L-1)})}}{\partial{w_{kj}^{(L-1)}}}<br>$$</p>
+<p>由于$w_{kj}^{(L-1)}和a_j^{(L-1)}$并不相关，所以互为常数，求偏导就变得很简单了。<br>即：</p>
+<p>$$<br>\frac{\partial{(w_{kj}^{(L-1)} a_j^{(L-1)})}}{\partial{w_{kj}^{(L-1)}}} ＝ a_j^{(L-1)}<br>$$</p>
+<p>综上各式：</p>
+<p>$$<br>\frac {\partial{E}} {\partial{ w_{kj}^{(L-1)} }} = (h_k-Y_k) \sigma{(z_k^{(L)})} (1-\sigma{(z_k^{(L)})}) a_j^{(L-1)} = (h_k-Y_k) a_k^{(L)} (1-a_k^{(L)}) a_j^{(L-1)}<br>$$</p>
+<p>为了形式更简洁，我们定义：</p>
+<p>$$<br>\delta_k^{(L)}=(h_k-Y_k) a_k^{(L)} (1-a_k^{(L)})<br>$$<br>则有：</p>
+<p>$$<br>\frac {\partial{E}} {\partial{ w_{kj}^{(L-1)} }} = \delta_k^{(L)} a_j^{(L-1)}<br>$$<br>至此，已经理清了从输出层到最后一层隐层间的参数更新过程！往更前层隐层的更新与这个过程类似，就不再赘述。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://zjupjt.com/2016/08/13/nn-fp-bp/" data-id="cirtg2nsk0007pshpnox2yam2" class="article-share-link">分享</a>
+      
+      
+        <a href="http://zjupjt.com/2016/08/13/nn-fp-bp/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/08/13/nn-fp-bp/">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Neural-Network/">Neural Network</a></li></ul>
+
+    </footer>
+
+      
+      
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/04/nn-Activation-Function/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">神经网络-激活函数</div>
+    </a>
+  
+</nav>
+
+  
+
+
+  
+    <section id="comments">
+    <!-- 多说评论框 start -->
+      <div id="ds-thread" class="ds-thread" data-thread-key="2016/08/13/nn-fp-bp/" data-title="神经网络模型" data-url="http://zjupjt.com/2016/08/13/nn-fp-bp/"></div>
+    <!-- 多说评论框 end --> 
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"code4future"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+    </section>
+  
+
+
+
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+	<h3 class="widget-title">About Me</h3>
+	<div class="widget">
+	  <!-img src="http://pic.4j4j.cn/upload/pic/20130221/c53f922687.jpg" height="80px" width="80px">
+	  <p><b>	Jingtian Peng</b></br></>
+	  <p align="right"><i> -- A Single Coder </i></>
+	</div>
+</div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Mining/">Data Mining</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Classification/" style="font-size: 10px;">Classification</a> <a href="/tags/Data-Mining/" style="font-size: 10px;">Data Mining</a> <a href="/tags/Deep-Learning/" style="font-size: 13.33px;">Deep Learning</a> <a href="/tags/Information-Retrieval/" style="font-size: 10px;">Information Retrieval</a> <a href="/tags/Machine-Learning/" style="font-size: 20px;">Machine Learning</a> <a href="/tags/Maching-Learning/" style="font-size: 10px;">Maching Learning</a> <a href="/tags/Neural-Network/" style="font-size: 13.33px;">Neural Network</a> <a href="/tags/Python/" style="font-size: 16.67px;">Python</a> <a href="/tags/Text-Minging/" style="font-size: 10px;">Text Minging</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/13/nn-fp-bp/">神经网络模型</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/04/nn-Activation-Function/">神经网络-激活函数</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/24/ML-LogisticRegression/">机器学习算法-Logistic Regression</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/28/Singular-Vector-Decomposition-SVD/">Singular Vector Decomposition(SVD)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/07/Stanford-CS229-1/">Stanford CS229:Supervised Learning[1]</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+	<div class="outer">
+	    <div id="footer-info" class="inner" style="text-align:center;">
+		  <table width="100%" border="0">
+	        <tr>
+	          <td style="text-align:left">
+	            Copyright &copy; 2015-2016 Jingtian Peng &nbsp; &nbsp;
+	            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a><br>
+			  </td>
+			  <td style="text-align:right">
+			    <div style="font-family: FontAwesome;font-size: 20px;">
+			    <a href="http://weibo.com/2806951572" title="weibo" target="_blank">&#61834;</a>&nbsp;
+				<a href="https://cn.linkedin.com/in/jingtianP" title="LinkedIn" target="_blank">&#61665;</a>&nbsp;
+				<a href="https://github.com/DjangoPeng" title="GitHub" target="_blank">&#61595;</a>&nbsp;
+				</div><br>
+			    <a href="/sitemap.xml">网站地图</a>&nbsp; &nbsp;
+				<a href="/atom.xml">订阅本站</a>&nbsp; &nbsp;
+				<a href="mailto:pjt73651@gmail.com" target="_blank">联系博主</a>&nbsp; &nbsp;
+			  </td>
+	        </tr>
+	      </table>
+	    </div>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/sitemap.xml" class="mobile-nav-link">Map</a>
+  
+</nav>
+    
+
+<script src="http://lib.sinaapp.com/js/jquery/2.2.0/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof jQuery == 'undefined') {
+  document.write(unescape("%3Cscript src='/js/jquery-2.2.0.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+// ]]>
+</script>
+
+<!-- Baidu Analytics Start --->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?a52351a6fe462bd199a77c0023bf75ab";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Baidu Analytics End --->
+
+<!-- Baidu Share Start --->
+<script>
+window_bd_share_config={"common":{"bdSnsKey":{"tsina":"3687385740"},"bdWbuid":2806951572,"bdText":"","bdMini":"2","bdMiniList":["douban","kaixin001","tieba","tsohu","sqq","youdao","qingbiji","mail","linkedin","mshare","copy","print"],"bdPic":"http://www.devchen.com/SharePic.png","bdStyle":"1","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<!--- Baidu Share End --->
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>
