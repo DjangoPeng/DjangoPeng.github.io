@@ -7,26 +7,26 @@
   
   <meta name="keywords" content="python, data mining, machine learning">
   
-  <title>python读书笔记：细节决定成败(3) | Code4Future</title>
+  <title>神经网络-激活函数 | Code4Future</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="作者：一个独行的程序员
-背景：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的tutorial
-14.pprint - Pretty Printer坑">
+在训练神经网络的参数时，我们通常会使用一些激活函数（Activation Function）来引入非线性因素，解决一些线性不可分的问题。这篇文章主要介绍几种常用的激活函数。
+1.Sigmoid">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python读书笔记：细节决定成败(3)">
-<meta property="og:url" content="http://zjupjt.com/2016/02/02/pythonNotes3/index.html">
+<meta property="og:title" content="神经网络-激活函数">
+<meta property="og:url" content="http://zjupjt.com/2016/08/04/nn-Activation-Function/index.html">
 <meta property="og:site_name" content="Code4Future">
 <meta property="og:description" content="作者：一个独行的程序员
-背景：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的tutorial
-14.pprint - Pretty Printer坑">
-<meta property="og:image" content="http://zjupjt.com/2016/02/02/pythonNotes3/img_0.png">
-<meta property="og:updated_time" content="2016-07-24T12:28:38.000Z">
+在训练神经网络的参数时，我们通常会使用一些激活函数（Activation Function）来引入非线性因素，解决一些线性不可分的问题。这篇文章主要介绍几种常用的激活函数。
+1.Sigmoid">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png">
+<meta property="og:updated_time" content="2016-08-13T14:57:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python读书笔记：细节决定成败(3)">
+<meta name="twitter:title" content="神经网络-激活函数">
 <meta name="twitter:description" content="作者：一个独行的程序员
-背景：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的tutorial
-14.pprint - Pretty Printer坑">
-<meta name="twitter:image" content="http://zjupjt.com/2016/02/02/pythonNotes3/img_0.png">
+在训练神经网络的参数时，我们通常会使用一些激活函数（Activation Function）来引入非线性因素，解决一些线性不可分的问题。这篇文章主要介绍几种常用的激活函数。
+1.Sigmoid">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png">
   
     <link rel="alternative" href="/atom.xml" title="Code4Future" type="application/atom+xml">
   
@@ -98,7 +98,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-pythonNotes3" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-nn-Activation-Function" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -106,60 +106,46 @@
         
   
     <h1 class="article-title" itemprop="name">
-      python读书笔记：细节决定成败(3)
+      神经网络-激活函数
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2016/02/02/pythonNotes3/" class="article-date">
-  <time datetime="2016-02-02T07:43:11.000Z" itemprop="datePublished">2016-2-2 Tue  15:43</time>
+      <a href="/2016/08/04/nn-Activation-Function/" class="article-date">
+  <time datetime="2016-08-04T15:16:18.000Z" itemprop="datePublished">2016-8-4 Thu  23:16</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Python/">Python</a>
+    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
   </div>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/2016/02/02/pythonNotes3/img_0.png" alt="." title=".">
-<p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
-<p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/" target="_blank" rel="external">tutorial</a></p>
-<h2 id="14-pprint-Pretty-Printer"><a href="#14-pprint-Pretty-Printer" class="headerlink" title="14.pprint - Pretty Printer"></a>14.pprint - Pretty Printer</h2><p>坑</p>
+        <p>作者：<a href="https://cn.linkedin.com/in/jingtianp" target="_blank" rel="external">一个独行的程序员</a></p>
+<p><em>在训练神经网络的参数时，我们通常会使用一些激活函数（Activation Function）来引入非线性因素，解决一些线性不可分的问题。这篇文章主要介绍几种常用的激活函数。</em></p>
+<h1 id="1-Sigmoid"><a href="#1-Sigmoid" class="headerlink" title="1.Sigmoid"></a>1.Sigmoid</h1><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png" alt="sigmoid"></p>
 <a id="more"></a>
-<h2 id="15-List-Comprehension"><a href="#15-List-Comprehension" class="headerlink" title="15.List Comprehension"></a>15.List Comprehension</h2><pre><code>elems = [1, 2, 3, 4]
-squares = [e*e for e in elems]  # square each element
-big = [e for e in elems if e &gt; 2]  # keep elements bigger than 2
+<p>最早使用的激活函数，形式简单，且微分形式便于计算：</p>
+<p>$$<br>f(x)=\frac{1}{1+e^{-x}}<br>$$</p>
+<p>$$<br>f^{‘}(x)=f(x)(1-f(x))<br>$$</p>
+<h1 id="2-tanh"><a href="#2-tanh" class="headerlink" title="2.tanh"></a>2.tanh</h1>
+<p>sigmoid的一种变体，将1的值域从［0，1］扩展到了［－1，1］，又称为双极性sigmoid函数</p>
+<p>$$<br>t(x)=\frac{1-e^{-x}}{1+e^{-x}}\ =\ 2f(x)-1<br>$$<br>$$<br>t^{‘}(x)=1-t(x)^2<br>$$</p>
 
-from gensim import corpora, models, similarities
-documents = [&quot;Human machine interface for lab abc computer applications&quot;,
-             &quot;A survey of user opinion of computer system response time&quot;,
-             &quot;The EPS user interface management system&quot;,
-             &quot;System and human system engineering testing of EPS&quot;,
-             &quot;Relation of user perceived response time to error measurement&quot;,
-             &quot;The generation of random binary unordered trees&quot;,
-             &quot;The intersection graph of paths in trees&quot;,
-             &quot;Graph minors IV Widths of trees and well quasi ordering&quot;,
-             &quot;Graph minors A survey&quot;]
-
-# remove common words and tokenize
-stoplist = set(&apos;for a of the and to in&apos;.split())
-texts = [[word for word in document.lower().split() if word not in stoplist]
-         for document in documents]
-</code></pre>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/02/02/pythonNotes3/" data-id="cirtg2nsx000gpshpjl4rzuu7" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/08/04/nn-Activation-Function/" data-id="cirtg2nso000cpshpn7ktpwqj" class="article-share-link">分享</a>
       
       
-        <a href="http://zjupjt.com/2016/02/02/pythonNotes3/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/02/02/pythonNotes3/">评论</a>
+        <a href="http://zjupjt.com/2016/08/04/nn-Activation-Function/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/08/04/nn-Activation-Function/">评论</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maching-Learning/">Maching Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Neural-Network/">Neural Network</a></li></ul>
 
     </footer>
 
@@ -170,19 +156,19 @@ texts = [[word for word in document.lower().split() if word not in stoplist]
     
 <nav id="article-nav">
   
-    <a href="/2016/02/15/tf-idf/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/08/13/nn-fp-bp/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          TF-IDF的原理与应用
+          神经网络模型
         
       </div>
     </a>
   
   
-    <a href="/2016/01/28/pythonNotes2/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/07/24/ML-LogisticRegression/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">python读书笔记：细节决定成败(2)</div>
+      <div class="article-nav-title">机器学习算法-Logistic Regression</div>
     </a>
   
 </nav>
@@ -193,7 +179,7 @@ texts = [[word for word in document.lower().split() if word not in stoplist]
   
     <section id="comments">
     <!-- 多说评论框 start -->
-      <div id="ds-thread" class="ds-thread" data-thread-key="2016/02/02/pythonNotes3/" data-title="python读书笔记：细节决定成败(3)" data-url="http://zjupjt.com/2016/02/02/pythonNotes3/"></div>
+      <div id="ds-thread" class="ds-thread" data-thread-key="2016/08/04/nn-Activation-Function/" data-title="神经网络-激活函数" data-url="http://zjupjt.com/2016/08/04/nn-Activation-Function/"></div>
     <!-- 多说评论框 end --> 
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -359,6 +345,23 @@ window_bd_share_config={"common":{"bdSnsKey":{"tsina":"3687385740"},"bdWbuid":28
 
 <script src="/js/script.js"></script>
 
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>
