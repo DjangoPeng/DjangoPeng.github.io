@@ -21,7 +21,7 @@
 神经网络模型在机器学习和认知科学领域，人工神经网络（artificial neural network，缩写ANN），简称神经网络（neural network，缩写NN）是一种模仿生物神经网络(动物">
 <meta property="og:image" content="http://zjupjt.com/2016/08/13/nn-fp-bp/nn0.png">
 <meta property="og:image" content="http://zjupjt.com/2016/08/13/nn-fp-bp/nn1.png">
-<meta property="og:updated_time" content="2016-08-14T09:18:08.000Z">
+<meta property="og:updated_time" content="2016-08-14T09:22:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="神经网络模型">
 <meta name="twitter:description" content="作者：一个独行的程序员
@@ -180,7 +180,7 @@
 <h4 id="权重调整"><a href="#权重调整" class="headerlink" title="权重调整"></a>权重调整</h4><p>假设输出层的节点数为K，一共$L$层网络，则有以下定义：</p>
 <p>损失函数<br>$$<br>E = \frac{1}{2}\sum_{k\in{K}}(h_k-Y_k)^2<br>$$<br>这里需要注意的是，原理上我们应该用整个训练集的所有数据来计算E。但是实际操作时，由于计算量太大，我们往往就只用1个数据点来进行参数调整（梯度更新），这也就是所谓的SGD（Stochastic Gradient Descent），关于这部分内容，参考<a href="http://zjupjt.com/2016/06/07/Stanford-CS229-1/">这篇文章</a>。</p>
 <p>训练的目标：最小化误差，即求损失函数对参数的偏导数。</p>
-<p>不失一般性，不妨考虑最后一隐层第$j$个神经元的参数$w^{(L-1)}_{kj}$，则有：</p>
+<p>不失一般性，不妨考虑最后一隐层第$j$个神经元到输出层第$k$个神经元的参数$w^{(L-1)}_{kj}$，则有：</p>
 <p>$$<br>\frac{\partial{E}}{\partial{w^{(L-1)}_{kj}}}=\frac{\partial}{\partial{w^{(L-1)}_{kj}}}\frac{1}{2}\sum_{k\in{K}}(h_k-Y_k)^2<br>$$</p>
 <p>由于参数$w^{(L-1)}_{kj}$只影响第k个输出，所以输出层的其它偏导数为0，且$Y$与参数并不相关，即：</p>
 <p>$$<br>\frac{\partial}{\partial {w_{kj}^{(L-1)}} } \frac{1}{2} \sum_{k\in{K}} (h_k-Y_k)^2 = \frac{\partial}{\partial{w_{kj}^{(L)}}} \frac{1}{2} (h_k-Y_k)^2 \  ＝\ (h_k-Y_k) \frac{\partial}{\partial{w_k^{(L)}}} h_k<br>$$</p>
