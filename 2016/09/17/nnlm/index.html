@@ -22,7 +22,7 @@ Bengio 2003年的NNLM可谓是神经网络语言模型的开山之作，并且�
 语言模型通俗的说，语言模型就是判断一句话像不像是人说出来的。形式化的定义，语言模型是借由一个概率分布，试图用概率p(s)来表示字符串s作为1个句子出现的频率：
 $$    p(s) = p(w_1,…w_m)$$">
 <meta property="og:image" content="http://zjupjt.com/2016/09/17/nnlm/nnlm1.png">
-<meta property="og:updated_time" content="2016-09-17T06:09:50.000Z">
+<meta property="og:updated_time" content="2016-09-17T06:25:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="神经网络语言模型-NNLM">
 <meta name="twitter:description" content="作者：一个独行的程序员
@@ -146,6 +146,7 @@ $$    p(s) = p(w_1,…w_m)$$">
 <p>同时，NNLM通过分布式表示（distributed representations）解决了维度灾难（curse of dimensionality）的问题。通过词向量矩阵C，将词汇表中的V个单词映射为V个m维的词向量（feature vector）。</p>
 <p>同样使用n-gram表示，但是NNLM却是共享参数矩阵C。相反，统计语言模型却需要用词矩阵表示每一个句子，空间代价太大。</p>
 <p>Bengio通过1个3层的神经网络来构建NNLM，并且与普通NN不同的是：输入层的输入数据实质上是词向量矩阵C，并且是全局共享的。</p>
+<img src="/2016/09/17/nnlm/nnlm1.png" alt="神经网络语言模型" title="神经网络语言模型">
 <p>为了说明，下面定义符号：<br>训练集是许多由词$w_1…w_T$构成的句子，其中$w_t \in V$，词汇表V是有限个不重复词组成的集合。训练目标是学到一个很好的模型:</p>
 <p>$$<br>f(w_t,…,w_{t-n+1})=\hat p(w_t|w_1^{t-1})<br>$$</p>
 <p>取 $\frac{1}{\hat p(w_t|w_1^{t-1})}$ 的几何平均值作为困惑度（<em>perplexity</em>）,即log似然的几何平均的指数。</p>
@@ -155,7 +156,7 @@ $$    p(s) = p(w_1,…w_m)$$">
 <p>$$<br>f(w_t,…,w_{t-n+1})=\hat p(w_t|w_1^{t-1})<br>$$</p>
 <p>分解成两部分：</p>
 <ol>
-<li>词汇表V中的第i个单词-&gt;词向量$C(i) \in R^m$。 C(i)表示每个词i的分布式词向量(distributed feature vector),C是一个拥有$|V| x m$参数的词向量矩阵。</li>
+<li>词汇表V中的第i个单词-&gt;词向量$C(i) \in R^m$。 C(i)表示每个词i的分布式词向量(distributed feature vector),C是一个拥有$|V| \times m$参数的词向量矩阵。</li>
 <li>第i个词的上文的向量形式为：$(C(w_{t-n+1}),…,C(w_{t-1}))$,已知词汇表V中第i个词在已知前n-1个词时的条件概率是$p(w_t|w_1^{t-1})$，定义函数</li>
 </ol>
 <p>$$<br>g(i,C(w_{t-n+1}),…,C(w_{t-1}))<br>$$</p>
@@ -165,7 +166,6 @@ $$    p(s) = p(w_1,…w_m)$$">
 <p>模型的训练目标：</p>
 <p>$$<br>    \mathop{argmax}_{\theta} L = \frac{1}{T} \sum_{t}^{|V|} log f(w_t,…,w_{t-n+1}; \theta) + R(\theta)<br>$$</p>
 <p>其中$R(\theta)$为正则化惩罚项。</p>
-<img src="/2016/09/17/nnlm/nnlm1.png" alt="神经网络语言模型" title="神经网络语言模型">
 <p>输入层：将$C(w_{t-n+1}),…,C(w_{t-1})$这n-1个词向量首尾相接拼起来形成一个$(n-1)m$维的向量x。</p>
 <p>隐藏层：输入$o=d+Hx$，d为$h$维的隐层偏置项，H为$h \times (n-1)m$维的隐层参数；输出$a=tanh(o)$</p>
 <p>输出层：用Softmax做V分类，模型大部分计算都在这一层；$y_i$表示下一个词为i的未归一化log概率：</p>
