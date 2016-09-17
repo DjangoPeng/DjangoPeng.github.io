@@ -22,7 +22,7 @@ Bengio 2003年的NNLM可谓是神经网络语言模型的开山之作，并且�
 语言模型通俗的说，语言模型就是判断一句话像不像是人说出来的。形式化的定义，语言模型是借由一个概率分布，试图用概率p(s)来表示字符串s作为1个句子出现的频率：
 $$    p(s) = p(w_1,…w_m)$$">
 <meta property="og:image" content="http://zjupjt.com/2016/09/17/nnlm/nnlm1.png">
-<meta property="og:updated_time" content="2016-09-17T05:41:33.000Z">
+<meta property="og:updated_time" content="2016-09-17T06:09:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="神经网络语言模型-NNLM">
 <meta name="twitter:description" content="作者：一个独行的程序员
@@ -132,10 +132,10 @@ $$    p(s) = p(w_1,…w_m)$$">
 <h2 id="语言模型"><a href="#语言模型" class="headerlink" title="语言模型"></a>语言模型</h2><p>通俗的说，语言模型就是判断一句话像不像是人说出来的。<br>形式化的定义，语言模型是借由一个概率分布，试图用概率p(s)来表示字符串s作为1个句子出现的频率：</p>
 <p>$$<br>    p(s) = p(w_1,…w_m)<br>$$</p>
 <a id="more"></a>
-<p>语言模型在许多NLP相关的问题都有应用，如语音识别、机器翻译、词性标注、句法分析和信息检索等。<br>然而，如果通过穷举的方式枚举所有的w来计算p(s)，时间和空间代价都是巨大的。<br>假设词汇表单词数V = 10000，句子平均长度为M = 20，则时间复杂度为$O(V^M)$，即$O(10^80)$。因此，我们常常使用<strong>n-gram</strong>模型来近似求解p(s)。</p>
+<p>语言模型在许多NLP相关的问题都有应用，如语音识别、机器翻译、词性标注、句法分析和信息检索等。<br>然而，如果通过穷举的方式枚举所有的w来计算p(s)，时间和空间代价都是巨大的。<br>假设词汇表单词数V = 10000，句子平均长度为M = 20，则时间复杂度为$O(V^M)$，即$O(10^{80})$。因此，我们常常使用<strong>n-gram</strong>模型来近似求解p(s)。</p>
 <h2 id="n-gram-语言模型"><a href="#n-gram-语言模型" class="headerlink" title="n-gram 语言模型"></a>n-gram 语言模型</h2><p>对于一个由M个词构成的句子$s=w_1w_2…w_M$，其概率计算公式为：</p>
 <p>$$<br>    p(s) = p(w_1)p(w_2|w_1)p(w_3|w_1w_2)…p(w_t|w_1…w_{M-1})<br>         = \prod_{i=1}^{M} p(w_i|w_1…w_{i-1})<br>$$</p>
-<p>产生第i个词的概率是由已经产生的i-1个词$w_1w<em>2…w</em>{i-1}$决定的。n-gram模型则是只考虑已经产生的前n-1个单词，而不是从句首开始的所有单词。因此，公式变为：</p>
+<p>产生第i个词的概率是由已经产生的i-1个词$w_1w_2…w_{i-1}$决定的。n-gram模型则是只考虑已经产生的前n-1个单词，而不是从句首开始的所有单词。因此，公式变为：</p>
 <p>$$<br>    p(s) = \prod_{i=1}^{M} p(w_i|w_{i-n+1}…w_{i-1})<br>         = \prod_{i=1}^{M} p(w_i|w_{i-n+1}^{i-1})<br>$$</p>
 <p>在实际建模时，考虑到计算时间，我们常常取n=2或n=3，即bigram或trigram。</p>
 <h2 id="Bengio的NNLM"><a href="#Bengio的NNLM" class="headerlink" title="Bengio的NNLM"></a>Bengio的NNLM</h2><p>相对于统计语言模型，NNLM在相似语义（similar semantic）和语法角色（grammatical roles)上进行了优化。首先看一个例句：</p>
