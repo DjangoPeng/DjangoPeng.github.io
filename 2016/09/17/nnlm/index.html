@@ -7,29 +7,29 @@
   
   <meta name="keywords" content="python, data mining, machine learning">
   
-  <title>TF-IDF的原理与应用 | Code4Future</title>
+  <title>神经网络语言模型-NNLM | Code4Future</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="作者：一个独行的程序员
-
-1.TF-IDF原理TF-IDF(Term Frequency-Inverse Document Frequency)，中文叫做词频－逆文档频率。在文本挖掘(Text Mining)和信息检索(Information Retrieval)领域具有广泛的应用。">
+Bengio 2003年的NNLM可谓是神经网络语言模型的开山之作，并且为后来的RNNLM、Word2Vec、NMT等提供了思路，为DL4NLP打下了坚实的基础。
+语言模型通俗的说，语言模型就是判断一句话像不像是人说出来的。形式化的定义，语言模型是借由一个概率分布，试图用概率p(s)来表示字符串s作为1个句子出现的频率：
+$$    p(s) = p(w_1,…w_m)$$">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TF-IDF的原理与应用">
-<meta property="og:url" content="http://zjupjt.com/2016/02/15/tf-idf/index.html">
+<meta property="og:title" content="神经网络语言模型-NNLM">
+<meta property="og:url" content="http://zjupjt.com/2016/09/17/nnlm/index.html">
 <meta property="og:site_name" content="Code4Future">
 <meta property="og:description" content="作者：一个独行的程序员
-
-1.TF-IDF原理TF-IDF(Term Frequency-Inverse Document Frequency)，中文叫做词频－逆文档频率。在文本挖掘(Text Mining)和信息检索(Information Retrieval)领域具有广泛的应用。">
-<meta property="og:image" content="http://zjupjt.com/2016/02/15/tf-idf/img_0.png">
-<meta property="og:image" content="https://upload.wikimedia.org/math/e/5/a/e5a7b43197068eddf42859f3995ebf15.png">
-<meta property="og:image" content="https://upload.wikimedia.org/math/0/2/5/0257ce95c505ab568d7898faa56a4f5c.png">
-<meta property="og:image" content="https://upload.wikimedia.org/math/b/0/6/b06a060c28253c8dd2528811c447862e.png">
-<meta property="og:updated_time" content="2016-07-08T06:19:52.000Z">
+Bengio 2003年的NNLM可谓是神经网络语言模型的开山之作，并且为后来的RNNLM、Word2Vec、NMT等提供了思路，为DL4NLP打下了坚实的基础。
+语言模型通俗的说，语言模型就是判断一句话像不像是人说出来的。形式化的定义，语言模型是借由一个概率分布，试图用概率p(s)来表示字符串s作为1个句子出现的频率：
+$$    p(s) = p(w_1,…w_m)$$">
+<meta property="og:image" content="http://zjupjt.com/2016/09/17/nnlm/nnlm1.png">
+<meta property="og:updated_time" content="2016-09-17T05:41:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TF-IDF的原理与应用">
+<meta name="twitter:title" content="神经网络语言模型-NNLM">
 <meta name="twitter:description" content="作者：一个独行的程序员
-
-1.TF-IDF原理TF-IDF(Term Frequency-Inverse Document Frequency)，中文叫做词频－逆文档频率。在文本挖掘(Text Mining)和信息检索(Information Retrieval)领域具有广泛的应用。">
-<meta name="twitter:image" content="http://zjupjt.com/2016/02/15/tf-idf/img_0.png">
+Bengio 2003年的NNLM可谓是神经网络语言模型的开山之作，并且为后来的RNNLM、Word2Vec、NMT等提供了思路，为DL4NLP打下了坚实的基础。
+语言模型通俗的说，语言模型就是判断一句话像不像是人说出来的。形式化的定义，语言模型是借由一个概率分布，试图用概率p(s)来表示字符串s作为1个句子出现的频率：
+$$    p(s) = p(w_1,…w_m)$$">
+<meta name="twitter:image" content="http://zjupjt.com/2016/09/17/nnlm/nnlm1.png">
   
     <link rel="alternative" href="/atom.xml" title="Code4Future" type="application/atom+xml">
   
@@ -101,7 +101,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-tf-idf" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-nnlm" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -109,112 +109,87 @@
         
   
     <h1 class="article-title" itemprop="name">
-      TF-IDF的原理与应用
+      神经网络语言模型-NNLM
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2016/02/15/tf-idf/" class="article-date">
-  <time datetime="2016-02-15T12:50:51.000Z" itemprop="datePublished">2016-2-15 Mon  20:50</time>
+      <a href="/2016/09/17/nnlm/" class="article-date">
+  <time datetime="2016-09-17T04:25:45.000Z" itemprop="datePublished">2016-9-17 Sat  12:25</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Data-Mining/">Data Mining</a>
+    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
   </div>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
-<img src="/2016/02/15/tf-idf/img_0.png" alt="." title=".">
-<h2 id="1-TF-IDF原理"><a href="#1-TF-IDF原理" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><p>TF-IDF(Term Frequency-Inverse Document Frequency)，中文叫做词频－逆文档频率。在文本挖掘(Text Mining)和信息检索(Information Retrieval)领域具有广泛的应用。</p>
+        <p>作者：<a href="https://cn.linkedin.com/in/jingtianp" target="_blank" rel="external">一个独行的程序员</a></p>
+<p><em>Bengio 2003年的NNLM可谓是神经网络语言模型的开山之作，并且为后来的RNNLM、Word2Vec、NMT等提供了思路，为DL4NLP打下了坚实的基础。</em></p>
+<h2 id="语言模型"><a href="#语言模型" class="headerlink" title="语言模型"></a>语言模型</h2><p>通俗的说，语言模型就是判断一句话像不像是人说出来的。<br>形式化的定义，语言模型是借由一个概率分布，试图用概率p(s)来表示字符串s作为1个句子出现的频率：</p>
+<p>$$<br>    p(s) = p(w_1,…w_m)<br>$$</p>
 <a id="more"></a>
-<p>其难能可贵之处在于：<strong>没有繁复的数学推导式，仅需要中学数学水平，便可以在一节课时间理解其原理并上手使用。</strong></p>
-<p>设想现在我们正在阅读新闻，如何最快速的了解新闻主旨？毫无疑问——<strong>关键词</strong></p>
-<p>TF-IDF就具有这样的能力：提取关键词！</p>
-<p>假设一个词在一篇文章中出现的次数越多，那么它就越”紧扣主题”。以本文为例，我们可以统计<strong>词频(TF)</strong>，不难发现<em>TF-IDF</em>,<em>原理</em>,<em>应用</em>是出现频率很高的词，后文称keywords。这符合我们的假设，但是有些词却出现的次数更多，如：<em>的</em>，<em>是</em>,<em>有</em>等。这类词语没有明确意义，我们称为停顿词(Stopwords)。</p>
-<p>如果单纯按照词频算关键词，你会发现几乎所有的文章都是stopwords的词频最高。换句话说，像这种”万金油”，是没有区分度的词语，不能很好的起到将文章分类的作用。这时就需要祭出<strong>逆文档频率(IDF)</strong>来解决词语权重的问题。</p>
-<p>虽然keywords词频不如stopwords高，但是纵观全网的所有文章中，本文的keywords并不是在每篇文章都出现的，而是在很小一部分文章中出现。所以这些keywords是具有高辨识度的，应该给一个更大的权重；相反那些几乎所有文章中都出现的stopwords，则应该给一个很小的权重。</p>
-<p>最终，将TF*IDF得出的分值作为每一个词在本文的重要度，就提取出了文章的关键词。</p>
-<p>公式化的说法如下,<br>对于在某一特定文件里的词语 t<sub>i</sub> 来说，它的重要性可表示为：</p>
-<p><img src="https://upload.wikimedia.org/math/e/5/a/e5a7b43197068eddf42859f3995ebf15.png"></p>
-<p>以上式子中n<sub>i,j</sub>是该词在文件d<sub>j</sub>中的出现次数，而分母则是在文件d<sub>j</sub>中所有字词的出现次数之和。</p>
-<p><img src="https://upload.wikimedia.org/math/0/2/5/0257ce95c505ab568d7898faa56a4f5c.png"></p>
-<p>|D|：语料库中的文件总数</p>
-<p>|{ j: t<sub>i</sub> in d<sub>j</sub>}| ：包含词语 t<sub>i</sub>的文件数目（即 n<sub>i,j</sub> != 0的文件数目）如果该词语不在语料库中，就会导致分母为零，因此一般情况下使用1 + |{j : t<sub>i</sub> in d<sub>j</sub>}|</p>
-<p><img src="https://upload.wikimedia.org/math/b/0/6/b06a060c28253c8dd2528811c447862e.png"></p>
-<p>TF-IDF倾向于过滤掉常见的词语，保留重要的词语。</p>
-<h2 id="2-TF-IDF应用"><a href="#2-TF-IDF应用" class="headerlink" title="2.TF-IDF应用"></a>2.TF-IDF应用</h2><p>本小节通过Google搜索结果数为例，将含有中文”的”结果数15.8亿作为整个语料库大小，计算上一节中的keyword和stopword的TF-IDF值。为了计算简便，假设全文分词后一共500词，则结果如下：</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>包含该词的文章(百万)</th>
-<th>IDF</th>
-<th>TF</th>
-<th>TF-IDF</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>TF-IDF</td>
-<td>0.497</td>
-<td>3.502</td>
-<td>0.018</td>
-<td>0.063</td>
-</tr>
-<tr>
-<td>原理</td>
-<td>24.4</td>
-<td>1.811</td>
-<td>0.008</td>
-<td>0.014</td>
-</tr>
-<tr>
-<td>应用</td>
-<td>82.8</td>
-<td>1.280</td>
-<td>0.008</td>
-<td>0.010</td>
-</tr>
-<tr>
-<td>是</td>
-<td>363</td>
-<td>0.638</td>
-<td>0.028</td>
-<td>0.018</td>
-</tr>
-<tr>
-<td>有</td>
-<td>482</td>
-<td>0.515</td>
-<td>0.026</td>
-<td>0.013</td>
-</tr>
-<tr>
-<td>的</td>
-<td>1580</td>
-<td>0.000</td>
-<td>0.080</td>
-<td>0.000</td>
-</tr>
-</tbody>
-</table>
-<p>TF-IDF的优点是计算简单，利于理解，性价比极高。但是它也有缺陷，首先单纯依据文章中的TF来衡量重要性，忽略了位置信息。如段首，句首一般权重更高；其次，有的文章可能关键词只出现1-2次，但可能通篇都是围绕其进行阐述和解释，所以单纯靠TF仍然不能解决所有的情况。</p>
+<p>语言模型在许多NLP相关的问题都有应用，如语音识别、机器翻译、词性标注、句法分析和信息检索等。<br>然而，如果通过穷举的方式枚举所有的w来计算p(s)，时间和空间代价都是巨大的。<br>假设词汇表单词数V = 10000，句子平均长度为M = 20，则时间复杂度为$O(V^M)$，即$O(10^80)$。因此，我们常常使用<strong>n-gram</strong>模型来近似求解p(s)。</p>
+<h2 id="n-gram-语言模型"><a href="#n-gram-语言模型" class="headerlink" title="n-gram 语言模型"></a>n-gram 语言模型</h2><p>对于一个由M个词构成的句子$s=w_1w_2…w_M$，其概率计算公式为：</p>
+<p>$$<br>    p(s) = p(w_1)p(w_2|w_1)p(w_3|w_1w_2)…p(w_t|w_1…w_{M-1})<br>         = \prod_{i=1}^{M} p(w_i|w_1…w_{i-1})<br>$$</p>
+<p>产生第i个词的概率是由已经产生的i-1个词$w_1w<em>2…w</em>{i-1}$决定的。n-gram模型则是只考虑已经产生的前n-1个单词，而不是从句首开始的所有单词。因此，公式变为：</p>
+<p>$$<br>    p(s) = \prod_{i=1}^{M} p(w_i|w_{i-n+1}…w_{i-1})<br>         = \prod_{i=1}^{M} p(w_i|w_{i-n+1}^{i-1})<br>$$</p>
+<p>在实际建模时，考虑到计算时间，我们常常取n=2或n=3，即bigram或trigram。</p>
+<h2 id="Bengio的NNLM"><a href="#Bengio的NNLM" class="headerlink" title="Bengio的NNLM"></a>Bengio的NNLM</h2><p>相对于统计语言模型，NNLM在相似语义（similar semantic）和语法角色（grammatical roles)上进行了优化。首先看一个例句：</p>
+<p>“The cat is walking in the bedroom”</p>
+<p>通过NNLM可以产生类似的句子，如：</p>
+<p>“A dog was running in a room”</p>
+<p>因为两句话中的(the, a)、(room, bedroom)、(dog, cat)等词对拥有相似的语义和相同的语法角色，所以才能构造出相似的句子。</p>
+<p>同时，NNLM通过分布式表示（distributed representations）解决了维度灾难（curse of dimensionality）的问题。通过词向量矩阵C，将词汇表中的V个单词映射为V个m维的词向量（feature vector）。</p>
+<p>同样使用n-gram表示，但是NNLM却是共享参数矩阵C。相反，统计语言模型却需要用词矩阵表示每一个句子，空间代价太大。</p>
+<p>Bengio通过1个3层的神经网络来构建NNLM，并且与普通NN不同的是：输入层的输入数据实质上是词向量矩阵C，并且是全局共享的。</p>
+<p>为了说明，下面定义符号：<br>训练集是许多由词$w_1…w_T$构成的句子，其中$w_t \in V$，词汇表V是有限个不重复词组成的集合。训练目标是学到一个很好的模型:</p>
+<p>$$<br>f(w_t,…,w_{t-n+1})=\hat p(w_t|w_1^{t-1})<br>$$</p>
+<p>取 $\frac{1}{\hat p(w_t|w_1^{t-1})}$ 的几何平均值作为困惑度（<em>perplexity</em>）,即log似然的几何平均的指数。</p>
+<p>模型中的唯一常数是对于任意的组合$w_1^{t-1}$,保证</p>
+<p>$$<br>\sum_{i=1}^{|V|} f(i,w_{t-1},…,w_{t-n+1}) = 1, \quad  f &gt; 0<br>$$</p>
+<p>通过条件概率的乘积，我们能够得到许多词组合成句子的联合概率。将</p>
+<p>$$<br>f(w_t,…,w_{t-n+1})=\hat p(w_t|w_1^{t-1})<br>$$</p>
+<p>分解成两部分：</p>
+<ol>
+<li>词汇表V中的第i个单词-&gt;词向量$C(i) \in R^m$。 C(i)表示每个词i的分布式词向量(distributed feature vector),C是一个拥有$|V| x m$参数的词向量矩阵。</li>
+<li>第i个词的上文的向量形式为：$(C(w_{t-n+1}),…,C(w_{t-1}))$,已知词汇表V中第i个词在已知前n-1个词时的条件概率是$p(w_t|w_1^{t-1})$，定义函数</li>
+</ol>
+<p>$$<br>g(i,C(w_{t-n+1}),…,C(w_{t-1}))<br>$$</p>
+<p>为此时第i个词的词向量，即：</p>
+<p>$$<br>f(i,…,w_{t-n+1}) = g(i,C(w_{t-n+1}),…,C(w_{t-1}))<br>$$</p>
+<p>因此，函数f是C和g的复合函数，并且C是所有词共享的一个参数矩阵。函数g可以用一个前馈网络(FNN)或循环神经网络(RNN)来实现，设网络中所有参数为$\omega$。则整个NNLM的参数$\theta = (C,\omega) $。</p>
+<p>模型的训练目标：</p>
+<p>$$<br>    \mathop{argmax}_{\theta} L = \frac{1}{T} \sum_{t}^{|V|} log f(w_t,…,w_{t-n+1}; \theta) + R(\theta)<br>$$</p>
+<p>其中$R(\theta)$为正则化惩罚项。</p>
+<img src="/2016/09/17/nnlm/nnlm1.png" alt="神经网络语言模型" title="神经网络语言模型">
+<p>输入层：将$C(w_{t-n+1}),…,C(w_{t-1})$这n-1个词向量首尾相接拼起来形成一个$(n-1)m$维的向量x。</p>
+<p>隐藏层：输入$o=d+Hx$，d为$h$维的隐层偏置项，H为$h \times (n-1)m$维的隐层参数；输出$a=tanh(o)$</p>
+<p>输出层：用Softmax做V分类，模型大部分计算都在这一层；$y_i$表示下一个词为i的未归一化log概率：</p>
+<p>$$<br>    y = b + Wx + U tanh(d+Hx)<br>$$</p>
+<p>其中，U为$|V| \times h$维的输出层参数矩阵，b为$|V|$维的输出层偏置项。模型考虑了从输入层直接到输出层的概率，W即为输入层直连输出层的$|V| \times (n-1）m$维参数矩阵。</p>
+<p>综上：$\theta = (b,d,W,U,H,C)$，</p>
+<p>总参数个数为:$|V|(1+mn+h)+h(1+(n-1)m)$。</p>
+<p>用随机梯度上升求解：</p>
+<p>$$<br>    \theta \leftarrow \theta + \epsilon \frac {\partial log \hat P(w_t|w_{t-1},…,w_{t-n+1}) } {\partial \theta}<br>$$</p>
+<p>收敛后得到了词向量矩阵C即为我们NNLM中最重要的参数，通过矩阵C可以完成词（Word）到向量（Vector）的转换，后来Mikolov的RNNLM、Continuous Space Word Representation、Word2Vec等都是在Bengio的这篇paper上改进来的。</p>
+<h2 id="参考论文"><a href="#参考论文" class="headerlink" title="参考论文"></a>参考论文</h2><p>[1] <a href="chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf" target="_blank" rel="external">Yoshua Bengio, R ́ejean Ducharme, Pascal Vincent, and Christian Janvin. A neural probabilistic languagemodel.The Journal of Machine Learning Research, 3:1137–1155, 2003. </a></p>
+<p>[2] <a href="chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/http://arxiv.org/pdf/1310.4546.pdf" target="_blank" rel="external">Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg Corrado, and Jeffrey Dean. Distributed Representations of Words and Phrases and their Compositionality. In Proceedings of NIPS, 2013.</a></p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/02/15/tf-idf/" data-id="cit6pz8pb000qbzhpct7cc7yy" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/09/17/nnlm/" data-id="cit6qav7y0000cghp2gatj3rt" class="article-share-link">分享</a>
       
       
-        <a href="http://zjupjt.com/2016/02/15/tf-idf/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/02/15/tf-idf/">评论</a>
+        <a href="http://zjupjt.com/2016/09/17/nnlm/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/09/17/nnlm/">评论</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Information-Retrieval/">Information Retrieval</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Text-Minging/">Text Minging</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Neural-Nework/">Neural Nework</a></li></ul>
 
     </footer>
 
@@ -225,19 +200,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/06/02/Hexo-Tutorial/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Hexo Tutorial
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/02/02/pythonNotes3/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/08/13/nn-fp-bp/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">python读书笔记：细节决定成败(3)</div>
+      <div class="article-nav-title">神经网络模型</div>
     </a>
   
 </nav>
@@ -248,7 +214,7 @@
   
     <section id="comments">
     <!-- 多说评论框 start -->
-      <div id="ds-thread" class="ds-thread" data-thread-key="2016/02/15/tf-idf/" data-title="TF-IDF的原理与应用" data-url="http://zjupjt.com/2016/02/15/tf-idf/"></div>
+      <div id="ds-thread" class="ds-thread" data-thread-key="2016/09/17/nnlm/" data-title="神经网络语言模型-NNLM" data-url="http://zjupjt.com/2016/09/17/nnlm/"></div>
     <!-- 多说评论框 end --> 
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -414,6 +380,23 @@ window_bd_share_config={"common":{"bdSnsKey":{"tsina":"3687385740"},"bdWbuid":28
 
 <script src="/js/script.js"></script>
 
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>
