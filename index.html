@@ -618,7 +618,9 @@
         <img src="/2016/02/02/pythonNotes3/img_0.png" alt="." title=".">
 <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP">一个独行的程序员</a></p>
 <p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/">tutorial</a></p>
-<h2 id="14-pprint-Pretty-Printer"><a href="#14-pprint-Pretty-Printer" class="headerlink" title="14.pprint - Pretty Printer"></a>14.pprint - Pretty Printer</h2><p>坑</p>
+<h2 id="14-os-path"><a href="#14-os-path" class="headerlink" title="14. os.path"></a>14. os.path</h2><h3 id="abspath-path"><a href="#abspath-path" class="headerlink" title="abspath(path)"></a>abspath(path)</h3><p>返回绝对路径</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> os</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.abspath(<span class="string">"translate.py"</span>)</div><div class="line"><span class="string">'/home/dl/PJT/translate.py'</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.abspath(<span class="string">"./"</span>)          </div><div class="line"><span class="string">'/home/dl/PJT'</span></div></pre></td></tr></table></figure>
+<h3 id="split-path"><a href="#split-path" class="headerlink" title="split(path)"></a>split(path)</h3><p>将path分割成(目录,文件(夹)名)二元组</p>
         
           <p class="article-more-link">
             <a href="/2016/02/02/pythonNotes3/#more">Read More</a>

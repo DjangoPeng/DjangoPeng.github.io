@@ -11,21 +11,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="作者：一个独行的程序员
 背景：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的tutorial
-14.pprint - Pretty Printer坑">
+14. os.pathabspath(path)返回绝对路径
+123456&amp;gt;&amp;gt;&amp;gt; import os&amp;gt;&amp;gt;&amp;gt; os.path.ab">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python读书笔记：细节决定成败(3)">
 <meta property="og:url" content="http://zjupjt.com/2016/02/02/pythonNotes3/index.html">
 <meta property="og:site_name" content="Code4Future">
 <meta property="og:description" content="作者：一个独行的程序员
 背景：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的tutorial
-14.pprint - Pretty Printer坑">
+14. os.pathabspath(path)返回绝对路径
+123456&amp;gt;&amp;gt;&amp;gt; import os&amp;gt;&amp;gt;&amp;gt; os.path.ab">
 <meta property="og:image" content="http://zjupjt.com/2016/02/02/pythonNotes3/img_0.png">
-<meta property="og:updated_time" content="2016-07-24T12:28:38.000Z">
+<meta property="og:updated_time" content="2016-09-20T13:19:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python读书笔记：细节决定成败(3)">
 <meta name="twitter:description" content="作者：一个独行的程序员
 背景：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的tutorial
-14.pprint - Pretty Printer坑">
+14. os.pathabspath(path)返回绝对路径
+123456&amp;gt;&amp;gt;&amp;gt; import os&amp;gt;&amp;gt;&amp;gt; os.path.ab">
 <meta name="twitter:image" content="http://zjupjt.com/2016/02/02/pythonNotes3/img_0.png">
   
     <link rel="alternative" href="/atom.xml" title="Code4Future" type="application/atom+xml">
@@ -127,28 +130,84 @@
         <img src="/2016/02/02/pythonNotes3/img_0.png" alt="." title=".">
 <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP" target="_blank" rel="external">一个独行的程序员</a></p>
 <p><strong>背景</strong>：我本来是一个信奉Java大法好的程序员。但是最近由于工作原因，不得不开始学习python。因此，写下这个读书笔记，希望能起到一个抛砖引玉的作用。原文中所有引用部分均来自python官方的<a href="https://docs.python.org/2/tutorial/" target="_blank" rel="external">tutorial</a></p>
-<h2 id="14-pprint-Pretty-Printer"><a href="#14-pprint-Pretty-Printer" class="headerlink" title="14.pprint - Pretty Printer"></a>14.pprint - Pretty Printer</h2><p>坑</p>
+<h2 id="14-os-path"><a href="#14-os-path" class="headerlink" title="14. os.path"></a>14. os.path</h2><h3 id="abspath-path"><a href="#abspath-path" class="headerlink" title="abspath(path)"></a>abspath(path)</h3><p>返回绝对路径</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> os</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.abspath(<span class="string">"translate.py"</span>)</div><div class="line"><span class="string">'/home/dl/PJT/translate.py'</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.abspath(<span class="string">"./"</span>)          </div><div class="line"><span class="string">'/home/dl/PJT'</span></div></pre></td></tr></table></figure>
+<h3 id="split-path"><a href="#split-path" class="headerlink" title="split(path)"></a>split(path)</h3><p>将path分割成(目录,文件(夹)名)二元组</p>
 <a id="more"></a>
-<h2 id="15-List-Comprehension"><a href="#15-List-Comprehension" class="headerlink" title="15.List Comprehension"></a>15.List Comprehension</h2><pre><code>elems = [1, 2, 3, 4]
-squares = [e*e for e in elems]  # square each element
-big = [e for e in elems if e &gt; 2]  # keep elements bigger than 2
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.split(os.path.abspath(<span class="string">"translate.py"</span>))</div><div class="line">(<span class="string">'/home/dl/PJT'</span>, <span class="string">'translate.py'</span>)</div></pre></td></tr></table></figure>
+<p>如果path只是一个文件夹路径，没有精确到文件，则第二个元素返回最后一层文件夹的名字：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.split(os.path.abspath(<span class="string">"./"</span>))  </div><div class="line">(<span class="string">'/home/dl'</span>, <span class="string">'PJT'</span>)</div></pre></td></tr></table></figure>
+<h3 id="dirname-path"><a href="#dirname-path" class="headerlink" title="dirname(path)"></a>dirname(path)</h3><p>返回os.path.split(path)的第一个元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.dirname(os.path.abspath(<span class="string">"translate.py"</span>))</div><div class="line"><span class="string">'/home/dl/PJT'</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.dirname(os.path.abspath(<span class="string">"./"</span>))  </div><div class="line"><span class="string">'/home/dl'</span></div></pre></td></tr></table></figure>
+<h3 id="basename-path"><a href="#basename-path" class="headerlink" title="basename(path)"></a>basename(path)</h3><p>返回os.path.split(path)的第二个元素。 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.basename(os.path.abspath(<span class="string">"translate.py"</span>))</div><div class="line"><span class="string">'translate.py'</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.basename(os.path.abspath(<span class="string">"./"</span>))  </div><div class="line"><span class="string">'PJT'</span></div></pre></td></tr></table></figure>
+<h3 id="commonprefix-list"><a href="#commonprefix-list" class="headerlink" title="commonprefix(list)"></a>commonprefix(list)</h3><p>返回最长公共路径前缀</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>cur = os.path.abspath(<span class="string">"./"</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>mnist = os.path.abspath(<span class="string">"mnist"</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>mnist</div><div class="line"><span class="string">'/home/dl/PJT/mnist'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>cur</div><div class="line"><span class="string">'/home/dl/PJT'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.commonprefix([cur,mnist])</div><div class="line"><span class="string">'/home/dl/PJT'</span></div></pre></td></tr></table></figure>
+<h3 id="exists-path"><a href="#exists-path" class="headerlink" title="exists(path)"></a>exists(path)</h3><p>如果path(当前路径优先)存在，返回True；如果path不存在，返回False</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.exists(<span class="string">"test"</span>)</div><div class="line"><span class="keyword">False</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.exists(<span class="string">"mnist"</span>)</div><div class="line"><span class="keyword">True</span></div></pre></td></tr></table></figure>
+<h3 id="isabs-path"><a href="#isabs-path" class="headerlink" title="isabs(path)"></a>isabs(path)</h3><p>如果path为绝对路径，返回True；否则，返回False</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.isabs(<span class="string">"mnist"</span>)</div><div class="line"><span class="keyword">False</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.isabs(os.path.abspath(<span class="string">"mnist"</span>))</div><div class="line"><span class="keyword">True</span></div></pre></td></tr></table></figure>
+<h3 id="isfile-path"><a href="#isfile-path" class="headerlink" title="isfile(path)"></a>isfile(path)</h3><p>如果path(当前路径优先)是一个存在的文件，返回True。否则，返回False</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.isfile(<span class="string">"translate.py"</span>)</div><div class="line"><span class="keyword">True</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.isfile(<span class="string">"mnist"</span>)</div><div class="line"><span class="keyword">False</span></div></pre></td></tr></table></figure>
+<h3 id="isdir-path"><a href="#isdir-path" class="headerlink" title="isdir(path)"></a>isdir(path)</h3><p>如果path是一个存在的目录，则返回True。否则返回False</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.isdir(<span class="string">"translate.py"</span>)</div><div class="line"><span class="keyword">False</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.isdir(<span class="string">"mnist"</span>)</div><div class="line"><span class="keyword">True</span></div></pre></td></tr></table></figure>
+<h3 id="join-path-paths"><a href="#join-path-paths" class="headerlink" title="join(path, *paths)"></a>join(path, *paths)</h3><p>将多个路径组合后返回，第一个绝对路径之前的参数将被忽略。 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>cur</div><div class="line"><span class="string">'/home/dl/PJT'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>mnist</div><div class="line"><span class="string">'/home/dl/PJT/mnist'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.join(mnist, cur, <span class="string">"translate.py"</span>)</div><div class="line"><span class="string">'/home/dl/PJT/translate.py'</span></div></pre></td></tr></table></figure>
+<h3 id="splitext-path"><a href="#splitext-path" class="headerlink" title="splitext(path)"></a>splitext(path)</h3><p>分离文件名与扩展名；默认返回(fname,fextension)元组，可做分片操作</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.splitext(<span class="string">"translate.py"</span>)</div><div class="line">(<span class="string">'translate'</span>, <span class="string">'.py'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.splitext(mnist)         </div><div class="line">(<span class="string">'/home/dl/PJT/mnist'</span>, <span class="string">''</span>)</div></pre></td></tr></table></figure>
+<h2 id="15-tmpfile"><a href="#15-tmpfile" class="headerlink" title="15. tmpfile"></a>15. tmpfile</h2><h3 id="tempfile-TemporaryFile"><a href="#tempfile-TemporaryFile" class="headerlink" title="tempfile.TemporaryFile()"></a>tempfile.TemporaryFile()</h3><p>如何你的应用程序需要一个临时文件来存储数据，但不需要同其他程序共享，那么用TemporaryFile函数创建临时文件是最好的选择。其他的应用程序是无法找到或打开这个文件的，因为它并没有引用文件系统表。用这个函数创建的临时文件，关闭后会自动删除。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> tempfile</div><div class="line"> </div><div class="line"><span class="keyword">print</span> <span class="string">'OriginalFile'</span></div><div class="line">filename = <span class="string">'/tmp/guess_my_name.%s.txt'</span> % os.getpid()</div><div class="line">temp = open(filename, <span class="string">'w+b'</span>)</div><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">print</span> <span class="string">'temp:'</span>, temp</div><div class="line">    <span class="keyword">print</span> <span class="string">'temp.name:'</span>, temp.name</div><div class="line"><span class="keyword">finally</span>:</div><div class="line">    temp.close()</div><div class="line">    os.remove(filename)     <span class="comment"># Clean up the temporary file yourself</span></div><div class="line"> </div><div class="line"><span class="keyword">print</span></div><div class="line"><span class="keyword">print</span> <span class="string">'TemporaryFile:'</span></div><div class="line">temp = tempfile.TemporaryFile()</div><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">print</span> <span class="string">'temp:'</span>, temp</div><div class="line">    <span class="keyword">print</span> <span class="string">'temp.name:'</span>, temp.name</div><div class="line"><span class="keyword">finally</span>:</div><div class="line">    temp.close()    <span class="comment"># Automatically cleans up the file</span></div></pre></td></tr></table></figure>
+<p>输出：</p>
+<pre><code>OriginalFile:
+temp: &lt;open file &apos;/tmp/guess_my_name.4807.txt&apos;, mode &apos;w+b&apos; at 0x7f0323cf35d0&gt;
+temp.name: /tmp/guess_my_name.4807.txt
 
-from gensim import corpora, models, similarities
-documents = [&quot;Human machine interface for lab abc computer applications&quot;,
-             &quot;A survey of user opinion of computer system response time&quot;,
-             &quot;The EPS user interface management system&quot;,
-             &quot;System and human system engineering testing of EPS&quot;,
-             &quot;Relation of user perceived response time to error measurement&quot;,
-             &quot;The generation of random binary unordered trees&quot;,
-             &quot;The intersection graph of paths in trees&quot;,
-             &quot;Graph minors IV Widths of trees and well quasi ordering&quot;,
-             &quot;Graph minors A survey&quot;]
+TemporaryFile:
+temp: &lt;open file &apos;&lt;fdopen&gt;&apos;, mode &apos;w+b&apos; at 0x7f0323cf3b70&gt;
+temp.name: &lt;fdopen&gt;
+</code></pre><p>这个例子说明了普通创建文件的方法与TemporaryFile()的不同之处，注意：用TemporaryFile()创建的文件没有文件名。</p>
+<h3 id="tempfile-NamedTemporaryFile"><a href="#tempfile-NamedTemporaryFile" class="headerlink" title="tempfile.NamedTemporaryFile()"></a>tempfile.NamedTemporaryFile()</h3><p>如果临时文件会被多个进程或主机使用，那么建立一个有名字的文件是最简单的方法。这就是NamedTemporaryFile要做的，可以使用name属性访问它的名字。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> tempfile</div><div class="line"> </div><div class="line">temp = tempfile.NamedTemporaryFile()</div><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">print</span> <span class="string">'temp:'</span>, temp</div><div class="line">    <span class="keyword">print</span> <span class="string">'temp.name:'</span>, temp.name</div><div class="line"><span class="keyword">finally</span>:</div><div class="line">    <span class="comment"># Automatically cleans up the file</span></div><div class="line">    temp.close()</div><div class="line"><span class="keyword">print</span> <span class="string">'Exists after close:'</span>, os.path.exists(temp.name)</div></pre></td></tr></table></figure>
+<p>输出：</p>
+<pre><code>temp: &lt;open file &apos;&lt;fdopen&gt;&apos;, mode &apos;w+b&apos; at 0x7f109a4ed660&gt;
+temp.name: /tmp/tmpM3clpn
+Exists after close: False
+</code></pre><p>尽管文件带有名字，但它仍然会在close后自动删除。</p>
+<p><strong>更精确地用3个参数生成文件名：</strong></p>
+<p>path = dir + prefix + random + suffix</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tempfile</div><div class="line"> </div><div class="line">temp = tempfile.NamedTemporaryFile(suffix=<span class="string">'_suffix'</span>, </div><div class="line">                                   prefix=<span class="string">'prefix_'</span>, </div><div class="line">                                   dir=<span class="string">'/tmp'</span>,</div><div class="line">                                   )</div><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">print</span> <span class="string">'temp:'</span>, temp</div><div class="line">    <span class="keyword">print</span> <span class="string">'temp.name:'</span>, temp.name</div><div class="line"><span class="keyword">finally</span>:</div><div class="line">    temp.close()</div></pre></td></tr></table></figure>
+<p>输出：</p>
+<pre><code>temp: &lt;open file &apos;&lt;fdopen&gt;&apos;, mode &apos;w+b&apos; at 0x7f9dca0f7b70&gt;
+temp.name: /tmp/prefix_SCJKwE_suffix
+</code></pre><h3 id="tempfile-mkdtemp"><a href="#tempfile-mkdtemp" class="headerlink" title="tempfile.mkdtemp()"></a>tempfile.mkdtemp()</h3><p>创建临时目录，目录需要手动删除</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> tempfile</div><div class="line"> </div><div class="line">directory_name = tempfile.mkdtemp()</div><div class="line"><span class="keyword">print</span> directory_name</div><div class="line"><span class="comment"># Clean up the directory </span></div><div class="line">os.removedirs(directory_name)</div></pre></td></tr></table></figure>
+<p>输出：</p>
+<pre><code>/tmp/tmp9u8Zw4
+</code></pre><h3 id="tempfile-mkstemp-suffix-’’-prefix-’tmp’-dir-None-text-False"><a href="#tempfile-mkstemp-suffix-’’-prefix-’tmp’-dir-None-text-False" class="headerlink" title="tempfile.mkstemp([suffix=’’[, prefix=’tmp’[, dir=None[, text=False]]]])"></a>tempfile.mkstemp([suffix=’’[, prefix=’tmp’[, dir=None[, text=False]]]])</h3><p>创建临时文件，调用tempfile.mkstemp函数后，返回包含两个元素的元组，第一个元素指示操作该临时文件的安全级别，第二个元素指示该临时文件的路径。参数suffix和prefix分别表示临时文件名称的后缀和前缀；dir指定了临时文件所在的目录，如果没有指定目录，将根据系统环境变量TMPDIR, TEMP或者TMP的设置来保存临时文件；参数text指定了是否以文本的形式来操作文件，默认为False，表示以二进制的形式来操作文件。</p>
+<h3 id="tempfile-mktemp-suffix-’’-prefix-’tmp’-dir-None"><a href="#tempfile-mktemp-suffix-’’-prefix-’tmp’-dir-None" class="headerlink" title="tempfile.mktemp([suffix=’’[, prefix=’tmp’[, dir=None]]])"></a>tempfile.mktemp([suffix=’’[, prefix=’tmp’[, dir=None]]])</h3><p>mktemp用于返回一个临时文件的路径，但并不创建该临时文件。</p>
+<h3 id="tempfile-tempdir"><a href="#tempfile-tempdir" class="headerlink" title="tempfile.tempdir"></a>tempfile.tempdir</h3><p>该属性用于指定创建的临时文件（夹）所在的默认文件夹。如果没有设置该属性或者将其设为None，Python将返回以下环境变量TMPDIR, TEMP, TEMP指定的目录，如果没有定义这些环境变量，临时文件将被创建在当前工作目录。</p>
+<h3 id="tempfile-gettempdir"><a href="#tempfile-gettempdir" class="headerlink" title="tempfile.gettempdir()"></a>tempfile.gettempdir()</h3><p>返回保存临时文件的文件夹路径。    </p>
+<h2 id="16-List-Comprehension"><a href="#16-List-Comprehension" class="headerlink" title="16.List Comprehension"></a>16.List Comprehension</h2><pre><code class="python">elems = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]
+squares = [e*e <span class="keyword">for</span> e <span class="keyword">in</span> elems]  <span class="comment"># square each element</span>
+big = [e <span class="keyword">for</span> e <span class="keyword">in</span> elems <span class="keyword">if</span> e &gt; <span class="number">2</span>]  <span class="comment"># keep elements bigger than 2</span>
 
-# remove common words and tokenize
-stoplist = set(&apos;for a of the and to in&apos;.split())
-texts = [[word for word in document.lower().split() if word not in stoplist]
-         for document in documents]
+<span class="keyword">from</span> gensim <span class="keyword">import</span> corpora, models, similarities
+documents = [<span class="string">"Human machine interface for lab abc computer applications"</span>,
+             <span class="string">"A survey of user opinion of computer system response time"</span>,
+             <span class="string">"The EPS user interface management system"</span>,
+             <span class="string">"System and human system engineering testing of EPS"</span>,
+             <span class="string">"Relation of user perceived response time to error measurement"</span>,
+             <span class="string">"The generation of random binary unordered trees"</span>,
+             <span class="string">"The intersection graph of paths in trees"</span>,
+             <span class="string">"Graph minors IV Widths of trees and well quasi ordering"</span>,
+             <span class="string">"Graph minors A survey"</span>]
+
+<span class="comment"># remove common words and tokenize</span>
+stoplist = set(<span class="string">'for a of the and to in'</span>.split())
+texts = [[word <span class="keyword">for</span> word <span class="keyword">in</span> document.lower().split() <span class="keyword">if</span> word <span class="keyword">not</span> <span class="keyword">in</span> stoplist]
+         <span class="keyword">for</span> document <span class="keyword">in</span> documents]
 </code></pre>
+
       
     </div>
     <footer class="article-footer">
