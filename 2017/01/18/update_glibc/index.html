@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta property="wb:webmaster" content="0f4e330dfccdfaa4" />
+  
+  
+  <meta name="keywords" content="python, data mining, machine learning">
+  
+  <title>Code4Future</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="升级系统glibc 指导文档注意：升级系统的glibc 库是一件风险极高的操作，升级失败会导致系统崩溃和数据丢失。请再次确认是否有其他的代替升级GLIBC的解决方案。
+本文档以RHEL 6.4 （glibc 2.12）为例，将系统GLIBC升级至2.14。
+1.查看系统glibc版本12$ ll /lib64/libc.so.6lrwxrwxrwx. 1 root root 12 Oct 28 1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Code4Future">
+<meta property="og:url" content="http://zjupjt.com/2017/01/18/update_glibc/index.html">
+<meta property="og:site_name" content="Code4Future">
+<meta property="og:description" content="升级系统glibc 指导文档注意：升级系统的glibc 库是一件风险极高的操作，升级失败会导致系统崩溃和数据丢失。请再次确认是否有其他的代替升级GLIBC的解决方案。
+本文档以RHEL 6.4 （glibc 2.12）为例，将系统GLIBC升级至2.14。
+1.查看系统glibc版本12$ ll /lib64/libc.so.6lrwxrwxrwx. 1 root root 12 Oct 28 1">
+<meta property="og:updated_time" content="2017-01-18T13:14:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Code4Future">
+<meta name="twitter:description" content="升级系统glibc 指导文档注意：升级系统的glibc 库是一件风险极高的操作，升级失败会导致系统崩溃和数据丢失。请再次确认是否有其他的代替升级GLIBC的解决方案。
+本文档以RHEL 6.4 （glibc 2.12）为例，将系统GLIBC升级至2.14。
+1.查看系统glibc版本12$ ll /lib64/libc.so.6lrwxrwxrwx. 1 root root 12 Oct 28 1">
+  
+    <link rel="alternative" href="/atom.xml" title="Code4Future" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="favicon/favicon.ico">
+  
+  <!-link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link href="http://fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+</head>
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Code4Future</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I am a slow walker, but I never walk back.</a>
+        </h2>
+      
+    </div>
+
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/sitemap.xml">Map</a>
+        
+      </nav>    
+
+      <nav id="sub-nav">
+        
+        <a class="nav-icon" href="https://cn.linkedin.com/in/jingtianP" title="LinkedIn" target="_blank">&#61665;</a>
+        <a class="nav-icon" href="https://github.com/DjangoPeng" title="GitHub" target="_blank">&#61595;</a>
+        <a class="nav-icon" href="http://weibo.com/2806951572" title="weibo" target="_blank">&#61834;</a>
+        <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://zjupjt.com"></form>
+      </div>
+
+      <script type="text/javascript">
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','Qxi4BvHzoYsUfYh7oiD_','2.0.0');
+      </script>
+      
+    </div>
+    <div>
+        
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-update_glibc" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      <a href="/2017/01/18/update_glibc/" class="article-date">
+  <time datetime="2017-01-18T13:14:01.000Z" itemprop="datePublished">2017-1-18 Wed  21:14</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="升级系统glibc-指导文档"><a href="#升级系统glibc-指导文档" class="headerlink" title="升级系统glibc 指导文档"></a>升级系统glibc 指导文档</h2><p><strong>注意：升级系统的glibc 库是一件风险极高的操作，升级失败会导致系统崩溃和数据丢失。请再次确认是否有其他的代替升级GLIBC的解决方案。</strong></p>
+<p>本文档以RHEL 6.4 （glibc 2.12）为例，将系统GLIBC升级至2.14。</p>
+<h4 id="1-查看系统glibc版本"><a href="#1-查看系统glibc版本" class="headerlink" title="1.查看系统glibc版本"></a>1.查看系统glibc版本</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ll /lib64/libc.so.6</div><div class="line">lrwxrwxrwx. 1 root root 12 Oct 28 19:18 /lib64/libc.so.6 -&gt; libc-2.12.so</div></pre></td></tr></table></figure>
+<h4 id="2-编译glibc-2-14"><a href="#2-编译glibc-2-14" class="headerlink" title="2.编译glibc-2.14"></a>2.编译glibc-2.14</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ tar xvf glibc-2.14.tar.gz</div><div class="line">$ tar xvf glibc-ports-2.14.tar.gz</div><div class="line">$ mv glibc-ports-2.14 glibc-2.14/ports</div><div class="line">$ mkdir glibc-2.14-build</div><div class="line">$ cd glibc-2.14-build</div><div class="line"># Configure glibc 2.14</div><div class="line">$ ../glibc-2.14/configure --prefix=/usr --disable-profile --enable-add-ons --with-headers=/usr/include --with-binutils=/usr/bin</div><div class="line"># Build </div><div class="line">$ make</div></pre></td></tr></table></figure>
+<h4 id="3-安装glibc-2-14"><a href="#3-安装glibc-2-14" class="headerlink" title="3.安装glibc-2.14"></a>3.安装glibc-2.14</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 根据系统的环境不同，安装过程中可能出现错误</div><div class="line">$ make install</div></pre></td></tr></table></figure>
+<h4 id="4-检查是否升级成功"><a href="#4-检查是否升级成功" class="headerlink" title="4.检查是否升级成功"></a>4.检查是否升级成功</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"># 如果出现错误，首先查看/lib64下是否安装libc-2.14</div><div class="line">$ ll /lib64/libc*</div><div class="line">-rwxr-xr-x. 1 root root 1916568 Nov 21  2012 libc-2.12.so</div><div class="line">-rwxr-xr-x  1 root root 9643763 Dec 23 17:30 libc-2.14.so</div><div class="line">lrwxrwxrwx. 1 root root      18 Aug 15 18:00 libcap-ng.so.0 -&gt; libcap-ng.so.0.0.0</div><div class="line">-rwxr-xr-x. 1 root root   18672 Nov  5  2010 libcap-ng.so.0.0.0</div><div class="line">lrwxrwxrwx. 1 root root      14 Aug 15 17:59 libcap.so.2 -&gt; libcap.so.2.16</div><div class="line">-rwxr-xr-x. 1 root root   16600 Aug 23  2011 libcap.so.2.16</div><div class="line">lrwxrwxrwx. 1 root root      19 Aug 15 18:02 libcgroup.so.1 -&gt; libcgroup.so.1.0.37</div><div class="line">-rwxr-xr-x. 1 root root   80568 Dec 20  2012 libcgroup.so.1.0.37</div><div class="line">-rwxr-xr-x. 1 root root  197064 Nov 21  2012 libcidn-2.12.so</div><div class="line">lrwxrwxrwx. 1 root root      15 Aug 15 17:59 libcidn.so.1 -&gt; libcidn-2.12.so</div><div class="line">lrwxrwxrwx. 1 root root      17 Aug 15 17:59 libcom_err.so.2 -&gt; libcom_err.so.2.1</div><div class="line">-rwxr-xr-x. 1 root root   14664 Oct 13  2012 libcom_err.so.2.1</div><div class="line">-rwxr-xr-x. 1 root root   40400 Nov 21  2012 libcrypt-2.12.so</div><div class="line">lrwxrwxrwx. 1 root root      22 Aug 15 18:02 libcryptsetup.so.1 -&gt; libcryptsetup.so.1.1.0</div><div class="line">-rwxr-xr-x. 1 root root   94312 Feb 29  2012 libcryptsetup.so.1.1.0</div><div class="line">lrwxrwxrwx. 1 root root      16 Aug 15 17:59 libcrypt.so.1 -&gt; libcrypt-2.12.so</div><div class="line">lrwxrwxrwx  1 root root      19 Dec 23 17:39 libc.so.6 -&gt; /lib64/libc-2.14.so</div><div class="line"></div><div class="line"># 检查软链，编译成功会在glibc-2.14-build/libc.so.6生成软链</div><div class="line">$ ll libc.so.6</div><div class="line">lrwxrwxrwx 1 root root 7 Dec 23 17:24 libc.so.6 -&gt; libc.so</div><div class="line"></div><div class="line"># 查看系统glibc版本</div><div class="line">$ strings libc.so | grep GLIBC</div><div class="line">GLIBC_2.2.5</div><div class="line">GLIBC_2.2.6</div><div class="line">GLIBC_2.3</div><div class="line">GLIBC_2.3.2</div><div class="line">GLIBC_2.3.3</div><div class="line">GLIBC_2.3.4</div><div class="line">GLIBC_2.4</div><div class="line">GLIBC_2.5</div><div class="line">GLIBC_2.6</div><div class="line">GLIBC_2.7</div><div class="line">GLIBC_2.8</div><div class="line">GLIBC_2.9</div><div class="line">GLIBC_2.10</div><div class="line">GLIBC_2.11</div><div class="line">GLIBC_2.12</div><div class="line">GLIBC_2.13</div><div class="line">GLIBC_2.14</div><div class="line">GLIBC_PRIVATE</div><div class="line"># 说明glibc-2.14安装成功</div></pre></td></tr></table></figure>
+<h4 id="5-更新系统库"><a href="#5-更新系统库" class="headerlink" title="5.更新系统库"></a>5.更新系统库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ cp libc.so /lib64/libc-2.14.so</div><div class="line"># 删除glibc-2.12的软链</div><div class="line">$ rm -rf /lib64/libc.so.6</div><div class="line"># 生成glibc-2.14的软链</div><div class="line">$ LD_PRELOAD=/lib64/libc-2.14.so ln -s /lib64/libc-2.14.so  /lib64/libc.so.6</div></pre></td></tr></table></figure>
+<h4 id="6-测试glibc-2-14"><a href="#6-测试glibc-2-14" class="headerlink" title="6.测试glibc-2.14"></a>6.测试glibc-2.14</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装tensorflow_0.10后，测试glibc版本依赖</span></div><div class="line">$ python</div><div class="line">Python <span class="number">2.7</span><span class="number">.12</span> |Anaconda <span class="number">4.2</span><span class="number">.0</span> (<span class="number">64</span>-bit)| (default, Jul  <span class="number">2</span> <span class="number">2016</span>, <span class="number">17</span>:<span class="number">42</span>:<span class="number">40</span>) </div><div class="line">[GCC <span class="number">4.4</span><span class="number">.7</span> <span class="number">20120313</span> (Red Hat <span class="number">4.4</span><span class="number">.7</span><span class="number">-1</span>)] on linux2</div><div class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> <span class="keyword">or</span> <span class="string">"license"</span> <span class="keyword">for</span> more information.</div><div class="line">Anaconda <span class="keyword">is</span> brought to you by Continuum Analytics.</div><div class="line">Please check out: http://continuum.io/thanks <span class="keyword">and</span> https://anaconda.org</div><div class="line">&gt;&gt;&gt;<span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>hello = tf.constant(<span class="string">"Hello TensorFlow!"</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sess = tf.Session()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sess.run(hello)</div><div class="line"><span class="string">'Hello TensorFlow!'</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://zjupjt.com/2017/01/18/update_glibc/" data-id="ciy334y850000nrhpxvcyrgfs" class="article-share-link">分享</a>
+      
+      
+        <a href="http://zjupjt.com/2017/01/18/update_glibc/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2017/01/18/update_glibc/">评论</a>
+      
+      
+    </footer>
+
+      
+      
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/18/python_advanced_1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/17/nnlm/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">神经网络语言模型-NNLM</div>
+    </a>
+  
+</nav>
+
+  
+
+
+  
+    <section id="comments">
+    <!-- 多说评论框 start -->
+      <div id="ds-thread" class="ds-thread" data-thread-key="2017/01/18/update_glibc/" data-title="" data-url="http://zjupjt.com/2017/01/18/update_glibc/"></div>
+    <!-- 多说评论框 end --> 
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"code4future"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+    </section>
+  
+
+
+
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+	<h3 class="widget-title">About Me</h3>
+	<div class="widget">
+	  <!-img src="http://pic.4j4j.cn/upload/pic/20130221/c53f922687.jpg" height="80px" width="80px">
+	  <p><b>	Jingtian Peng</b></br></>
+	  <p align="right"><i> -- A Single Coder </i></>
+	</div>
+</div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Mining/">Data Mining</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Classification/" style="font-size: 10px;">Classification</a> <a href="/tags/Data-Mining/" style="font-size: 10px;">Data Mining</a> <a href="/tags/Deep-Learning/" style="font-size: 16.67px;">Deep Learning</a> <a href="/tags/Information-Retrieval/" style="font-size: 10px;">Information Retrieval</a> <a href="/tags/Machine-Learning/" style="font-size: 20px;">Machine Learning</a> <a href="/tags/Neural-Network/" style="font-size: 13.33px;">Neural Network</a> <a href="/tags/Neural-Nework/" style="font-size: 10px;">Neural Nework</a> <a href="/tags/Python/" style="font-size: 16.67px;">Python</a> <a href="/tags/Text-Minging/" style="font-size: 10px;">Text Minging</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/01/18/python_advanced_1/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/18/update_glibc/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/17/nnlm/">神经网络语言模型-NNLM</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/13/nn-fp-bp/">神经网络模型</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/04/nn-Activation-Function/">神经网络-激活函数</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+	<div class="outer">
+	    <div id="footer-info" class="inner" style="text-align:center;">
+		  <table width="100%" border="0">
+	        <tr>
+	          <td style="text-align:left">
+	            Copyright &copy; 2015-2017 Jingtian Peng &nbsp; &nbsp;
+	            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a><br>
+			  </td>
+			  <td style="text-align:right">
+			    <div style="font-family: FontAwesome;font-size: 20px;">
+			    <a href="http://weibo.com/2806951572" title="weibo" target="_blank">&#61834;</a>&nbsp;
+				<a href="https://cn.linkedin.com/in/jingtianP" title="LinkedIn" target="_blank">&#61665;</a>&nbsp;
+				<a href="https://github.com/DjangoPeng" title="GitHub" target="_blank">&#61595;</a>&nbsp;
+				</div><br>
+			    <a href="/sitemap.xml">网站地图</a>&nbsp; &nbsp;
+				<a href="/atom.xml">订阅本站</a>&nbsp; &nbsp;
+				<a href="mailto:pjt73651@gmail.com" target="_blank">联系博主</a>&nbsp; &nbsp;
+			  </td>
+	        </tr>
+	      </table>
+	    </div>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/sitemap.xml" class="mobile-nav-link">Map</a>
+  
+</nav>
+    
+
+<script src="http://lib.sinaapp.com/js/jquery/2.2.0/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof jQuery == 'undefined') {
+  document.write(unescape("%3Cscript src='/js/jquery-2.2.0.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+// ]]>
+</script>
+
+<!-- Baidu Analytics Start --->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?4fcfa30fdac460a8f30636bb8c97ad89";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Baidu Analytics End --->
+
+<!-- Baidu Share Start --->
+<script>
+window_bd_share_config={"common":{"bdSnsKey":{"tsina":"3687385740"},"bdWbuid":2806951572,"bdText":"","bdMini":"2","bdMiniList":["douban","kaixin001","tieba","tsohu","sqq","youdao","qingbiji","mail","linkedin","mshare","copy","print"],"bdPic":"http://www.devchen.com/SharePic.png","bdStyle":"1","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<!--- Baidu Share End --->
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>

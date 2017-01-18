@@ -9,12 +9,16 @@
   
   <title>Code4Future</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="Python 进阶系列1：lambda函数与高阶函数Python作为一门流行的编程语言，广受程序员与数据科学家的喜爱。如今的Python拥有丰富的第三方库和良好的生态发展，使其能够在数据科学、人工智能、web等各领域获得广泛的支持。Python进阶系列旨在分享一些Python的高级特性，如Lambda表达式、元类(metaclass)的使用、类(class)和类型(type)的统一、经典类与新式类">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Code4Future">
-<meta property="og:url" content="http://zjupjt.com/index.html">
+<meta property="og:url" content="http://zjupjt.com/2017/01/18/python_advanced_1/index.html">
 <meta property="og:site_name" content="Code4Future">
+<meta property="og:description" content="Python 进阶系列1：lambda函数与高阶函数Python作为一门流行的编程语言，广受程序员与数据科学家的喜爱。如今的Python拥有丰富的第三方库和良好的生态发展，使其能够在数据科学、人工智能、web等各领域获得广泛的支持。Python进阶系列旨在分享一些Python的高级特性，如Lambda表达式、元类(metaclass)的使用、类(class)和类型(type)的统一、经典类与新式类">
+<meta property="og:updated_time" content="2017-01-18T15:09:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Code4Future">
+<meta name="twitter:description" content="Python 进阶系列1：lambda函数与高阶函数Python作为一门流行的编程语言，广受程序员与数据科学家的喜爱。如今的Python拥有丰富的第三方库和良好的生态发展，使其能够在数据科学、人工智能、web等各领域获得广泛的支持。Python进阶系列旨在分享一些Python的高级特性，如Lambda表达式、元类(metaclass)的使用、类(class)和类型(type)的统一、经典类与新式类">
   
     <link rel="alternative" href="/atom.xml" title="Code4Future" type="application/atom+xml">
   
@@ -86,9 +90,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-python_advanced_1" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-python_advanced_1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -166,567 +168,44 @@
       
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/01/18/update_glibc/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
 
 
+  
+    <section id="comments">
+    <!-- 多说评论框 start -->
+      <div id="ds-thread" class="ds-thread" data-thread-key="2017/01/18/python_advanced_1/" data-title="" data-url="http://zjupjt.com/2017/01/18/python_advanced_1/"></div>
+    <!-- 多说评论框 end --> 
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"code4future"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+    </section>
   
 
 
 
 </article>
-
-  
-    <article id="post-update_glibc" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-    <div class="article-meta">
-      <a href="/2017/01/18/update_glibc/" class="article-date">
-  <time datetime="2017-01-18T13:14:01.000Z" itemprop="datePublished">2017-1-18 Wed  21:14</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="升级系统glibc-指导文档"><a href="#升级系统glibc-指导文档" class="headerlink" title="升级系统glibc 指导文档"></a>升级系统glibc 指导文档</h2><p><strong>注意：升级系统的glibc 库是一件风险极高的操作，升级失败会导致系统崩溃和数据丢失。请再次确认是否有其他的代替升级GLIBC的解决方案。</strong></p>
-<p>本文档以RHEL 6.4 （glibc 2.12）为例，将系统GLIBC升级至2.14。</p>
-<h4 id="1-查看系统glibc版本"><a href="#1-查看系统glibc版本" class="headerlink" title="1.查看系统glibc版本"></a>1.查看系统glibc版本</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ll /lib64/libc.so.6</div><div class="line">lrwxrwxrwx. 1 root root 12 Oct 28 19:18 /lib64/libc.so.6 -&gt; libc-2.12.so</div></pre></td></tr></table></figure>
-<h4 id="2-编译glibc-2-14"><a href="#2-编译glibc-2-14" class="headerlink" title="2.编译glibc-2.14"></a>2.编译glibc-2.14</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ tar xvf glibc-2.14.tar.gz</div><div class="line">$ tar xvf glibc-ports-2.14.tar.gz</div><div class="line">$ mv glibc-ports-2.14 glibc-2.14/ports</div><div class="line">$ mkdir glibc-2.14-build</div><div class="line">$ cd glibc-2.14-build</div><div class="line"># Configure glibc 2.14</div><div class="line">$ ../glibc-2.14/configure --prefix=/usr --disable-profile --enable-add-ons --with-headers=/usr/include --with-binutils=/usr/bin</div><div class="line"># Build </div><div class="line">$ make</div></pre></td></tr></table></figure>
-<h4 id="3-安装glibc-2-14"><a href="#3-安装glibc-2-14" class="headerlink" title="3.安装glibc-2.14"></a>3.安装glibc-2.14</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 根据系统的环境不同，安装过程中可能出现错误</div><div class="line">$ make install</div></pre></td></tr></table></figure>
-<h4 id="4-检查是否升级成功"><a href="#4-检查是否升级成功" class="headerlink" title="4.检查是否升级成功"></a>4.检查是否升级成功</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"># 如果出现错误，首先查看/lib64下是否安装libc-2.14</div><div class="line">$ ll /lib64/libc*</div><div class="line">-rwxr-xr-x. 1 root root 1916568 Nov 21  2012 libc-2.12.so</div><div class="line">-rwxr-xr-x  1 root root 9643763 Dec 23 17:30 libc-2.14.so</div><div class="line">lrwxrwxrwx. 1 root root      18 Aug 15 18:00 libcap-ng.so.0 -&gt; libcap-ng.so.0.0.0</div><div class="line">-rwxr-xr-x. 1 root root   18672 Nov  5  2010 libcap-ng.so.0.0.0</div><div class="line">lrwxrwxrwx. 1 root root      14 Aug 15 17:59 libcap.so.2 -&gt; libcap.so.2.16</div><div class="line">-rwxr-xr-x. 1 root root   16600 Aug 23  2011 libcap.so.2.16</div><div class="line">lrwxrwxrwx. 1 root root      19 Aug 15 18:02 libcgroup.so.1 -&gt; libcgroup.so.1.0.37</div><div class="line">-rwxr-xr-x. 1 root root   80568 Dec 20  2012 libcgroup.so.1.0.37</div><div class="line">-rwxr-xr-x. 1 root root  197064 Nov 21  2012 libcidn-2.12.so</div><div class="line">lrwxrwxrwx. 1 root root      15 Aug 15 17:59 libcidn.so.1 -&gt; libcidn-2.12.so</div><div class="line">lrwxrwxrwx. 1 root root      17 Aug 15 17:59 libcom_err.so.2 -&gt; libcom_err.so.2.1</div><div class="line">-rwxr-xr-x. 1 root root   14664 Oct 13  2012 libcom_err.so.2.1</div><div class="line">-rwxr-xr-x. 1 root root   40400 Nov 21  2012 libcrypt-2.12.so</div><div class="line">lrwxrwxrwx. 1 root root      22 Aug 15 18:02 libcryptsetup.so.1 -&gt; libcryptsetup.so.1.1.0</div><div class="line">-rwxr-xr-x. 1 root root   94312 Feb 29  2012 libcryptsetup.so.1.1.0</div><div class="line">lrwxrwxrwx. 1 root root      16 Aug 15 17:59 libcrypt.so.1 -&gt; libcrypt-2.12.so</div><div class="line">lrwxrwxrwx  1 root root      19 Dec 23 17:39 libc.so.6 -&gt; /lib64/libc-2.14.so</div><div class="line"></div><div class="line"># 检查软链，编译成功会在glibc-2.14-build/libc.so.6生成软链</div><div class="line">$ ll libc.so.6</div><div class="line">lrwxrwxrwx 1 root root 7 Dec 23 17:24 libc.so.6 -&gt; libc.so</div><div class="line"></div><div class="line"># 查看系统glibc版本</div><div class="line">$ strings libc.so | grep GLIBC</div><div class="line">GLIBC_2.2.5</div><div class="line">GLIBC_2.2.6</div><div class="line">GLIBC_2.3</div><div class="line">GLIBC_2.3.2</div><div class="line">GLIBC_2.3.3</div><div class="line">GLIBC_2.3.4</div><div class="line">GLIBC_2.4</div><div class="line">GLIBC_2.5</div><div class="line">GLIBC_2.6</div><div class="line">GLIBC_2.7</div><div class="line">GLIBC_2.8</div><div class="line">GLIBC_2.9</div><div class="line">GLIBC_2.10</div><div class="line">GLIBC_2.11</div><div class="line">GLIBC_2.12</div><div class="line">GLIBC_2.13</div><div class="line">GLIBC_2.14</div><div class="line">GLIBC_PRIVATE</div><div class="line"># 说明glibc-2.14安装成功</div></pre></td></tr></table></figure>
-<h4 id="5-更新系统库"><a href="#5-更新系统库" class="headerlink" title="5.更新系统库"></a>5.更新系统库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ cp libc.so /lib64/libc-2.14.so</div><div class="line"># 删除glibc-2.12的软链</div><div class="line">$ rm -rf /lib64/libc.so.6</div><div class="line"># 生成glibc-2.14的软链</div><div class="line">$ LD_PRELOAD=/lib64/libc-2.14.so ln -s /lib64/libc-2.14.so  /lib64/libc.so.6</div></pre></td></tr></table></figure>
-<h4 id="6-测试glibc-2-14"><a href="#6-测试glibc-2-14" class="headerlink" title="6.测试glibc-2.14"></a>6.测试glibc-2.14</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装tensorflow_0.10后，测试glibc版本依赖</span></div><div class="line">$ python</div><div class="line">Python <span class="number">2.7</span><span class="number">.12</span> |Anaconda <span class="number">4.2</span><span class="number">.0</span> (<span class="number">64</span>-bit)| (default, Jul  <span class="number">2</span> <span class="number">2016</span>, <span class="number">17</span>:<span class="number">42</span>:<span class="number">40</span>) </div><div class="line">[GCC <span class="number">4.4</span><span class="number">.7</span> <span class="number">20120313</span> (Red Hat <span class="number">4.4</span><span class="number">.7</span><span class="number">-1</span>)] on linux2</div><div class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> <span class="keyword">or</span> <span class="string">"license"</span> <span class="keyword">for</span> more information.</div><div class="line">Anaconda <span class="keyword">is</span> brought to you by Continuum Analytics.</div><div class="line">Please check out: http://continuum.io/thanks <span class="keyword">and</span> https://anaconda.org</div><div class="line">&gt;&gt;&gt;<span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>hello = tf.constant(<span class="string">"Hello TensorFlow!"</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sess = tf.Session()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sess.run(hello)</div><div class="line"><span class="string">'Hello TensorFlow!'</span></div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://zjupjt.com/2017/01/18/update_glibc/" data-id="ciy334y850000nrhpxvcyrgfs" class="article-share-link">分享</a>
-      
-      
-        <a href="http://zjupjt.com/2017/01/18/update_glibc/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2017/01/18/update_glibc/">评论</a>
-      
-      
-    </footer>
-
-      
-      
-  </div>
-  
-
-
-  
-
-
-
-</article>
-
-  
-    <article id="post-nnlm" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/17/nnlm/">神经网络语言模型-NNLM</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/17/nnlm/" class="article-date">
-  <time datetime="2016-09-17T04:25:45.000Z" itemprop="datePublished">2016-9-17 Sat  12:25</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
-  </div>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>作者：<a href="https://cn.linkedin.com/in/jingtianp">一个独行的程序员</a></p>
-<p><em>Bengio 2003年的NNLM可谓是神经网络语言模型的开山之作，并且为后来的RNNLM、Word2Vec、NMT等提供了思路，为DL4NLP打下了坚实的基础。</em></p>
-<h2 id="语言模型"><a href="#语言模型" class="headerlink" title="语言模型"></a>语言模型</h2><p>通俗的说，语言模型就是判断一句话像不像是人说出来的。<br>形式化的定义，语言模型是借由一个概率分布，试图用概率p(s)来表示字符串s作为1个句子出现的频率：</p>
-<p>$$<br>    p(s) = p(w_1,…w_m)<br>$$</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/09/17/nnlm/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://zjupjt.com/2016/09/17/nnlm/" data-id="cit6qav7y0000cghp2gatj3rt" class="article-share-link">分享</a>
-      
-      
-        <a href="http://zjupjt.com/2016/09/17/nnlm/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/09/17/nnlm/">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Neural-Nework/">Neural Nework</a></li></ul>
-
-    </footer>
-
-      
-      
-  </div>
-  
-
-
-  
-
-
-
-</article>
-
-  
-    <article id="post-nn-fp-bp" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/13/nn-fp-bp/">神经网络模型</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/08/13/nn-fp-bp/" class="article-date">
-  <time datetime="2016-08-13T14:54:48.000Z" itemprop="datePublished">2016-8-13 Sat  22:54</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
-  </div>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>作者：<a href="https://cn.linkedin.com/in/jingtianp">一个独行的程序员</a></p>
-<p><em>神经网络中决定一个模型好坏的因素就是参数<strong>W，b</strong>，而后向传播过程就是通过计算Loss相对w或b的偏导数来不断更新参数的过程。本文简要介绍神经网络模型，详细的解释了<strong>后向传播原理</strong>。</em></p>
-<h2 id="神经网络模型"><a href="#神经网络模型" class="headerlink" title="神经网络模型"></a>神经网络模型</h2><p>在机器学习和认知科学领域，人工神经网络（artificial neural network，缩写ANN），简称神经网络（neural network，缩写NN）是一种模仿生物神经网络(动物的中枢神经系统，特别是大脑)的结构和功能的数学模型或计算模型，用于对函数进行估计或近似。神经网络由大量的人工神经元联结进行计算。现代神经网络是一种非线性统计性数据建模工具。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/08/13/nn-fp-bp/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://zjupjt.com/2016/08/13/nn-fp-bp/" data-id="cit6pz8ow0009bzhpu19cqroz" class="article-share-link">分享</a>
-      
-      
-        <a href="http://zjupjt.com/2016/08/13/nn-fp-bp/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/08/13/nn-fp-bp/">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Neural-Network/">Neural Network</a></li></ul>
-
-    </footer>
-
-      
-      
-  </div>
-  
-
-
-  
-
-
-
-</article>
-
-  
-    <article id="post-nn-Activation-Function" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/04/nn-Activation-Function/">神经网络-激活函数</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/08/04/nn-Activation-Function/" class="article-date">
-  <time datetime="2016-08-04T15:16:18.000Z" itemprop="datePublished">2016-8-4 Thu  23:16</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
-  </div>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>作者：<a href="https://cn.linkedin.com/in/jingtianp">一个独行的程序员</a></p>
-<p><em>在训练神经网络的参数时，我们通常会使用一些激活函数（Activation Function）来引入非线性因素，解决一些线性不可分的问题。这篇文章主要介绍几种常用的激活函数。</em></p>
-<h1 id="1-Sigmoid"><a href="#1-Sigmoid" class="headerlink" title="1.Sigmoid"></a>1.Sigmoid</h1><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png" alt="sigmoid"></p>
-        
-          <p class="article-more-link">
-            <a href="/2016/08/04/nn-Activation-Function/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://zjupjt.com/2016/08/04/nn-Activation-Function/" data-id="cit6pz8or0007bzhphaeeswz4" class="article-share-link">分享</a>
-      
-      
-        <a href="http://zjupjt.com/2016/08/04/nn-Activation-Function/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/08/04/nn-Activation-Function/">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Neural-Network/">Neural Network</a></li></ul>
-
-    </footer>
-
-      
-      
-  </div>
-  
-
-
-  
-
-
-
-</article>
-
-  
-    <article id="post-ML-LogisticRegression" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/24/ML-LogisticRegression/">机器学习算法-Logistic Regression</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/07/24/ML-LogisticRegression/" class="article-date">
-  <time datetime="2016-07-24T12:27:34.000Z" itemprop="datePublished">2016-7-24 Sun  20:27</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
-  </div>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>作者：<a href="https://cn.linkedin.com/in/jingtianp">一个独行的程序员</a></p>
-<p><em>逻辑回归（Logistic Regression）是一种简单的分类模型，由于其高效而又简单的特性，在实际中取得了非常广泛的应用。本文主要关注逻辑回归的应用场景和数学原理，并对其在多分类问题上的扩展做了简要介绍。</em></p>
-<h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在实际生活中，我们常常会遇到很多“二选一”的问题。如：</p>
-<ul>
-<li>预测用户是否喜欢某推荐商品</li>
-<li>判断用户性别</li>
-<li>预测球赛的获胜队</li>
-</ul>
-<p>在处理以上这些二分类问题时，逻辑回归成了我们的一把利器。通常这类问题的处理步骤为：</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/07/24/ML-LogisticRegression/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://zjupjt.com/2016/07/24/ML-LogisticRegression/" data-id="cit6pz8oa0000bzhpu6sjj2js" class="article-share-link">分享</a>
-      
-      
-        <a href="http://zjupjt.com/2016/07/24/ML-LogisticRegression/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/07/24/ML-LogisticRegression/">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Classification/">Classification</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li></ul>
-
-    </footer>
-
-      
-      
-  </div>
-  
-
-
-  
-
-
-
-</article>
-
-  
-    <article id="post-Singular-Vector-Decomposition-SVD" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/28/Singular-Vector-Decomposition-SVD/">Singular Vector Decomposition(SVD)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/06/28/Singular-Vector-Decomposition-SVD/" class="article-date">
-  <time datetime="2016-06-28T06:24:48.000Z" itemprop="datePublished">2016-6-28 Tue  14:24</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
-  </div>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2">一个独行的程序员</a></p>
-<p><strong>参考</strong>：Dr. Edel Garcia, Singular Value Decomposition (SVD) A Fast Track Tutorial</p>
-<p><em>SVD（奇异值分解）是常用的一种矩阵降维方法，其数学原理和求解过程并不复杂。这篇文章用一个样例来解释说明如何进行SVD的运算，并附上了常用的求解SVD的工具。</em></p>
-<h2 id="Problem-求矩阵A的SVD"><a href="#Problem-求矩阵A的SVD" class="headerlink" title="Problem: 求矩阵A的SVD"></a>Problem: 求矩阵A的SVD</h2><img src="/2016/06/28/Singular-Vector-Decomposition-SVD/img_0.png" alt="img_0.png" title="">
-        
-          <p class="article-more-link">
-            <a href="/2016/06/28/Singular-Vector-Decomposition-SVD/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/" data-id="cit6pz8ol0004bzhp3mygw6gs" class="article-share-link">分享</a>
-      
-      
-        <a href="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/06/28/Singular-Vector-Decomposition-SVD/">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Mining/">Data Mining</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li></ul>
-
-    </footer>
-
-      
-      
-  </div>
-  
-
-
-  
-
-
-
-</article>
-
-  
-    <article id="post-Stanford-CS229-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/07/Stanford-CS229-1/">Stanford CS229:Supervised Learning[1]</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/06/07/Stanford-CS229-1/" class="article-date">
-  <time datetime="2016-06-07T06:17:26.000Z" itemprop="datePublished">2016-6-7 Tue  14:17</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
-  </div>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP">一个独行的程序员</a></p>
-<h2 id="Supervised-Learning"><a href="#Supervised-Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h2><p>监督学习(Supervised Learning)是机器学习中的一大类方法，其特点就是需要已经标注过的数据作为训练集，通过回归（Regression）等方法，得到一个误差最小的假设或估计。</p>
-<img src="/2016/06/07/Stanford-CS229-1/pic_9.png" alt="Supervised Learning" title="Supervised Learning">
-        
-          <p class="article-more-link">
-            <a href="/2016/06/07/Stanford-CS229-1/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://zjupjt.com/2016/06/07/Stanford-CS229-1/" data-id="cit6pz8oe0001bzhpfjie02ba" class="article-share-link">分享</a>
-      
-      
-        <a href="http://zjupjt.com/2016/06/07/Stanford-CS229-1/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/06/07/Stanford-CS229-1/">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li></ul>
-
-    </footer>
-
-      
-      
-  </div>
-  
-
-
-  
-
-
-
-</article>
-
-  
-    <article id="post-Hexo-Tutorial" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/02/Hexo-Tutorial/">Hexo Tutorial</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/06/02/Hexo-Tutorial/" class="article-date">
-  <time datetime="2016-06-02T14:40:59.000Z" itemprop="datePublished">2016-6-2 Thu  22:40</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Others/">Others</a>
-  </div>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2">一个独行的程序员</a></p>
-<h2 id="Install-Node-js"><a href="#Install-Node-js" class="headerlink" title="Install Node.js"></a>Install Node.js</h2><p>Mac通过Homebrew安装Node.js </p>
-<pre><code>$ brew install node
-</code></pre><p>或者去Node.js官网：<a href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
-<p>下载dmg文件，直接安装</p>
-<h2 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><p>Mac通过npm直接安装Hexo</p>
-<pre><code>$ npm install hexo --no-optional
-</code></pre>
-        
-          <p class="article-more-link">
-            <a href="/2016/06/02/Hexo-Tutorial/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://zjupjt.com/2016/06/02/Hexo-Tutorial/" data-id="cit6pz8oo0005bzhplgq9ehev" class="article-share-link">分享</a>
-      
-      
-        <a href="http://zjupjt.com/2016/06/02/Hexo-Tutorial/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/06/02/Hexo-Tutorial/">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
-
-    </footer>
-
-      
-      
-  </div>
-  
-
-
-  
-
-
-
-</article>
-
-  
-    <article id="post-tf-idf" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/15/tf-idf/">TF-IDF的原理与应用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/02/15/tf-idf/" class="article-date">
-  <time datetime="2016-02-15T12:50:51.000Z" itemprop="datePublished">2016-2-15 Mon  20:50</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Data-Mining/">Data Mining</a>
-  </div>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP">一个独行的程序员</a></p>
-<img src="/2016/02/15/tf-idf/img_0.png" alt="." title=".">
-<h2 id="1-TF-IDF原理"><a href="#1-TF-IDF原理" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><p>TF-IDF(Term Frequency-Inverse Document Frequency)，中文叫做词频－逆文档频率。在文本挖掘(Text Mining)和信息检索(Information Retrieval)领域具有广泛的应用。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/02/15/tf-idf/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://zjupjt.com/2016/02/15/tf-idf/" data-id="cit6pz8pb000qbzhpct7cc7yy" class="article-share-link">分享</a>
-      
-      
-        <a href="http://zjupjt.com/2016/02/15/tf-idf/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/02/15/tf-idf/">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Information-Retrieval/">Information Retrieval</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Text-Minging/">Text Minging</a></li></ul>
-
-    </footer>
-
-      
-      
-  </div>
-  
-
-
-  
-
-
-
-</article>
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
 </section>
         
           <aside id="sidebar">
@@ -872,23 +351,6 @@ window_bd_share_config={"common":{"bdSnsKey":{"tsina":"3687385740"},"bdWbuid":28
 
 <script src="/js/script.js"></script>
 
-  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
