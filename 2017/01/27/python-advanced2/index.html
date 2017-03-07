@@ -20,7 +20,7 @@ Ob">
 作者：DjangoPeng
 Ob">
 <meta property="og:image" content="http://zjupjt.com/2017/01/27/python-advanced2/img_0.png">
-<meta property="og:updated_time" content="2017-02-08T11:43:27.000Z">
+<meta property="og:updated_time" content="2017-03-07T14:05:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 进阶系列2：面向对象编程">
 <meta name="twitter:description" content="Python作为一门流行的编程语言，广受程序员与数据科学家的喜爱。如今的Python拥有丰富的第三方库和良好的生态发展，使其能够在数据科学、人工智能、web等各领域获得广泛的支持。Python进阶系列旨在分享一些Python的高级特性，如Lambda表达式、元类(metaclass)的使用、类(class)和类型(type)的统一、经典类与新式类区别与应用等。*
@@ -130,6 +130,7 @@ Ob">
 <h3 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h3><p>在学习和使用Python的过程中，应该有不少人都听过这句话：</p>
 <p><strong>”Everything is object！”</strong></p>
 <p>在Python的面向对象编程中，Object是最为核心的部分。今天，我想通过剖析Python Object的构造过程和组成原理，对比Python与Java/C++等在Object实现上的区别。</p>
+<a id="more"></a>
 <h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><p>定义一个类，通过构造函数完成类的实例化是通用的做法。通常，<code>__init__</code>被视作Python对象的构造函数。</p>
 <p>定义Person类：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">()</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age)</span>:</span></div><div class="line">        self.name = name</div><div class="line">        self.age = age</div></pre></td></tr></table></figure>
