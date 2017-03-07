@@ -88,6 +88,74 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-python-advanced2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/27/python-advanced2/">Python 进阶系列2：面向对象编程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/01/27/python-advanced2/" class="article-date">
+  <time datetime="2017-01-27T00:35:31.000Z" itemprop="datePublished">2017-1-27 Fri  08:35</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <img src="/2017/01/27/python-advanced2/img_0.png" alt="." title=".">
+<p>Python作为一门流行的编程语言，广受程序员与数据科学家的喜爱。如今的Python拥有丰富的第三方库和良好的生态发展，使其能够在数据科学、人工智能、web等各领域获得广泛的支持。Python进阶系列旨在分享一些Python的高级特性，如Lambda表达式、元类(metaclass)的使用、类(class)和类型(type)的统一、经典类与新式类区别与应用等。*</p>
+<p>作者：<a href="https://cn.linkedin.com/in/jingtianp" target="_blank" rel="external">DjangoPeng</a></p>
+<h3 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h3><p>在学习和使用Python的过程中，应该有不少人都听过这句话：</p>
+<p><strong>”Everything is object！”</strong></p>
+<p>在Python的面向对象编程中，Object是最为核心的部分。今天，我想通过剖析Python Object的构造过程和组成原理，对比Python与Java/C++等在Object实现上的区别。</p>
+<h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><p>定义一个类，通过构造函数完成类的实例化是通用的做法。通常，<code>__init__</code>被视作Python对象的构造函数。</p>
+<p>定义Person类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">()</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age)</span>:</span></div><div class="line">        self.name = name</div><div class="line">        self.age = age</div></pre></td></tr></table></figure>
+<p>实例化Person对象jeff：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>jeff = Person(<span class="string">"jeff"</span>, <span class="number">23</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>[jeff.name, jeff.age]</div><div class="line">[<span class="string">'jeff'</span>, <span class="number">23</span>]</div></pre></td></tr></table></figure>
+<p>在执行<code>jeff = Person(&quot;jeff&quot;, 23)</code>这条语句时，实际上调用了Person类的<code>__init__</code>方法，通过传入参数<code>name=&quot;jeff&quot;</code>和<code>age=23</code>实现对成员函数的赋值和Person对象的实例化。因此，该方法返回一个Person类的实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>jeff</div><div class="line">&lt;__main__.Person instance at <span class="number">0x103e85a28</span>&gt;</div></pre></td></tr></table></figure>
+<p>对比Java的类定义和实例化方法：</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://zjupjt.com/2017/01/27/python-advanced2/" data-id="cizzltzv5000fsmhp1dghw2dv" class="article-share-link">分享</a>
+      
+      
+        <a href="http://zjupjt.com/2017/01/27/python-advanced2/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2017/01/27/python-advanced2/">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+
+      
+      
+  </div>
+  
+
+
+  
+
+
+
+</article>
+
+  
     <article id="post-python_advanced_1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -116,59 +184,18 @@
       
         <img src="/2017/01/18/python_advanced_1/img_0.png" alt="." title=".">
 <p><em>Python作为一门流行的编程语言，广受程序员与数据科学家的喜爱。如今的Python拥有丰富的第三方库和良好的生态发展，使其能够在数据科学、人工智能、web等各领域获得广泛的支持。Python进阶系列旨在分享一些Python的高级特性，如Lambda表达式、元类(metaclass)的使用、类(class)和类型(type)的统一、经典类与新式类区别与应用等。</em></p>
-<p>作者：<a href="https://cn.linkedin.com/in/jingtianp" target="_blank" rel="external">DjangoPeng</a></p>
-<h3 id="lambda函数"><a href="#lambda函数" class="headerlink" title="lambda函数"></a>lambda函数</h3><p>在计算机编程中，<strong>匿名函数</strong>（anonymous function）是指一类无需定义<a href="https://zh.wikipedia.org/wiki/%E6%A0%87%E8%AF%86%E7%AC%A6" target="_blank" rel="external">标识符</a>（函数名）的<a href="https://zh.wikipedia.org/wiki/%E5%87%BD%E6%95%B0" target="_blank" rel="external">函数</a>或<a href="https://zh.wikipedia.org/wiki/%E5%AD%90%E7%A8%8B%E5%BA%8F" target="_blank" rel="external">子程序</a>，普遍存在于多种编程语言中。1958年<a href="https://zh.wikipedia.org/wiki/LISP" target="_blank" rel="external">LISP</a>首先采用匿名函数，自此之后，越来越多编程语言陆续采用，如C++、Java、Python。</p>
-<p>lambda作为一个关键字，用来实现Python的匿名函数，与def定义的普通函数相比较而言，lambda是单一的表达式，而不是代码块（block）。我们只能在lambda函数中封装有限的逻辑（通常就是一个表达式），这样做的目的是为了引导大家用lambda实现功能简单的函数，而复杂的逻辑仍然交由def处理。</p>
-<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>Python支持在运行时动态创建Lambda函数（匿名函数）。</p>
-<p>语法：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">lambda</span> arg1, arg2,...,argN : an expression <span class="keyword">with</span> args</div></pre></td></tr></table></figure>
-<p>以”:”作为分割，前为函数入参，后为整个函数的表达式，计算结果就作为函数的返回结果。</p>
-<p><strong>定义求一个数的平方的函数</strong></p>
-<p>lambda函数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">lambda</span> x : x**<span class="number">2</span></div></pre></td></tr></table></figure>
-<p>def函数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">pow</span><span class="params">(x)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> x**<span class="number">2</span></div></pre></td></tr></table></figure>
-<p>通过对比，可以发现lambda函数的语法更加简练，无需显示”return”，而是直接返回表达式计算结果。</p>
-<h4 id="调用方式"><a href="#调用方式" class="headerlink" title="调用方式"></a>调用方式</h4><p>方式1：lambda函数作为一个函数对象，同样可以将其赋值给变量，然后就像普通函数一样通过func()形式进行调用：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>pow = <span class="keyword">lambda</span> x, x**<span class="number">2</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>result = pow(<span class="number">2</span>)</div><div class="line"><span class="number">4</span></div></pre></td></tr></table></figure>
-<p>方式2：直接在lambda函数后加上一对小括号进行调用：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;(<span class="keyword">lambda</span> x : x**<span class="number">2</span>)(<span class="number">2</span>)</div><div class="line"><span class="number">4</span></div></pre></td></tr></table></figure>
-<h4 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h4><p>当一个函数接受另一个函数对象作为入参时，这种函数就称为高阶函数（Higher-order function)。</p>
-<h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a><strong>定义</strong></h4><p>定义一个高阶函数用于求两个数的和，同时接受一个函数对这两个数进行预处理，如：绝对值、开方、平方等。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">myAdd</span><span class="params">(a, b, f)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> f(a) + f(b)</div></pre></td></tr></table></figure>
-<p>其中a，b是用于求和的两个参数，f是对其进行预处理的函数。不妨先令f＝abs，则有：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>myAdd(<span class="number">1</span>, <span class="number">-1</span>, abs)</div><div class="line"><span class="number">2</span></div></pre></td></tr></table></figure>
-<p>我们之前定义了求平方的函数pow：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">pow</span><span class="params">(x)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> x**<span class="number">2</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>myAdd(<span class="number">2</span>, <span class="number">-2</span>, pow)</div><div class="line"><span class="number">8</span></div></pre></td></tr></table></figure>
-<p>正如之前所言，pow函数只有一个简单的表达式，完全可以由lambda函数代替：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>myAdd(<span class="number">2</span>, <span class="number">-2</span>, <span class="keyword">lambda</span> x : x**<span class="number">2</span>)</div><div class="line"><span class="number">8</span></div></pre></td></tr></table></figure>
-<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>下面实例中的map、reduce、filter都是Python内置的高阶函数，</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 求[0,1,2,3,4,5,6,7,8,9]各自的平方</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>map(<span class="keyword">lambda</span> x : x**<span class="number">2</span>, xrange(<span class="number">10</span>))</div><div class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>]</div><div class="line"><span class="comment"># 求0~99的和</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>reduce(<span class="keyword">lambda</span> x, y: x + y, xrange(<span class="number">100</span>))</div><div class="line"><span class="number">4950</span></div><div class="line"><span class="comment"># 求0~10中的偶数</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>filter(<span class="keyword">lambda</span> x: x % <span class="number">2</span>==<span class="number">0</span>, xrange(<span class="number">10</span>))</div><div class="line">[<span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>]</div></pre></td></tr></table></figure>
-<p>如果用def定义普通函数来完成上面的工作，以求和为例，则显得过于冗长：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">sum</span><span class="params">(a,b)</span>:</span></div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> a + b</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>reduce(sum, xrange(<span class="number">100</span>))</div><div class="line"><span class="number">4950</span></div></pre></td></tr></table></figure>
-<h4 id="数字字符串转换"><a href="#数字字符串转换" class="headerlink" title="数字字符串转换"></a>数字字符串转换</h4><p>输入一个字符串数字，将其转换为整型数字，通过lambda将其封装成str2int函数：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">str2int</span><span class="params">(s)</span>:</span>                                  </div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> reduce(<span class="keyword">lambda</span> x, y: int(x)*<span class="number">10</span> + int(y), s)</div><div class="line"><span class="meta">... </span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>num = str2int(<span class="string">'12345'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(num)</div><div class="line"><span class="number">12345</span></div></pre></td></tr></table></figure>
-<h4 id="嵌套排序问题"><a href="#嵌套排序问题" class="headerlink" title="嵌套排序问题"></a>嵌套排序问题</h4><p>当实现各种特定的排序需求时，如dict按value排序、list嵌套dict排序等，如果结合<code>sorted()</code>函数和lambda来处理，往往能达到事半功倍的效果。</p>
-<p><code>sorted()</code>函数原型：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sorted(iterable[,key][,reverse])</div></pre></td></tr></table></figure>
-<p>iterable是需要排序的变量，key是指定排序的元素，reverse指定是否逆序。</p>
-<p><strong>问题1：dict按key排序</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>dict = &#123;<span class="string">'a'</span>:<span class="number">3</span>, <span class="string">'b'</span>: <span class="number">1</span>, <span class="string">'c'</span>:<span class="number">2</span>&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(dict)</div><div class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(dict, reverse=<span class="keyword">True</span>)</div><div class="line">[<span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>]</div></pre></td></tr></table></figure>
-<p><strong>问题2：dict按value排序</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>dict = &#123;<span class="string">'a'</span>:<span class="number">3</span>, <span class="string">'b'</span>: <span class="number">1</span>, <span class="string">'c'</span>:<span class="number">2</span>&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(dict, key=<span class="keyword">lambda</span> k: dict[k])</div><div class="line">[<span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'a'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(dict, key=<span class="keyword">lambda</span> k: dict[k], reverse=<span class="keyword">True</span>)</div><div class="line">[<span class="string">'a'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>]</div></pre></td></tr></table></figure>
-<p><strong>问题3：list嵌套list排序</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>list = [[<span class="number">7</span>, <span class="number">4</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">8</span>, <span class="number">5</span>], [<span class="number">6</span>, <span class="number">9</span>, <span class="number">3</span>]]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(list, key=<span class="keyword">lambda</span> k: k[<span class="number">0</span>]) <span class="comment">#按各列表第0个升序</span></div><div class="line">[[<span class="number">2</span>, <span class="number">8</span>, <span class="number">5</span>], [<span class="number">6</span>, <span class="number">9</span>, <span class="number">3</span>], [<span class="number">7</span>, <span class="number">4</span>, <span class="number">1</span>]]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(list, key=<span class="keyword">lambda</span> k: k[<span class="number">0</span>], reverse=<span class="keyword">True</span>) <span class="comment">#按各列表第0个降序</span></div><div class="line">[[<span class="number">7</span>, <span class="number">4</span>, <span class="number">1</span>], [<span class="number">6</span>, <span class="number">9</span>, <span class="number">3</span>], [<span class="number">2</span>, <span class="number">8</span>, <span class="number">5</span>]]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(list, key=<span class="keyword">lambda</span> k: k[<span class="number">1</span>]) <span class="comment">#按各列表第1个升序</span></div><div class="line">[[<span class="number">7</span>, <span class="number">4</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">8</span>, <span class="number">5</span>], [<span class="number">6</span>, <span class="number">9</span>, <span class="number">3</span>]]</div></pre></td></tr></table></figure>
-<p><strong>问题4：list嵌套dict排序</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>list = [</div><div class="line"><span class="meta">... </span>    &#123;<span class="string">'x'</span>: <span class="number">3</span>, <span class="string">'y'</span>: <span class="number">2</span>, <span class="string">'z'</span>: <span class="number">1</span>&#125;,</div><div class="line"><span class="meta">... </span>    &#123;<span class="string">'x'</span>: <span class="number">2</span>, <span class="string">'y'</span>: <span class="number">1</span>, <span class="string">'z'</span>: <span class="number">3</span>&#125;,</div><div class="line"><span class="meta">... </span>    &#123;<span class="string">'x'</span>: <span class="number">1</span>, <span class="string">'y'</span>: <span class="number">3</span>, <span class="string">'z'</span>: <span class="number">2</span>&#125;,</div><div class="line"><span class="meta">... </span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(list, key=<span class="keyword">lambda</span> k: k[<span class="string">'x'</span>]) <span class="comment">#按dict中x的value升序</span></div><div class="line">[&#123;<span class="string">'y'</span>: <span class="number">3</span>, <span class="string">'x'</span>: <span class="number">1</span>, <span class="string">'z'</span>: <span class="number">2</span>&#125;, &#123;<span class="string">'y'</span>: <span class="number">1</span>, <span class="string">'x'</span>: <span class="number">2</span>, <span class="string">'z'</span>: <span class="number">3</span>&#125;, &#123;<span class="string">'y'</span>: <span class="number">2</span>, <span class="string">'x'</span>: <span class="number">3</span>, <span class="string">'z'</span>: <span class="number">1</span>&#125;]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(lis, key=<span class="keyword">lambda</span> k: k[<span class="string">'x'</span>], reverse=<span class="keyword">True</span>) <span class="comment">#按dict中x的value降序</span></div><div class="line">[&#123;<span class="string">'y'</span>: <span class="number">2</span>, <span class="string">'x'</span>: <span class="number">3</span>, <span class="string">'z'</span>: <span class="number">1</span>&#125;, &#123;<span class="string">'y'</span>: <span class="number">1</span>, <span class="string">'x'</span>: <span class="number">2</span>, <span class="string">'z'</span>: <span class="number">3</span>&#125;, &#123;<span class="string">'y'</span>: <span class="number">3</span>, <span class="string">'x'</span>: <span class="number">1</span>, <span class="string">'z'</span>: <span class="number">2</span>&#125;]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(list, key=<span class="keyword">lambda</span> k: k[<span class="string">'y'</span>]) <span class="comment">#按dict中y的value升序</span></div><div class="line">[&#123;<span class="string">'y'</span>: <span class="number">1</span>, <span class="string">'x'</span>: <span class="number">2</span>, <span class="string">'z'</span>: <span class="number">3</span>&#125;, &#123;<span class="string">'y'</span>: <span class="number">2</span>, <span class="string">'x'</span>: <span class="number">3</span>, <span class="string">'z'</span>: <span class="number">1</span>&#125;, &#123;<span class="string">'y'</span>: <span class="number">3</span>, <span class="string">'x'</span>: <span class="number">1</span>, <span class="string">'z'</span>: <span class="number">2</span>&#125;]</div></pre></td></tr></table></figure>
-<p><strong>问题5：dict嵌套list排序</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>dict = &#123;</div><div class="line"><span class="meta">... </span>    <span class="string">'a'</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</div><div class="line"><span class="meta">... </span>    <span class="string">'b'</span>: [<span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>],</div><div class="line"><span class="meta">... </span>    <span class="string">'c'</span>: [<span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>],</div><div class="line"><span class="meta">... </span>&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(dict, key=<span class="keyword">lambda</span> k: dict[k][<span class="number">0</span>])</div><div class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(dict, key=<span class="keyword">lambda</span> k: dict[k][<span class="number">0</span>], reverse=<span class="keyword">True</span>)</div><div class="line">[<span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(dict, key=<span class="keyword">lambda</span> k: dict[k][<span class="number">1</span>])</div><div class="line">[<span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>]</div></pre></td></tr></table></figure>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>在实现简单功能的函数时，为了提升代码可读性，减少函数定义，可以尝试使用lambda编写匿名函数。其好处是显而易见的，当其与常用的高阶函数如map、reduce、fileter、sorted等结合时，能够产生事半功倍的效果。</p>
-
+<p>作者：<a href="https://cn.linkedin.com/in/jingtianp">DjangoPeng</a></p>
+<h3 id="lambda函数"><a href="#lambda函数" class="headerlink" title="lambda函数"></a>lambda函数</h3><p>在计算机编程中，<strong>匿名函数</strong>（anonymous function）是指一类无需定义<a href="https://zh.wikipedia.org/wiki/%E6%A0%87%E8%AF%86%E7%AC%A6">标识符</a>（函数名）的<a href="https://zh.wikipedia.org/wiki/%E5%87%BD%E6%95%B0">函数</a>或<a href="https://zh.wikipedia.org/wiki/%E5%AD%90%E7%A8%8B%E5%BA%8F">子程序</a>，普遍存在于多种编程语言中。1958年<a href="https://zh.wikipedia.org/wiki/LISP">LISP</a>首先采用匿名函数，自此之后，越来越多编程语言陆续采用，如C++、Java、Python。</p>
+        
+          <p class="article-more-link">
+            <a href="/2017/01/18/python_advanced_1/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2017/01/18/python_advanced_1/" data-id="ciy334y930001nrhpdora9vl1" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2017/01/18/python_advanced_1/" data-id="cizzltzvg000osmhpszpe26yv" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2017/01/18/python_advanced_1/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2017/01/18/python_advanced_1/">评论</a>
@@ -230,7 +257,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2017/01/11/update_glibc/" data-id="ciy334y850000nrhpxvcyrgfs" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2017/01/11/update_glibc/" data-id="cizzltzvp000ysmhp04ma7zg6" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2017/01/11/update_glibc/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2017/01/11/update_glibc/">评论</a>
@@ -292,7 +319,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/09/17/nnlm/" data-id="cit6qav7y0000cghp2gatj3rt" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/09/17/nnlm/" data-id="cizzltzuz000csmhpg4aj1wp4" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/09/17/nnlm/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/09/17/nnlm/">评论</a>
@@ -353,7 +380,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/08/13/nn-fp-bp/" data-id="cit6pz8ow0009bzhpu19cqroz" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/08/13/nn-fp-bp/" data-id="cizzltzun0005smhpelqw2iqr" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/08/13/nn-fp-bp/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/08/13/nn-fp-bp/">评论</a>
@@ -414,7 +441,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/08/04/nn-Activation-Function/" data-id="cit6pz8or0007bzhphaeeswz4" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/08/04/nn-Activation-Function/" data-id="cizzltzuw000asmhpfhw3d3d4" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/08/04/nn-Activation-Function/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/08/04/nn-Activation-Function/">评论</a>
@@ -481,7 +508,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/07/24/ML-LogisticRegression/" data-id="cit6pz8oa0000bzhpu6sjj2js" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/07/24/ML-LogisticRegression/" data-id="cizzltzud0001smhpdox0h5xr" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/07/24/ML-LogisticRegression/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/07/24/ML-LogisticRegression/">评论</a>
@@ -543,7 +570,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/" data-id="cit6pz8ol0004bzhp3mygw6gs" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/" data-id="cizzltzuk0004smhpeho3enrn" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/06/28/Singular-Vector-Decomposition-SVD/">评论</a>
@@ -604,7 +631,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/06/07/Stanford-CS229-1/" data-id="cit6pz8oe0001bzhpfjie02ba" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/06/07/Stanford-CS229-1/" data-id="cizzltzur0006smhpcde66ins" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/06/07/Stanford-CS229-1/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/06/07/Stanford-CS229-1/">评论</a>
@@ -670,74 +697,13 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/06/02/Hexo-Tutorial/" data-id="cit6pz8oo0005bzhplgq9ehev" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2016/06/02/Hexo-Tutorial/" data-id="cizzltzu80000smhp5kj7rni4" class="article-share-link">分享</a>
       
       
         <a href="http://zjupjt.com/2016/06/02/Hexo-Tutorial/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/06/02/Hexo-Tutorial/">评论</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
-
-    </footer>
-
-      
-      
-  </div>
-  
-
-
-  
-
-
-
-</article>
-
-  
-    <article id="post-tf-idf" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/15/tf-idf/">TF-IDF的原理与应用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/02/15/tf-idf/" class="article-date">
-  <time datetime="2016-02-15T12:50:51.000Z" itemprop="datePublished">2016-2-15 Mon  20:50</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Data-Mining/">Data Mining</a>
-  </div>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtianP">一个独行的程序员</a></p>
-<img src="/2016/02/15/tf-idf/img_0.png" alt="." title=".">
-<h2 id="1-TF-IDF原理"><a href="#1-TF-IDF原理" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><p>TF-IDF(Term Frequency-Inverse Document Frequency)，中文叫做词频－逆文档频率。在文本挖掘(Text Mining)和信息检索(Information Retrieval)领域具有广泛的应用。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/02/15/tf-idf/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://zjupjt.com/2016/02/15/tf-idf/" data-id="cit6pz8pb000qbzhpct7cc7yy" class="article-share-link">分享</a>
-      
-      
-        <a href="http://zjupjt.com/2016/02/15/tf-idf/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/02/15/tf-idf/">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Information-Retrieval/">Information Retrieval</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Text-Minging/">Text Minging</a></li></ul>
 
     </footer>
 
@@ -777,7 +743,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Mining/">Data Mining</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">4</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Mining/">Data Mining</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -795,7 +761,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -805,6 +771,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/01/27/python-advanced2/">Python 进阶系列2：面向对象编程</a>
+          </li>
         
           <li>
             <a href="/2017/01/18/python_advanced_1/">Python 进阶系列1：lambda函数与高阶函数</a>
@@ -820,10 +790,6 @@
         
           <li>
             <a href="/2016/08/13/nn-fp-bp/">神经网络模型</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/04/nn-Activation-Function/">神经网络-激活函数</a>
           </li>
         
       </ul>

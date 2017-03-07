@@ -7,44 +7,26 @@
   
   <meta name="keywords" content="python, data mining, machine learning">
   
-  <title>机器学习算法-Logistic Regression | Code4Future</title>
+  <title>Python 进阶系列2：面向对象编程 | Code4Future</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="作者：一个独行的程序员
-逻辑回归（Logistic Regression）是一种简单的分类模型，由于其高效而又简单的特性，在实际中取得了非常广泛的应用。本文主要关注逻辑回归的应用场景和数学原理，并对其在多分类问题上的扩展做了简要介绍。
-逻辑回归问题在实际生活中，我们常常会遇到很多“二选一”的问题。如：
-
-预测用户是否喜欢某推荐商品
-判断用户性别
-预测球赛的获胜队
-
-在处理以上这些二分类问题时，逻辑">
+  <meta name="description" content="Python作为一门流行的编程语言，广受程序员与数据科学家的喜爱。如今的Python拥有丰富的第三方库和良好的生态发展，使其能够在数据科学、人工智能、web等各领域获得广泛的支持。Python进阶系列旨在分享一些Python的高级特性，如Lambda表达式、元类(metaclass)的使用、类(class)和类型(type)的统一、经典类与新式类区别与应用等。*
+作者：DjangoPeng
+Ob">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习算法-Logistic Regression">
-<meta property="og:url" content="http://zjupjt.com/2016/07/24/ML-LogisticRegression/index.html">
+<meta property="og:title" content="Python 进阶系列2：面向对象编程">
+<meta property="og:url" content="http://zjupjt.com/2017/01/27/python-advanced2/index.html">
 <meta property="og:site_name" content="Code4Future">
-<meta property="og:description" content="作者：一个独行的程序员
-逻辑回归（Logistic Regression）是一种简单的分类模型，由于其高效而又简单的特性，在实际中取得了非常广泛的应用。本文主要关注逻辑回归的应用场景和数学原理，并对其在多分类问题上的扩展做了简要介绍。
-逻辑回归问题在实际生活中，我们常常会遇到很多“二选一”的问题。如：
-
-预测用户是否喜欢某推荐商品
-判断用户性别
-预测球赛的获胜队
-
-在处理以上这些二分类问题时，逻辑">
-<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png">
-<meta property="og:updated_time" content="2016-08-04T14:43:59.000Z">
+<meta property="og:description" content="Python作为一门流行的编程语言，广受程序员与数据科学家的喜爱。如今的Python拥有丰富的第三方库和良好的生态发展，使其能够在数据科学、人工智能、web等各领域获得广泛的支持。Python进阶系列旨在分享一些Python的高级特性，如Lambda表达式、元类(metaclass)的使用、类(class)和类型(type)的统一、经典类与新式类区别与应用等。*
+作者：DjangoPeng
+Ob">
+<meta property="og:image" content="http://zjupjt.com/2017/01/27/python-advanced2/img_0.png">
+<meta property="og:updated_time" content="2017-02-08T11:43:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习算法-Logistic Regression">
-<meta name="twitter:description" content="作者：一个独行的程序员
-逻辑回归（Logistic Regression）是一种简单的分类模型，由于其高效而又简单的特性，在实际中取得了非常广泛的应用。本文主要关注逻辑回归的应用场景和数学原理，并对其在多分类问题上的扩展做了简要介绍。
-逻辑回归问题在实际生活中，我们常常会遇到很多“二选一”的问题。如：
-
-预测用户是否喜欢某推荐商品
-判断用户性别
-预测球赛的获胜队
-
-在处理以上这些二分类问题时，逻辑">
-<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png">
+<meta name="twitter:title" content="Python 进阶系列2：面向对象编程">
+<meta name="twitter:description" content="Python作为一门流行的编程语言，广受程序员与数据科学家的喜爱。如今的Python拥有丰富的第三方库和良好的生态发展，使其能够在数据科学、人工智能、web等各领域获得广泛的支持。Python进阶系列旨在分享一些Python的高级特性，如Lambda表达式、元类(metaclass)的使用、类(class)和类型(type)的统一、经典类与新式类区别与应用等。*
+作者：DjangoPeng
+Ob">
+<meta name="twitter:image" content="http://zjupjt.com/2017/01/27/python-advanced2/img_0.png">
   
     <link rel="alternative" href="/atom.xml" title="Code4Future" type="application/atom+xml">
   
@@ -116,7 +98,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-ML-LogisticRegression" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-python-advanced2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -124,76 +106,50 @@
         
   
     <h1 class="article-title" itemprop="name">
-      机器学习算法-Logistic Regression
+      Python 进阶系列2：面向对象编程
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2016/07/24/ML-LogisticRegression/" class="article-date">
-  <time datetime="2016-07-24T12:27:34.000Z" itemprop="datePublished">2016-7-24 Sun  20:27</time>
+      <a href="/2017/01/27/python-advanced2/" class="article-date">
+  <time datetime="2017-01-27T00:35:31.000Z" itemprop="datePublished">2017-1-27 Fri  08:35</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
+    <a class="article-category-link" href="/categories/Python/">Python</a>
   </div>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>作者：<a href="https://cn.linkedin.com/in/jingtianp" target="_blank" rel="external">一个独行的程序员</a></p>
-<p><em>逻辑回归（Logistic Regression）是一种简单的分类模型，由于其高效而又简单的特性，在实际中取得了非常广泛的应用。本文主要关注逻辑回归的应用场景和数学原理，并对其在多分类问题上的扩展做了简要介绍。</em></p>
-<h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在实际生活中，我们常常会遇到很多“二选一”的问题。如：</p>
-<ul>
-<li>预测用户是否喜欢某推荐商品</li>
-<li>判断用户性别</li>
-<li>预测球赛的获胜队</li>
-</ul>
-<p>在处理以上这些二分类问题时，逻辑回归成了我们的一把利器。通常这类问题的处理步骤为：</p>
-<a id="more"></a>
-<ol>
-<li>获取原始数据</li>
-</ol>
-<ul>
-<li>标记训练数据</li>
-<li>训练逻辑回归的参数</li>
-<li>测试模型效果</li>
-</ul>
-<p>在获得数据和标签后，我们就得到了n组训练数据，定义为：<br>$$<br>D = (x^1, y^1), (x^2, y^2),…,(x^n, y^n)<br>$$<br>其中，每组数据有m维特征，即：$x^i=[x_1^i,x_2^i,…,x_m^i]$</p>
-<p>y的取值为[0,1](1为正例，0为负例)。</p>
-<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><h3 id="Logistic-Function"><a href="#Logistic-Function" class="headerlink" title="Logistic Function"></a>Logistic Function</h3><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png" alt=""></p>
-<p>$$<br>\sigma(t)=\frac{e^t}{1+e^t}=\frac{1}{1+e^{-t}}<br>$$</p>
-<p>令$t=\theta^T X=\sum\theta_i x_i$,其中，$x_0 = 1$。<br>$\theta$是一个n+1维的向量，也是我们模型训练的参数。</p>
-<h3 id="为什么用逻辑回归"><a href="#为什么用逻辑回归" class="headerlink" title="为什么用逻辑回归"></a>为什么用逻辑回归</h3><p>对于二分类问题，我们可以用t来描述数据本身的特征，即每个维度的值$x_i$和其对应的权重(即参数)$\theta_i$，同时考虑到向量的形式，我们将$x_0$设为1。</p>
-<p>在《机器学习实战》中LR的对应章节也有提到，我们其实是想通过数据和标签，构造出一个分类模型。那么如何尽可能利用所有维度特征和所有数据呢？</p>
-<p>我们将由事件特征到类别划属这个问题，映射到一个概率分布模型。即：<br>$$<br>y =<br>\begin{cases}<br>1,\, \sigma(\theta,X) &gt; 0.5 \\<br>0,\, \sigma(\theta,X) &lt; 0.5 \\<br>\end{cases}<br>$$</p>
-<p>现在我们需要做的就是得到一个最优的$\theta$，使得模型预测准确率最高。</p>
-<h3 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h3><p>最常用的求解最优化问题的方法就是梯度下降法了，简单好懂，易于操作。其本质就是每次都朝着梯度的方向进行迭代，即：<br>$$<br>\vartriangle\theta_i = \partial\frac{\sigma(\theta,X)}{\partial\theta_i}<br>$$</p>
-<p>因此，我们也就得到了参数$\theta$的迭代方程：<br>$$<br>\theta:=\theta+\alpha\vartriangle\theta<br>$$<br>其中，$\alpha$是每一步迭代的步长，即 learning rate.</p>
-<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><h3 id="多分类问题"><a href="#多分类问题" class="headerlink" title="多分类问题"></a>多分类问题</h3><p>逻辑回归之所以好用，就在于它利用了函数图像的特性，刚好在y=0.5上下形成了两个概率相等的区间。如果将其用作多分类，则会有许多麻烦产生。</p>
-<ul>
-<li>概率不再均等</li>
-<li>可解释性太差</li>
-<li>若每一个分类单独训练，无法解决多分类互斥的情况</li>
-</ul>
-<p>基于以上几点原因，前辈们想出了一个两全其美的办法。既能利用逻辑回归的简单形式，又能解决多分类的问题。</p>
-<h3 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h3><p><strong>Softmax可以看作是逻辑回归的多分类版本。</strong></p>
-<p>让我们再来回顾一下逻辑回归模型，其本质是利用了概率密度函数来解决分类问题，即：<br>$$<br>y^*=<br>\begin{cases}<br>1,\, p(y=1|\theta, X) &gt; 0.5 \\<br>0,\, p(y=1|\theta, X) &lt; 0.5 \\<br>\end{cases}<br>$$</p>
-<p>那么，遵循这个思路，只要我们能够定义多分类场景下的条件概率就可以解决问题了。即<strong>multinomial logistic function</strong>，假设我们有K类：<br>$$<br>p(y=i|\theta,X) = \frac{e^{\theta_i^Tx}}{\sum_1^K e^{\theta_i^T x}}<br>$$<br>$$<br>y^*=argmax_i \, p(y=i|\theta,X)<br>$$</p>
-<p>需要注意的是，这里一共有K个$\theta$向量，对应了K个不同的类别，而每个$\theta$又有n+1个维度。</p>
+        <img src="/2017/01/27/python-advanced2/img_0.png" alt="." title=".">
+<p>Python作为一门流行的编程语言，广受程序员与数据科学家的喜爱。如今的Python拥有丰富的第三方库和良好的生态发展，使其能够在数据科学、人工智能、web等各领域获得广泛的支持。Python进阶系列旨在分享一些Python的高级特性，如Lambda表达式、元类(metaclass)的使用、类(class)和类型(type)的统一、经典类与新式类区别与应用等。*</p>
+<p>作者：<a href="https://cn.linkedin.com/in/jingtianp" target="_blank" rel="external">DjangoPeng</a></p>
+<h3 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h3><p>在学习和使用Python的过程中，应该有不少人都听过这句话：</p>
+<p><strong>”Everything is object！”</strong></p>
+<p>在Python的面向对象编程中，Object是最为核心的部分。今天，我想通过剖析Python Object的构造过程和组成原理，对比Python与Java/C++等在Object实现上的区别。</p>
+<h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><p>定义一个类，通过构造函数完成类的实例化是通用的做法。通常，<code>__init__</code>被视作Python对象的构造函数。</p>
+<p>定义Person类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">()</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age)</span>:</span></div><div class="line">        self.name = name</div><div class="line">        self.age = age</div></pre></td></tr></table></figure>
+<p>实例化Person对象jeff：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>jeff = Person(<span class="string">"jeff"</span>, <span class="number">23</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>[jeff.name, jeff.age]</div><div class="line">[<span class="string">'jeff'</span>, <span class="number">23</span>]</div></pre></td></tr></table></figure>
+<p>在执行<code>jeff = Person(&quot;jeff&quot;, 23)</code>这条语句时，实际上调用了Person类的<code>__init__</code>方法，通过传入参数<code>name=&quot;jeff&quot;</code>和<code>age=23</code>实现对成员函数的赋值和Person对象的实例化。因此，该方法返回一个Person类的实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>jeff</div><div class="line">&lt;__main__.Person instance at <span class="number">0x103e85a28</span>&gt;</div></pre></td></tr></table></figure>
+<p>对比Java的类定义和实例化方法：</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/07/24/ML-LogisticRegression/" data-id="cizzltzud0001smhpdox0h5xr" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2017/01/27/python-advanced2/" data-id="cizzltzv5000fsmhp1dghw2dv" class="article-share-link">分享</a>
       
       
-        <a href="http://zjupjt.com/2016/07/24/ML-LogisticRegression/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/07/24/ML-LogisticRegression/">评论</a>
+        <a href="http://zjupjt.com/2017/01/27/python-advanced2/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2017/01/27/python-advanced2/">评论</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Classification/">Classification</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
 
     </footer>
 
@@ -204,19 +160,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/08/04/nn-Activation-Function/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          神经网络-激活函数
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/06/28/Singular-Vector-Decomposition-SVD/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/01/18/python_advanced_1/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Singular Vector Decomposition(SVD)</div>
+      <div class="article-nav-title">Python 进阶系列1：lambda函数与高阶函数</div>
     </a>
   
 </nav>
@@ -227,7 +174,7 @@
   
     <section id="comments">
     <!-- 多说评论框 start -->
-      <div id="ds-thread" class="ds-thread" data-thread-key="2016/07/24/ML-LogisticRegression/" data-title="机器学习算法-Logistic Regression" data-url="http://zjupjt.com/2016/07/24/ML-LogisticRegression/"></div>
+      <div id="ds-thread" class="ds-thread" data-thread-key="2017/01/27/python-advanced2/" data-title="Python 进阶系列2：面向对象编程" data-url="http://zjupjt.com/2017/01/27/python-advanced2/"></div>
     <!-- 多说评论框 end --> 
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -393,23 +340,6 @@ window_bd_share_config={"common":{"bdSnsKey":{"tsina":"3687385740"},"bdWbuid":28
 
 <script src="/js/script.js"></script>
 
-  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
