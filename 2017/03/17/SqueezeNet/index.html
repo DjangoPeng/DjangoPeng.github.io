@@ -7,32 +7,26 @@
   
   <meta name="keywords" content="python, data mining, machine learning">
   
-  <title>Singular Vector Decomposition(SVD) | Code4Future</title>
+  <title>SqueezeNet:AlexNet准确率，0.5MB模型，50x压缩, | Code4Future</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="作者：一个独行的程序员
-参考：Dr. Edel Garcia, Singular Value Decomposition (SVD) A Fast Track Tutorial​SVD（奇异值分解）是常用的一种矩阵降维方法，其数学原理和求解过程并不复杂。这篇文章用一个样例来解释说明如何进行SVD的运算，并附上了常用的求解SVD的工具。
-Problem: 求矩阵A的SVD">
+  <meta name="description" content="作者：DjangoPeng
+近年来，CNN模型在ImageNet图像分类任务上赚足了眼球。从最早的AlexNet、Inception、VGG，到后来的Network-in-Network、GoogleNet、ResNet等，国内外的研究学者们一直在刷新着准确率，今年我们能够看到AI已经在该任务上超越了人类（5%）的准确率。但是，从工业界应用场景来看，上述网络普遍存在模型大，训练时间长的问题。以Te">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Singular Vector Decomposition(SVD)">
-<meta property="og:url" content="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/index.html">
+<meta property="og:title" content="SqueezeNet:AlexNet准确率，0.5MB模型，50x压缩,">
+<meta property="og:url" content="http://zjupjt.com/2017/03/17/SqueezeNet/index.html">
 <meta property="og:site_name" content="Code4Future">
-<meta property="og:description" content="作者：一个独行的程序员
-参考：Dr. Edel Garcia, Singular Value Decomposition (SVD) A Fast Track Tutorial​SVD（奇异值分解）是常用的一种矩阵降维方法，其数学原理和求解过程并不复杂。这篇文章用一个样例来解释说明如何进行SVD的运算，并附上了常用的求解SVD的工具。
-Problem: 求矩阵A的SVD">
-<meta property="og:image" content="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/img_0.png">
-<meta property="og:image" content="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/img_1.png">
-<meta property="og:image" content="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/img_2.png">
-<meta property="og:image" content="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/img_3.png">
-<meta property="og:image" content="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/img_4.png">
-<meta property="og:image" content="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/img_5.png">
-<meta property="og:image" content="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/img_6.png">
-<meta property="og:updated_time" content="2017-03-17T14:51:56.000Z">
+<meta property="og:description" content="作者：DjangoPeng
+近年来，CNN模型在ImageNet图像分类任务上赚足了眼球。从最早的AlexNet、Inception、VGG，到后来的Network-in-Network、GoogleNet、ResNet等，国内外的研究学者们一直在刷新着准确率，今年我们能够看到AI已经在该任务上超越了人类（5%）的准确率。但是，从工业界应用场景来看，上述网络普遍存在模型大，训练时间长的问题。以Te">
+<meta property="og:image" content="http://zjupjt.com/2017/03/17/SqueezeNet/fire_module.png">
+<meta property="og:image" content="http://zjupjt.com/2017/03/17/SqueezeNet/squeezenet.png">
+<meta property="og:image" content="http://zjupjt.com/2017/03/17/SqueezeNet/network.png">
+<meta property="og:image" content="http://zjupjt.com/2017/03/17/SqueezeNet/compression_rate.png">
+<meta property="og:updated_time" content="2017-03-17T17:09:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Singular Vector Decomposition(SVD)">
-<meta name="twitter:description" content="作者：一个独行的程序员
-参考：Dr. Edel Garcia, Singular Value Decomposition (SVD) A Fast Track Tutorial​SVD（奇异值分解）是常用的一种矩阵降维方法，其数学原理和求解过程并不复杂。这篇文章用一个样例来解释说明如何进行SVD的运算，并附上了常用的求解SVD的工具。
-Problem: 求矩阵A的SVD">
-<meta name="twitter:image" content="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/img_0.png">
+<meta name="twitter:title" content="SqueezeNet:AlexNet准确率，0.5MB模型，50x压缩,">
+<meta name="twitter:description" content="作者：DjangoPeng
+近年来，CNN模型在ImageNet图像分类任务上赚足了眼球。从最早的AlexNet、Inception、VGG，到后来的Network-in-Network、GoogleNet、ResNet等，国内外的研究学者们一直在刷新着准确率，今年我们能够看到AI已经在该任务上超越了人类（5%）的准确率。但是，从工业界应用场景来看，上述网络普遍存在模型大，训练时间长的问题。以Te">
+<meta name="twitter:image" content="http://zjupjt.com/2017/03/17/SqueezeNet/fire_module.png">
   
     <link rel="alternative" href="/atom.xml" title="Code4Future" type="application/atom+xml">
   
@@ -104,7 +98,7 @@ Problem: 求矩阵A的SVD">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Singular-Vector-Decomposition-SVD" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-SqueezeNet" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -112,46 +106,67 @@ Problem: 求矩阵A的SVD">
         
   
     <h1 class="article-title" itemprop="name">
-      Singular Vector Decomposition(SVD)
+      SqueezeNet:AlexNet准确率，0.5MB模型，50x压缩,
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2016/06/28/Singular-Vector-Decomposition-SVD/" class="article-date">
-  <time datetime="2016-06-28T06:24:48.000Z" itemprop="datePublished">2016-6-28 Tue  14:24</time>
+      <a href="/2017/03/17/SqueezeNet/" class="article-date">
+  <time datetime="2017-03-17T13:58:30.000Z" itemprop="datePublished">2017-3-17 Fri  21:58</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
+    <a class="article-category-link" href="/categories/Deep-Learning/">Deep Learning</a>
   </div>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">一个独行的程序员</a></p>
-<p><strong>参考</strong>：Dr. Edel Garcia, Singular Value Decomposition (SVD) A Fast Track Tutorial<br>​<br><em>SVD（奇异值分解）是常用的一种矩阵降维方法，其数学原理和求解过程并不复杂。这篇文章用一个样例来解释说明如何进行SVD的运算，并附上了常用的求解SVD的工具。</em></p>
-<h2 id="Problem-求矩阵A的SVD"><a href="#Problem-求矩阵A的SVD" class="headerlink" title="Problem: 求矩阵A的SVD"></a>Problem: 求矩阵A的SVD</h2><img src="/2016/06/28/Singular-Vector-Decomposition-SVD/img_0.png" alt="img_0.png" title="">
+        <p><strong>作者</strong>：<a href="https://www.linkedin.com/in/jingtian-peng-522376a2" target="_blank" rel="external">DjangoPeng</a></p>
+<p>近年来，CNN模型在ImageNet图像分类任务上赚足了眼球。从最早的AlexNet、Inception、VGG，到后来的Network-in-Network、GoogleNet、ResNet等，国内外的研究学者们一直在刷新着准确率，今年我们能够看到AI已经在该任务上超越了人类（5%）的准确率。但是，从工业界应用场景来看，上述网络普遍存在模型大，训练时间长的问题。以Tesla自动驾驶车为例，每一次升级都需要把模型从服务器下载到自动驾驶车（Over-the-air)，这对带宽和网络的要求极高。</p>
+<p>因此，学术界又涌现出一大批模型压缩的文章，从最简单的SVD，到模型剪枝（Pruning）和量化（Quantization）都取得了不错的效果。2017 ICLR的一篇论文SqueezeNet在不影响准确率的情况下，能够取得50X倍的压缩效果，并提出了系统级（System-level）端到端（end-to-en）的SqueezeNet Macroarchitecture。本文主要介绍SqueezeNet的原理和实验结果</p>
 <a id="more"></a>
-<h2 id="Solution："><a href="#Solution：" class="headerlink" title="Solution："></a>Solution：</h2><h3 id="Step-1-求转置矩阵与积"><a href="#Step-1-求转置矩阵与积" class="headerlink" title="Step 1.求转置矩阵与积"></a>Step 1.求转置矩阵与积</h3><img src="/2016/06/28/Singular-Vector-Decomposition-SVD/img_1.png" alt="img_1.png" title="">
-<h3 id="Step-2-求特征方程和奇异值"><a href="#Step-2-求特征方程和奇异值" class="headerlink" title="Step 2.求特征方程和奇异值"></a>Step 2.求特征方程和奇异值</h3><img src="/2016/06/28/Singular-Vector-Decomposition-SVD/img_2.png" alt="img_2.png" title="">
-<h3 id="Step-3-用奇异值构造矩阵S"><a href="#Step-3-用奇异值构造矩阵S" class="headerlink" title="Step 3.用奇异值构造矩阵S"></a>Step 3.用奇异值构造矩阵S</h3><img src="/2016/06/28/Singular-Vector-Decomposition-SVD/img_3.png" alt="img_3.png" title="">
-<h3 id="Step-4-用特征向量构造矩阵V"><a href="#Step-4-用特征向量构造矩阵V" class="headerlink" title="Step 4.用特征向量构造矩阵V"></a>Step 4.用特征向量构造矩阵V</h3><img src="/2016/06/28/Singular-Vector-Decomposition-SVD/img_4.png" alt="img_4.png" title="">
-<h3 id="Step-5-求矩阵U"><a href="#Step-5-求矩阵U" class="headerlink" title="Step 5.求矩阵U"></a>Step 5.求矩阵U</h3><img src="/2016/06/28/Singular-Vector-Decomposition-SVD/img_5.png" alt="img_5.png" title="">
-<h3 id="正交性"><a href="#正交性" class="headerlink" title="正交性"></a>正交性</h3><img src="/2016/06/28/Singular-Vector-Decomposition-SVD/img_6.png" alt="img_6.png" title="">
+<h2 id="SqueezeNet"><a href="#SqueezeNet" class="headerlink" title="SqueezeNet"></a>SqueezeNet</h2><h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><p>SqueezeNet使得我们可以用0.5MB的CNN模型，达到和AlexNet同样的准确率，实现了50x的模型压缩。作为对比，SVD是5x，Network Pruning是9x，Deep Compression是35x。</p>
+<p>相比而言，SqueezeNet具有3大优势：</p>
+<ol>
+<li>在分布式训练阶段，显著减小Worker Server和Parameter Server间的通信成本；</li>
+<li>模型导出阶段，显著减小云端到终端（如自动驾驶车）的带宽成本和时延；</li>
+<li>更小的内存需求，在FPGA和其他存在内存限制的硬件上也能成功运行；</li>
+</ol>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>在CNN网络中，卷积层参数的个数由输入通道数（number of input channels）、卷积核个数（number of filters）以及卷积核大小（1x1, 3x3, 5x5等)的乘积决定。本文以AlexNet选择的3x3的卷积核为例，分析SqueezeNet模型压缩的原理。（PS：论文中也是以AlexNet为例进行分析）</p>
+<p>为了减少卷积层参数，同时又不影响准确率，SqueezeNet提出了3种策略：</p>
+<ol>
+<li>用1x1的卷积核替代3x3的卷积核，减小卷积核尺寸；</li>
+<li>减少3x3卷积核的输入通道数；</li>
+<li>在网络靠后的部分进行下采样，为卷积层提供尽可能大的activation map；</li>
+</ol>
+<p>策略1和2是为了减少参数，策略3则是在参数大幅减少的情况下，通过提供更大的activation map保证模型尽量不损失精度。</p>
+<p>为了实现这3种策略，作者提出了深度2层的Fire模块，如图1所示。第1层squeeze conv layer，全部由1x1的卷积核组成，个数为s(1x1)；第2层expand layer，由1x1和3x3的卷积核组成，个数分别为e(1x1)和e(3x3)。</p>
+<img src="/2017/03/17/SqueezeNet/fire_module.png" alt="图1: Fire模块图" title="图1: Fire模块图">
+<p>因为在squeeze layer用1x1卷积核替换了3x3的卷积核，我们实现了策略1；在实际训练时保证s(1x1) &lt; e(1x1) + e(3x3)，这样就减小了3x3卷积核的输入通道数，实现了策略2；同时，作者给出了使用Fire模块的一个完整的网络结构，如图2所示：从头到尾在每个fire模块输出时都增加卷积核个数，并且只在conv1，fire4，fire8和conv10等相对靠后的位置增加stride=2的max-pooling层，这是为了尽可能给卷积核提供较大的activation map，以满足策略3的需求。</p>
+<p>作者称这种基于fire模块的系统级网络为SqueezeNet Macroarchitecture，每个Fire模块都为fine-tune提供了3个超参数，s(1x1)、e(1x1)和e(3x3)。</p>
+<img src="/2017/03/17/SqueezeNet/squeezenet.png" alt="图2: SqueezeNet Macroarchitecture 左：SqueezeNet，中：SqueezeNet with simple bypass，右：SqueezeNet with complex bypass" title="图2: SqueezeNet Macroarchitecture 左：SqueezeNet，中：SqueezeNet with simple bypass，右：SqueezeNet with complex bypass">
+<p>SqueezeNet的网络结构和各层输出通道数等详细信息如图3所示：</p>
+<img src="/2017/03/17/SqueezeNet/network.png" alt="图3：SqueezeNet architecture dimensions" title="图3：SqueezeNet architecture dimensions">
+<h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3><p>本实验主要基于AlexNet做模型压缩，在不影响准确率的情况下，对比压缩前后模型大小。因此，baseline选用原始的AlexNet模型，对比SVD、Pruning、Deep Compression等方法。实验结果如图4所示：</p>
+<img src="/2017/03/17/SqueezeNet/compression_rate.png" alt="图4：SqueezeNet architecture dimensions" title="图4：SqueezeNet architecture dimensions">
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p><a href="https://arxiv.org/abs/1602.07360" target="_blank" rel="external">Iandola F N, Han S, Moskewicz M W, et al. SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and&lt; 0.5 MB model size[J]. arXiv preprint arXiv:1602.07360, 2016.</a></p>
+<p><a href="https://arxiv.org/abs/1510.00149" target="_blank" rel="external">Han S, Mao H, Dally W J. Deep compression: Compressing deep neural networks with pruning, trained quantization and huffman coding[J]. arXiv preprint arXiv:1510.00149, 2015.</a></p>
+<p><a href="http://papers.nips.cc/paper/5544-exploiting-linear-structure-within-convolutional-networks-for-efficient-evaluation" target="_blank" rel="external">Denton E L, Zaremba W, Bruna J, et al. Exploiting linear structure within convolutional networks for efficient evaluation[C]//Advances in Neural Information Processing Systems. 2014: 1269-1277.</a></p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/" data-id="cj0e2siu4000153xoys5s5jes" class="article-share-link">分享</a>
+        <a data-url="http://zjupjt.com/2017/03/17/SqueezeNet/" data-id="cj0e2siua000453xohf50zihl" class="article-share-link">分享</a>
       
       
-        <a href="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2016/06/28/Singular-Vector-Decomposition-SVD/">评论</a>
+        <a href="http://zjupjt.com/2017/03/17/SqueezeNet/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="2017/03/17/SqueezeNet/">评论</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Mining/">Data Mining</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CNN/">CNN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Model-Compression/">Model Compression</a></li></ul>
 
     </footer>
 
@@ -162,19 +177,10 @@ Problem: 求矩阵A的SVD">
     
 <nav id="article-nav">
   
-    <a href="/2016/07/24/ML-LogisticRegression/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          机器学习算法-Logistic Regression
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/06/07/Stanford-CS229-1/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/01/27/python-advanced2/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Stanford CS229:Supervised Learning[1]</div>
+      <div class="article-nav-title">Python 进阶系列2：面向对象编程</div>
     </a>
   
 </nav>
@@ -185,7 +191,7 @@ Problem: 求矩阵A的SVD">
   
     <section id="comments">
     <!-- 多说评论框 start -->
-      <div id="ds-thread" class="ds-thread" data-thread-key="2016/06/28/Singular-Vector-Decomposition-SVD/" data-title="Singular Vector Decomposition(SVD)" data-url="http://zjupjt.com/2016/06/28/Singular-Vector-Decomposition-SVD/"></div>
+      <div id="ds-thread" class="ds-thread" data-thread-key="2017/03/17/SqueezeNet/" data-title="SqueezeNet:AlexNet准确率，0.5MB模型，50x压缩," data-url="http://zjupjt.com/2017/03/17/SqueezeNet/"></div>
     <!-- 多说评论框 end --> 
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
